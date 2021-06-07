@@ -1,10 +1,18 @@
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.scss';
+import Home from './pages/index';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <h1>welcome to skyview capital</h1>
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+      <Footer />
+    </Router>
   );
 }
 
