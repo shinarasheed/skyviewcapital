@@ -35,3 +35,52 @@
     }
   }
 }
+
+.register {
+  background-image: url('./assets/images/registerbanner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 600px;
+  display: grid;
+  place-items: center;
+
+  &__cta {
+    display: grid;
+    place-items: center;
+  }
+
+  h5 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: #fff;
+  }
+
+  span {
+    color: #ff9900;
+  }
+
+  p {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0;
+    color: #fff;
+    font-weight: 300;
+  }
+
+  a {
+    color: #ff9900;
+    font-weight: 400;
+    border: 2px solid #ff9900;
+    border-radius: 50px;
+    padding: 0.8rem 5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-top: 4rem;
+
+    &:hover {
+      color: #ff9900;
+      text-decoration: none;
+    }
+  }
+}
