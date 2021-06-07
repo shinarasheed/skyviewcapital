@@ -3,7 +3,7 @@
 
 .services {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 2rem;
   padding: 10rem 5rem 5rem 5rem;
   background-color: $grey-color;
