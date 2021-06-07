@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Footer.scss';
+import '../styles/footer.scss';
 import { Link } from 'react-router-dom';
 import { footerlinks } from '../constants/footerlinks';
 import { footericons } from '../constants/footericons';

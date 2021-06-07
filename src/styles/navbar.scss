@@ -1,0 +1,16 @@
+.appbar {
+  background-color: #ffffff;
+  color: #000;
+
+  .brand__logo {
+    margin-right: 20rem;
+  }
+
+  &__link {
+    font-size: 1.8rem;
+  }
+
+  &__item {
+    margin-left: 2rem;
+  }
+}

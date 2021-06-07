@@ -1,0 +1,27 @@
+.header {
+  background-color: #c0a063;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 8rem;
+
+  .email,
+  .phone {
+    margin-left: 0.5rem;
+  }
+
+  span {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  .socials {
+    border-left: 1px solid #fff;
+    margin-left: 2rem;
+    padding-left: 2rem;
+
+    img:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+}
