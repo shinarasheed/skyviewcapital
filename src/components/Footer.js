@@ -65,7 +65,16 @@ const Footer = () => {
                 {footericons.map((icon, index) => (
                   <li key={index}>
                     <Link to={icon.url}>
-                      <img src={icon.img} alt="social icon" />
+                      <img
+                        style={{
+                          width: '35px',
+                          height: '35px',
+                          objectFit: 'cover',
+                          OObjectPosition: 'center',
+                        }}
+                        src={icon.img}
+                        alt="social icon"
+                      />
                     </Link>
                   </li>
                 ))}
