@@ -17,9 +17,11 @@ export const Hero = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>PRESERVING THE TRADITIONAL VALUES OF WEALTH CREATION</h3>
+          <h3>PRESERVING THE TRADITIONAL</h3>
+          <h3>VALUES OF WEALTH CREATION</h3>
           <p>Consistently Adding Values to Your Wealth. </p>
         </Carousel.Caption>
+        <div className="homeHeroOverlay"></div>
       </Carousel.Item>
       <Carousel.Item>
         <img
@@ -33,8 +35,10 @@ export const Hero = () => {
 
         <Carousel.Caption>
           <h3>Decision Making</h3>
-          <p>Making the Right Decisions at the Right Time.</p>
+          <p>Making the Right Decisions</p>
+          <p>at the Right Time.</p>
         </Carousel.Caption>
+        <div className="homeHeroOverlay"></div>
       </Carousel.Item>
       <Carousel.Item>
         <img
@@ -47,11 +51,12 @@ export const Hero = () => {
         />
 
         <Carousel.Caption>
-          <h3>Take Charge of Your Finances.</h3>
-          <p>
-            Make this the year you take control, Skyview capital makes it easy.
-          </p>
+          <h3>Take Charge of Your</h3>
+          <h3>Finances.</h3>
+          <p>Make this the year you take control,</p>
+          <p>Skyview capital makes it easy.</p>
         </Carousel.Caption>
+        <div className="homeHeroOverlay"></div>
       </Carousel.Item>
     </Carousel>
   );
