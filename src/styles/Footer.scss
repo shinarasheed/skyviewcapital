@@ -52,8 +52,14 @@ footer {
     border-top: 1px solid $primary-color;
     margin-bottom: 1.5rem;
   }
-}
-ul li {
-  color: $primary-color;
-  font-size: 1.5rem;
+
+  ul li,
+  ul li a {
+    color: $primary-color;
+    font-size: 1.5rem;
+  }
+
+  ul li a:hover {
+    color: $primary-color;
+  }
 }
