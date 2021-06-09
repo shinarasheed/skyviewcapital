@@ -1,6 +1,17 @@
 @import './styles/base';
 @import './styles/variables';
 
+// global styles
+.title {
+  color: $primary-color;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-size: 3rem;
+  text-align: center;
+}
+
+// end of global styles
+
 .services {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

@@ -1,30 +1,23 @@
 import service1 from '../assets/images/news1.png';
 import service2 from '../assets/images/news2.png';
 import service3 from '../assets/images/news3.png';
-import service4 from '../assets/images/news3.png';
 
 export const lastestnews = [
   {
     img: service1,
-    title: 'capital markets',
+    title: '3 Things You Can Invest Your Money In Right Now',
     description:
       'Our indepth experience in the stock market analysis over the past periods has enabled us to always provide for our reputable clients/investors the updates on the stock market',
   },
   {
     img: service2,
-    title: 'investments research',
+    title: 'Nigerian Exchange resumes trading with N25 billion growth',
     description:
       'Our indepth experience in the stock market analysis over the past periods has enabled us to always provide for our reputable clients/investors the updates on the stock market',
   },
   {
     img: service3,
-    title: 'security dealings',
-    description:
-      'Our indepth experience in the stock market analysis over the past periods has enabled us to always provide for our reputable clients/investors the updates on the stock market',
-  },
-  {
-    img: service4,
-    title: 'advisory services',
+    title: 'New digital currency exchange unveiled in Lagos.',
     description:
       'Our indepth experience in the stock market analysis over the past periods has enabled us to always provide for our reputable clients/investors the updates on the stock market',
   },
