@@ -1,6 +1,5 @@
 import React from 'react';
 import { lastestnews } from '../../data/latestnews';
-import '../../styles/latestnews.scss';
 import Title from '../Title';
 
 const LatestNews = () => {
