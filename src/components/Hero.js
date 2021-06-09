@@ -9,10 +9,9 @@ export const Hero = () => {
     <Carousel fade controls={false}>
       <Carousel.Item>
         <img
-          className="d-block"
+          className="d-block w-100"
           style={{
             height: '450px',
-            width: '100%',
           }}
           src={banner1}
           alt="First slide"
@@ -24,12 +23,9 @@ export const Hero = () => {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block"
+          className="d-block w-100"
           style={{
-            objectFit: 'cover',
-            objectPosition: 'center',
             height: '450px',
-            width: '100%',
           }}
           src={banner2}
           alt="Second slide"
@@ -42,13 +38,10 @@ export const Hero = () => {
       </Carousel.Item>
       <Carousel.Item>
         <img
+          className="d-block w-100"
           style={{
-            objectFit: 'cover',
-            objectPosition: 'center',
             height: '450px',
-            width: '100%',
           }}
-          className="d-block"
           src={banner3}
           alt="Third slide"
         />
