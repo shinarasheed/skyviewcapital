@@ -17,22 +17,22 @@ const Appbar = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Link className="appbar__item">
+          <Link to="/" className="appbar__item">
             <Nav.Link className="appbar__link">Home</Nav.Link>
           </Link>
-          <Link className="appbar__item">
+          <Link to="/" className="appbar__item">
             <Nav.Link className="appbar__link">About Us</Nav.Link>
           </Link>
-          <Link className="appbar__item">
+          <Link to="/" className="appbar__item">
             <Nav.Link className="appbar__link">Services</Nav.Link>
           </Link>
-          <Link className="appbar__item">
+          <Link to="/" className="appbar__item">
             <Nav.Link className="appbar__link">Research</Nav.Link>
           </Link>
-          <Link className="appbar__item">
+          <Link to="/" className="appbar__item">
             <Nav.Link className="appbar__link">Download</Nav.Link>
           </Link>
-          <Link className="appbar__item">
+          <Link to="/" className="appbar__item">
             <Nav.Link className="appbar__link">Contact</Nav.Link>
           </Link>
           <NavDropdown
@@ -40,10 +40,10 @@ const Appbar = () => {
             title="My Account"
             id="basic-nav-dropdown"
           >
-            <Link>
+            <Link to="/">
               <NavDropdown.Item>Login</NavDropdown.Item>
             </Link>
-            <Link>
+            <Link to="/">
               <NavDropdown.Item>Create Account</NavDropdown.Item>
             </Link>
           </NavDropdown>
