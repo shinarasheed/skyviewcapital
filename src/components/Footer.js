@@ -73,6 +73,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+        <div className="line"></div>
+
         <p className="text-center">
           Copyright &copy; {new Date().getFullYear()} Skyview Capital Limited.
           All Right Reserved.
