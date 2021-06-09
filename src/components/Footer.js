@@ -8,11 +8,11 @@ import Subscribe from './Subscribe';
 const Footer = () => {
   return (
     <>
-      <footer className="container-fluid">
-        <div className="row">
-          <div className="col-md-2 my-2">
-            <div>
-              <h5>Head Office</h5>
+      <footer>
+        <div className="footer__section">
+          <div>
+            <div className="mb-5">
+              <h5 className="mb-4">Head Office</h5>
               <ul>
                 <li>Lagos:</li>
                 <li>Skyview Capital Ltd,</li>
@@ -22,15 +22,15 @@ const Footer = () => {
             </div>
 
             <div>
-              <h5>Branch Office</h5>
-              <ul>
+              <h5 className="mb-3">Branch Office</h5>
+              <ul className="mb-5">
                 <li>Rivers State: </li>
                 <li>26 Aba Road, Ground Floor</li>
                 <li>UPDC Building,Port Harcourt.</li>
                 <li></li>
               </ul>
 
-              <ul>
+              <ul className="mb-5">
                 <li>FCT:</li>
                 <li>Plot 1723, Ademola Adetokunbo</li>
                 <li>Crescent, Nurnberger Plaza</li>
@@ -45,10 +45,10 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="col-md-2 my-2">
+          <div>
             <div>
-              <h5>Quick Links</h5>
-              <ul>
+              <h5 className="mb-4">Quick Links</h5>
+              <ul className="quick__links">
                 {footerlinks.map((link, index) => (
                   <li key={index}>
                     <Link to={link.path}>{link.text}</Link>
@@ -57,21 +57,19 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="col-md-2 my-2">
+          <div>
+            <Subscribe />
             <div>
-              <Subscribe />
-              <div>
-                <h6>Connect with us</h6>
-                <ul className="socials">
-                  {footericons.map((icon, index) => (
-                    <li key={index}>
-                      <Link to={icon.url}>
-                        <img src={icon.img} alt="social icon" />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <h6 className="mt-5">Connect with us</h6>
+              <ul className="socials">
+                {footericons.map((icon, index) => (
+                  <li key={index}>
+                    <Link to={icon.url}>
+                      <img src={icon.img} alt="social icon" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

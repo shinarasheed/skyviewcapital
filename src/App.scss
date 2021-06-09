@@ -194,3 +194,27 @@
     }
   }
 }
+
+.subscribeform {
+  input {
+    border: none;
+    font-size: 15px;
+    padding: 5px 0 5px 1rem;
+    border-radius: 5px;
+  }
+
+  .formControl {
+    margin-bottom: 2rem;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    border: none;
+    background: $primary-color;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 5px 0 5px 1rem;
+  }
+}

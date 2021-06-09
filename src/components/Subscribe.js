@@ -3,14 +3,24 @@ import React from 'react';
 const Subscribe = () => {
   return (
     <>
-      <form>
-        <div>
-          <input type="text" placeholder="Enter Name" />
+      <form className="subscribeform">
+        <div className="formControl">
+          <input
+            className="subscribe__name"
+            type="text"
+            placeholder="Enter Name"
+          />
         </div>
-        <div>
-          <input type="text" placeholder="Enter Email Adress" />
+        <div className="formControl">
+          <input
+            className="subscribe__email"
+            type="text"
+            placeholder="Enter Email Adress"
+          />
         </div>
-        <button type="submit">Subscribe</button>
+        <button className="subscribe__button" type="submit">
+          Subscribe
+        </button>
       </form>
     </>
   );

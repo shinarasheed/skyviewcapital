@@ -3,11 +3,24 @@
 
 footer {
   background-color: $black-secondary;
+  padding: 7rem 0 1rem 0;
   margin-bottom: 0 !important;
-  color: #fff;
+
+  .footer__section {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  h5,
+  h6 {
+    color: #fff;
+    font-size: 1.8rem;
+  }
 
   p {
     margin-bottom: 0;
+    color: $primary-color;
+    font-size: 1.5rem;
   }
 
   a {
@@ -19,4 +32,21 @@ footer {
       text-decoration: none;
     }
   }
+
+  .quick__links li:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .socials {
+    display: flex;
+    margin-top: 2rem;
+  }
+
+  .socials li:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+ul li {
+  color: $primary-color;
+  font-size: 1.5rem;
 }
