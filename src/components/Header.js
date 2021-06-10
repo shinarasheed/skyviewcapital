@@ -27,20 +27,20 @@ const socials = [
 const Header = () => {
   return (
     <section className="header">
-      <div className="d-flex align-items-center">
-        <div className="d-flex align-items-center mr-3">
+      <div className="addressSection">
+        <div className="emailAddress d-flex align-items-center mr-3">
           <HiOutlineMail style={{ color: '#fff', fontSize: '2rem' }} />
           <span className="email">info@skyviewcapitalng.com</span>
         </div>
-        <div className="d-flex align-items-center ml-3">
+        <div className="phoneNumber d-flex align-items-center">
           <img src={phone} alt="phone" />
           <span className="phone">0700000000023</span>
         </div>
       </div>
 
-      <div className="d-flex align-items-center">
+      <div className="addressInfo d-flex align-items-center">
         <span>Monday - Friday (8AM - 5PM)</span>
-        <div className="d-flex align-items-center socials">
+        <div className="socials">
           {socials.map((item) => {
             return <img key={item.id} src={item.logo} alt={item.name} />;
           })}

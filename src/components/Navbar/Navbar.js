@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import '../styles/navbar.scss';
-import logo from '../assets/images/logo.png';
+import './Navbar.scss';
+import logo from '../../assets/images/logo.png';
 
 const Appbar = () => {
   return (
