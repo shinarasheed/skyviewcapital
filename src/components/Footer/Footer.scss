@@ -1,5 +1,5 @@
-@import '../styles/base';
-@import '../styles/variables';
+@import '../../styles/base';
+@import '../../styles/variables';
 
 footer {
   background-color: $black-secondary;
@@ -10,6 +10,9 @@ footer {
     display: flex;
     padding-right: 20rem;
     justify-content: space-between;
+    @media screen and(max-width:768px) {
+      flex-direction: column;
+    }
     margin-bottom: 4rem;
   }
 

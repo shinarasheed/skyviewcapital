@@ -1,9 +1,9 @@
 import React from 'react';
-import '../styles/footer.scss';
+import './Footer.scss';
 import { Link } from 'react-router-dom';
-import { footerlinks } from '../constants/footerlinks';
-import { footericons } from '../constants/footericons';
-import Subscribe from './Subscribe';
+import { footerlinks } from '../../constants/footerlinks';
+import { footericons } from '../../constants/footericons';
+import Subscribe from '../Subscribe';
 
 const Footer = () => {
   return (
@@ -26,7 +26,7 @@ const Footer = () => {
               <ul className="mb-5">
                 <li>Rivers State: </li>
                 <li>26 Aba Road, Ground Floor</li>
-                <li>UPDC Building,Port Harcourt.</li>
+                <li>UPDC Building, Port Harcourt.</li>
                 <li></li>
               </ul>
 
