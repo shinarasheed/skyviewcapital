@@ -24,6 +24,7 @@ const Register = () => {
 
         <Link to="/">Register Now</Link>
       </div>
+      <div className="registerOverlay"></div>
     </section>
   );
 };
