@@ -12,13 +12,13 @@ export const testimonials = [
 
   {
     img: client3,
-    name: 'Patience Momodu',
+    name: 'Kenneth Preye',
     testimonial:
       'We know Skyview Capital and The Network are dedicated to helping their clients grow and provide the support and resources to help us run our business as we see fit.”',
   },
   {
     img: client2,
-    name: 'Kenneth Preye',
+    name: 'Patience Momodu',
     testimonial:
       " Skyview Capital doesn't have any proprietary funds or products; rather, we were told to select whichever products we felt were best for the client’s situation. This client-centric approach really resonated with me and felt right.Thus began my avenue toward the independent model.",
   },
