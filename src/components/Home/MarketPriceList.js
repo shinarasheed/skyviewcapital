@@ -10,9 +10,9 @@ const MarketPriceList = () => {
         {/* market statistics */}
         <div>
           <table>
-            <thead className="text-capitalize" style={{ textAlign: 'center' }}>
-              <tr>
-                <th rowSpan="2">Market Statistics</th>
+            <thead>
+              <tr className="Tabletitle">
+                <th colSpan="2">Market Statistics</th>
               </tr>
             </thead>
             <tbody>
@@ -43,8 +43,11 @@ const MarketPriceList = () => {
         {/* top gainers */}
         <div>
           <table>
-            <thead className="text-capitalize">
-              <tr>
+            <thead>
+              <tr className="Tabletitle">
+                <th colSpan="4">TOP GAINERS - 24th May, 2021</th>
+              </tr>
+              <tr className="conetnts">
                 <th>Company</th>
                 <th>Prev</th>
                 <th>Current</th>
@@ -67,8 +70,11 @@ const MarketPriceList = () => {
         {/* top losers */}
         <div>
           <table>
-            <thead className="text-capitalize">
-              <tr>
+            <thead>
+              <tr className="Tabletitle">
+                <th colSpan="4">TOP LOSERS - 24th May, 2021</th>
+              </tr>
+              <tr className="content">
                 <th>Company</th>
                 <th>Prev</th>
                 <th>Current</th>

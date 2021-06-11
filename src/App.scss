@@ -289,7 +289,7 @@
 }
 
 .marketPriceList {
-  padding: 3rem 0 0 0;
+  padding: 5rem 0 7rem 0;
   font-size: 2rem;
 }
 
@@ -299,46 +299,35 @@
   flex-wrap: wrap;
 }
 
-.table-title {
-  display: flex;
-  justify-content: space-between;
-
-  a {
-    color: #606c86;
-    text-decoration: underline;
-    font-size: 1.2rem;
-  }
-
-  h3 {
-    color: #0c74c4;
-    font-weight: 600;
-  }
-}
-
 table {
   width: 100%;
   font-size: 1.3rem;
   overflow: hidden;
-  margin-bottom: 4rem;
 }
 
-table,
+table thead {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+tr,
 th,
 td {
   border: 1px solid black;
 }
 
+table thead tr.Tabletitle {
+  background-color: #c0a063;
+  border: none;
+}
+
 table th {
-  padding: 0 1rem;
+  padding: 1rem 1rem;
   font-weight: 100;
-  color: #0c74c4;
+  color: #000;
 }
 
 table tr,
 table td {
   padding: 1rem 1rem;
-}
-
-table tbody tr {
-  border-bottom: 1px solid #606c86;
 }
