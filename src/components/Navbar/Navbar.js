@@ -19,7 +19,7 @@ const Appbar = () => {
           <LinkContainer to="/" className="appbar__item">
             <Nav.Link className="appbar__link">Home</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/" className="appbar__item">
+          <LinkContainer to="/aboutus" className="appbar__item">
             <Nav.Link className="appbar__link">About Us</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/" className="appbar__item">

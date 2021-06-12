@@ -1,0 +1,114 @@
+.aboutusHero {
+  background-image: url('../assets/images/aboutushero.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  p {
+    color: #fff;
+    font-size: 4rem;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+  }
+
+  .aboutHeroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(68, 68, 68, 0.5);
+    z-index: 1;
+  }
+}
+
+.aboutSecondSection {
+  padding: 5rem 0;
+  width: 80vw;
+  margin: 0 auto;
+
+  .secondSectionCard {
+    margin-bottom: 5rem;
+    h5 {
+      text-align: center;
+      font-size: 3rem;
+      text-transform: capitalize;
+      margin-bottom: 4rem;
+      @media screen and(max-width:768px) {
+        margin-bottom: 3rem;
+      }
+    }
+
+    .cardDescription {
+      display: flex;
+      align-items: center;
+      gap: 15rem;
+
+      @media screen and(max-width:768px) {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      p {
+        font-size: 2rem;
+      }
+
+      .description {
+        flex: 2;
+        @media screen and(max-width:768px) {
+          flex: 1;
+        }
+      }
+
+      .banner {
+        flex: 1;
+        @media screen and(max-width:768px) {
+          flex: 1;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .cardDescription-2 {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 15rem;
+      @media screen and(max-width:768px) {
+        flex-direction: column-reverse;
+        gap: 2rem;
+      }
+
+      p {
+        font-size: 2rem;
+      }
+
+      .description {
+        flex: 2;
+        @media screen and(max-width:768px) {
+          flex: 1;
+        }
+      }
+
+      .banner {
+        flex: 1;
+        @media screen and(max-width:768px) {
+          flex: 1;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

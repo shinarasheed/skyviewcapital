@@ -331,3 +331,14 @@ table tr,
 table td {
   padding: 1rem 1rem;
 }
+
+// services
+.servicesHero {
+  background-image: url('./assets/images/serviceshero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50px;
+  display: grid;
+  place-items: center;
+}
