@@ -57,7 +57,7 @@ const AboutUs = () => {
         </article>
 
         <article className="secondSectionCard">
-          <h5>mission and vision</h5>
+          <h5>Why Skyview capital</h5>
           <div className="cardDescription">
             <div className="description">
               <p>

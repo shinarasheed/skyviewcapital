@@ -9,6 +9,10 @@
   justify-content: center;
   position: relative;
 
+  @media screen and(max-width:768px) {
+    min-height: 25rem;
+  }
+
   p {
     color: #fff;
     font-size: 4rem;
@@ -51,7 +55,7 @@
       gap: 15rem;
 
       @media screen and(max-width:768px) {
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 2rem;
       }
 
