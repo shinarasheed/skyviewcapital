@@ -38,7 +38,7 @@ const Footer = () => {
                 <li>Wuse II, Abuja.</li>
               </ul>
 
-              <ul>
+              <ul className="mb-4">
                 <li>Phone: 01-9035651</li>
                 <li>Email: info@skyviewcapitalng.com;</li>
                 <li>complaints@skyviewcapitalng.com</li>
