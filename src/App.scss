@@ -42,6 +42,9 @@
   p {
     font-size: 2rem;
     line-height: 0.8;
+    @media screen and(max-width:768px) {
+      line-height: 1.2;
+    }
   }
 }
 //end of carousel styles
