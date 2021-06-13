@@ -349,12 +349,31 @@ table td {
 }
 
 // services
+
+.capitalMarkets {
+  padding: 0 6rem;
+  background-color: $grey-primary;
+}
 .servicesHero {
   background-image: url('./assets/images/serviceshero.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 50px;
-  display: grid;
-  place-items: center;
+  height: 50rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h5 {
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 3rem;
+  }
 }
