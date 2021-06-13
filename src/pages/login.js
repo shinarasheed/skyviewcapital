@@ -7,7 +7,7 @@ const Login = () => {
     <section className="loginsection">
       <div className="loginForm">
         <Form>
-          <Form.Group controlId="formBasicEmail">
+          <Form.Group>
             <Form.Label className="formLabel">Username</Form.Label>
             <Form.Control size="lg" type="text" placeholder="Enter Username" />
             <Form.Text className="formText">
@@ -15,7 +15,7 @@ const Login = () => {
             </Form.Text>
           </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
+          <Form.Group>
             <Form.Label className="formLabel">Password</Form.Label>
             <Form.Control size="lg" type="password" placeholder="Password" />
             <Form.Text className="formText">
