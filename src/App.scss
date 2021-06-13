@@ -453,6 +453,8 @@ table td {
     font-size: 2rem;
     width: 20rem;
     margin-top: 1rem;
+    background-color: $primary-color;
+    border: none;
   }
 
   .sinupCta {
@@ -497,9 +499,8 @@ table td {
     font-size: 2rem;
     width: 20rem;
     margin-top: 1rem;
-  }
-  @media screen and(max-width:768px) {
-    width: 60%;
+    background-color: $primary-color;
+    border: none;
   }
 
   .sinupCta {
@@ -518,6 +519,9 @@ table td {
   background-size: cover;
   background-repeat: no-repeat;
   height: 45rem;
+  @media screen and(max-width:768px) {
+    height: 30rem;
+  }
 }
 
 .formMessage {
