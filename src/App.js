@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './App.scss';
 import Home from './pages/index';
 import Header from './components/Header';
 import Navbar from './components/Navbar/Navbar';
@@ -9,6 +8,8 @@ import CarpitalMarkets from './pages/capitalmarkets';
 import InvestmentResearch from './pages/investmentresearch';
 import SecurityDealings from './pages/securitydealings';
 import AdvisoryServices from './pages/advisoryservices';
+
+import './App.scss';
 
 function App() {
   return (
