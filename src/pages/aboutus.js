@@ -1,8 +1,6 @@
 import React from 'react';
 
-import Hero from '../components/styledComponents/Hero';
-// import { aboutdata } from '../data/about';
-import abouthero from '../assets/images/aboutushero.png';
+import Team from '../components/Home/Team';
 import about1 from '../assets/images/about1.png';
 import about2 from '../assets/images/about2.png';
 import about3 from '../assets/images/about3.png';
@@ -11,26 +9,10 @@ import '../styles/aboutus.scss';
 const AboutUs = () => {
   return (
     <>
-      <Hero img={abouthero}>
+      <section className="aboutusHero">
         <p>About Us</p>
-      </Hero>
-
-      {/* <section className="aboutSection">
-        {aboutdata.map((data, index) => (
-          <article className="aboutData" key={index}>
-            <div className="data">
-              <h5>{data.title}</h5>
-              <div className="description">
-                <p>{data.description}</p>
-              </div>
-              <div className="banner">
-                <img src={data.img} alt={data.title} />
-              </div>
-            </div>
-          </article>
-        ))}
-      </section> */}
-
+        <div className="aboutHeroOverlay"></div>
+      </section>
       <section className="aboutSecondSection">
         <article className="secondSectionCard">
           <h5>Who we are</h5>
@@ -99,6 +81,8 @@ const AboutUs = () => {
           </div>
         </article>
       </section>
+
+      <Team />
     </>
   );
 };

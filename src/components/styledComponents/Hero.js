@@ -10,24 +10,23 @@ const GlobalHero = ({ img, children }) => {
   );
 };
 
+// const StyledHero = styled.header`
+//   min-height: 60vh;
+//   background: url(${(props) => props.img}) center/cover no-repeat;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// `;
+
+// export default StyledHero;
+
 const HeroWrapper = styled.section`
+  /* min-height: 60vh; */
+  background: url(${(props) => props.img}) center/cover no-repeat;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-image: url(${(props) => props.img});
-  /* background-image: ${(props) => `url(${props.img})`}; */
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  justify-content: center;
   height: 480px;
-  .overLay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: ${(props) => props.color};
-  }
 `;
 
 export default GlobalHero;
