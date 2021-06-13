@@ -466,6 +466,7 @@ table td {
 }
 
 .contactForm {
+  padding-top: 5rem;
   width: 30%;
   margin: 0 auto;
   padding-bottom: 5rem;
@@ -509,4 +510,16 @@ table td {
     font-size: 1.5rem;
     margin-top: 4rem;
   }
+}
+
+.contactHero {
+  background-image: url('./assets/images/contact1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 45rem;
+}
+
+.formMessage {
+  resize: none;
 }

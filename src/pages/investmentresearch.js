@@ -22,7 +22,7 @@ const InvestmentResearch = () => {
       </article>
       <section className="capitalMarkets">
         <Section>
-          <h5>Capital Market</h5>
+          <h5>Investment Research</h5>
 
           <article className="description">
             <div className="descriptionSection">

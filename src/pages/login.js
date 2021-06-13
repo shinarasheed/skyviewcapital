@@ -10,9 +10,6 @@ const Login = () => {
           <Form.Group>
             <Form.Label className="formLabel">Username</Form.Label>
             <Form.Control size="lg" type="text" placeholder="Enter Username" />
-            <Form.Text className="formText">
-              We'll never share your email with anyone else.
-            </Form.Text>
           </Form.Group>
 
           <Form.Group>
