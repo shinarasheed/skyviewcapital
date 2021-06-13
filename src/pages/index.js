@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Hero } from '../components/Hero';
 import LatestNews from '../components/Home/LatestNews';
 import MarketPriceList from '../components/Home/MarketPriceList';
@@ -9,15 +10,20 @@ import Testimonials from '../components/Home/Testimonials';
 
 const Home = () => {
   return (
-    <section>
-      <Hero />
-      <Services />
-      <MarketPriceList />
-      <Register />
-      <LatestNews />
-      <Testimonials />
-      <Team />
-    </section>
+    <>
+      <Helmet>
+        <title>SkyviewCapital</title>
+      </Helmet>
+      <section>
+        <Hero />
+        <Services />
+        <MarketPriceList />
+        <Register />
+        <LatestNews />
+        <Testimonials />
+        <Team />
+      </section>
+    </>
   );
 };
 

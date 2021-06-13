@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Helmet } from 'react-helmet';
 import Team from '../components/Home/Team';
 import about1 from '../assets/images/about1.png';
 import about2 from '../assets/images/about2.png';
@@ -9,6 +9,9 @@ import '../styles/aboutus.scss';
 const AboutUs = () => {
   return (
     <>
+      <Helmet>
+        <title>AboutUs</title>
+      </Helmet>
       <section className="aboutusHero">
         <p>About Us</p>
         <div className="aboutHeroOverlay"></div>
