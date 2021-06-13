@@ -8,6 +8,9 @@ import CarpitalMarkets from './pages/capitalmarkets';
 import InvestmentResearch from './pages/investmentresearch';
 import SecurityDealings from './pages/securitydealings';
 import AdvisoryServices from './pages/advisoryservices';
+import Login from './pages/login';
+import Signup from './pages/signup';
+import Contact from './pages/contact';
 
 import './App.scss';
 
@@ -39,6 +42,9 @@ function App() {
           path="/services/advisoryservices"
           component={AdvisoryServices}
         />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/contact" component={Contact} />
       </Switch>
       <Footer />
     </Router>

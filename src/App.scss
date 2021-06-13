@@ -12,6 +12,19 @@
 }
 
 // carousel styles
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: white !important;
+}
+
+.dropdown-item {
+  font-size: 1.5rem !important;
+  color: #000 !important;
+  margin-bottom: 1rem !important;
+}
+
 .carousel-caption {
   position: absolute;
   top: 0 !important;
@@ -47,6 +60,7 @@
     }
   }
 }
+
 //end of carousel styles
 
 // end of home hero styles
@@ -391,5 +405,108 @@ table td {
   p {
     font-size: 3rem;
     z-index: 2;
+  }
+}
+
+.loginsection {
+  background-image: url('./assets/images/login2.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50rem;
+}
+
+.loginForm {
+  width: 30%;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  background: rgba(0, 47, 87, 0.9);
+  padding: 5rem 4rem;
+
+  @media screen and(max-width:768px) {
+    width: 90%;
+  }
+
+  .form-control {
+    font-size: 1.5rem;
+    padding: 2rem 0 2rem 1rem;
+
+    &::placeholder {
+      font-size: 1.5rem;
+    }
+  }
+
+  .formLabel {
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .formText {
+    font-size: 1.3rem;
+    color: white;
+  }
+
+  button {
+    font-size: 2rem;
+    width: 20rem;
+    margin-top: 1rem;
+  }
+
+  .sinupCta {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 4rem;
+  }
+}
+
+.contactForm {
+  width: 30%;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  @media screen and(max-width:768px) {
+    width: 80%;
+  }
+
+  .form-control {
+    font-size: 1.5rem;
+    padding: 2rem 0 2rem 1rem;
+
+    &::placeholder {
+      font-size: 1.5rem;
+    }
+  }
+
+  .formLabel {
+    font-size: 1.5rem;
+    color: #000;
+  }
+
+  .formText {
+    font-size: 1.3rem;
+    color: #000;
+  }
+
+  button {
+    font-size: 2rem;
+    width: 20rem;
+    margin-top: 1rem;
+  }
+  @media screen and(max-width:768px) {
+    width: 60%;
+  }
+
+  .sinupCta {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 4rem;
   }
 }

@@ -22,16 +22,33 @@ const Appbar = () => {
           <LinkContainer to="/aboutus" className="appbar__item">
             <Nav.Link className="appbar__link">About Us</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/" className="appbar__item">
-            <Nav.Link className="appbar__link">Services</Nav.Link>
-          </LinkContainer>
+
+          <NavDropdown
+            className="appbar__item appbar__link"
+            title="Services"
+            id="basic-nav-dropdown"
+          >
+            <LinkContainer to="/services/capitalmarkets">
+              <NavDropdown.Item>Capital Markets</NavDropdown.Item>
+            </LinkContainer>
+            <LinkContainer to="/services/investmentresearch">
+              <NavDropdown.Item>Investment Research</NavDropdown.Item>
+            </LinkContainer>
+            <LinkContainer to="/services/securitydealings">
+              <NavDropdown.Item>Security Dealings</NavDropdown.Item>
+            </LinkContainer>
+            <LinkContainer to="/services/advisoryservices">
+              <NavDropdown.Item>Advisory Services</NavDropdown.Item>
+            </LinkContainer>
+          </NavDropdown>
+
           <LinkContainer to="/" className="appbar__item">
             <Nav.Link className="appbar__link">Research</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/" className="appbar__item">
             <Nav.Link className="appbar__link">Download</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/" className="appbar__item">
+          <LinkContainer to="/contact" className="appbar__item">
             <Nav.Link className="appbar__link">Contact</Nav.Link>
           </LinkContainer>
           <NavDropdown
@@ -39,10 +56,10 @@ const Appbar = () => {
             title="My Account"
             id="basic-nav-dropdown"
           >
-            <LinkContainer to="/">
+            <LinkContainer to="/login">
               <NavDropdown.Item>Login</NavDropdown.Item>
             </LinkContainer>
-            <LinkContainer to="/">
+            <LinkContainer to="/signup">
               <NavDropdown.Item>Create Account</NavDropdown.Item>
             </LinkContainer>
           </NavDropdown>
