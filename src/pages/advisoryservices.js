@@ -12,7 +12,7 @@ const AdvisoryServices = () => {
     <>
       <FadeIn transitionDuration="600">
         <Helmet>
-          <title>advisoryservices</title>
+          <title>AdvisoryServices</title>
         </Helmet>
       </FadeIn>
 

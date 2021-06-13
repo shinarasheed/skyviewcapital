@@ -12,7 +12,7 @@ const CarpitalMarkets = () => {
     <>
       <FadeIn transitionDuration="600">
         <Helmet>
-          <title>capitalmarkets</title>
+          <title>CapitalMarkets</title>
         </Helmet>
       </FadeIn>
       <article className="servicesHero">

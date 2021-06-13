@@ -12,7 +12,7 @@ const SecurityDealings = () => {
     <>
       <FadeIn transitionDuration="600">
         <Helmet>
-          <title>securitydealings</title>
+          <title>SecurityDealings</title>
         </Helmet>
       </FadeIn>
       <article className="servicesHero">
