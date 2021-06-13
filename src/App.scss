@@ -366,17 +366,30 @@ table td {
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
   @media screen and(max-width:768px) {
     height: 30rem;
+  }
+
+  .servicesHeroOverlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(192, 160, 99, 0.4);
+    z-index: 1;
   }
 
   h5 {
     font-size: 5rem;
     font-weight: 700;
     text-transform: uppercase;
+    z-index: 2;
   }
 
   p {
     font-size: 3rem;
+    z-index: 2;
   }
 }

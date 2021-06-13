@@ -18,6 +18,7 @@ const CarpitalMarkets = () => {
       <article className="servicesHero">
         <h5>services</h5>
         <p>Consistently Adding Values to Your Wealth. </p>
+        <div className="servicesHeroOverlay"></div>
       </article>
       <section className="capitalMarkets">
         <Section>
