@@ -366,6 +366,9 @@ table td {
   justify-content: center;
   align-items: center;
   text-align: center;
+  @media screen and(max-width:768px) {
+    height: 30rem;
+  }
 
   h5 {
     font-size: 5rem;
