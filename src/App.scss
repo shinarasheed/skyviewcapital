@@ -387,14 +387,15 @@
 
 .marketPriceList__section {
   display: flex;
-  justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 3rem;
+  justify-content: space-around;
+  align-items: center;
+  row-gap: 2rem;
 }
 
 table {
   width: 100%;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   border-radius: 6px 6px 0 0;
   overflow: hidden;
 }
