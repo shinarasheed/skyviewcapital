@@ -63,13 +63,13 @@ const SecurityDealings = () => {
 
               <div>
                 <h6>Certificate Verification</h6>
-                {/* <p>
+                <p>
                   With the invention of the automated system now with the CSCS,
                   this package is on the verge of phasing out. It involves the
                   collation of Share certificates on stocks purchased from our
                   reputable clients, onward forwarding to the Central Securities
                   Clearing Systems where they are confirmed and lodged.
-                </p> */}
+                </p>
               </div>
 
               <div>
