@@ -3,6 +3,7 @@ import React from 'react';
 const Subscribe = () => {
   return (
     <>
+      <h5 className="mb-4">Subscribe to our Newsletter</h5>
       <form className="subscribeform">
         <div className="formControl">
           <input

@@ -4,10 +4,13 @@ import Service from '../Service';
 
 const ServicesSection = () => {
   return (
-    <section className="services">
-      {services.map((service, index) => {
-        return <Service {...service} key={index} />;
-      })}
+    <section className="servicesSection">
+      <h5>Our Service Highlights</h5>
+      <article className="services">
+        {services.map((service, index) => {
+          return <Service {...service} key={index} />;
+        })}
+      </article>
     </section>
   );
 };

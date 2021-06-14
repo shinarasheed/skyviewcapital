@@ -79,27 +79,43 @@
 }
 // end of global styles
 
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  column-gap: 2rem;
-  row-gap: 2rem;
-  padding: 10rem 5rem 5rem 5rem;
+.servicesSection {
+  padding: 4rem 5rem 5rem 5rem;
   background-color: $grey-primary;
   @media screen and(max-width:768px) {
     padding: 4rem 5rem 5rem 5rem;
   }
 
+  h5 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+    text-align: center;
+    color: $primary-color;
+  }
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  column-gap: 2rem;
+  row-gap: 2rem;
+
   .service {
     background-color: #fff;
     border-radius: 16px 16px 16px 16px;
+    box-shadow: 0px 3px 7px 1px rgba(23, 19, 19, 0.74);
+
     margin-bottom: 2rem;
 
     &__description {
       font-size: 1.5rem;
       padding: 2rem 3rem 4rem 3rem;
-      display: grid;
-      place-items: center;
+
+      P {
+        text-align: center;
+        height: 14rem;
+      }
 
       @media screen and(max-width:768px) {
         font-size: 2rem;
@@ -115,7 +131,9 @@
 
     a {
       color: #ff9900;
-      margin-top: 3rem;
+      text-align: center;
+      display: block;
+      margin-top: 4rem;
 
       &:hover {
         text-decoration: none;

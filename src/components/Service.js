@@ -4,12 +4,18 @@ import { Link } from 'react-router-dom';
 const Service = ({ title, link, img, description }) => {
   return (
     <article>
-      <h5 className="service__title text-uppercase">{title}</h5>
-      <div className="service">
+      <h5
+        data-aos="fade-up"
+        data-aos-delay="900"
+        className="service__title text-uppercase"
+      >
+        {title}
+      </h5>
+      <div data-aos="zoom-in" data-aos-duration="900" className="service">
         <img className="w-100" src={img} alt={title} />
         <div className="service__description">
           <p>{description}</p>
-          <Link to={link}>LEARN MORE</Link>
+          <Link to={`/services/${link}`}>LEARN MORE</Link>
         </div>
       </div>
     </article>

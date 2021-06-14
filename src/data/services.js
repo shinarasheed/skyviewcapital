@@ -5,31 +5,31 @@ import service4 from '../assets/images/service4.png';
 
 export const services = [
   {
-    link: '/services/capitalmarkets',
+    link: 'capitalmarkets',
     img: service1,
     title: 'capital markets',
     description:
-      'Our indepth experience in the stock market analysis over the past periods has enabled us to always provide for our reputable clients/investors the updates on the stock market',
+      'As a licensed Broker/Dealer firm, we buy and sell securities (Listed Companies Shares,Corporate & Sovereign Bonds)on behalf of clients on The Nigerian Stock Exchange (NSE).',
   },
   {
-    link: '/services/investmentresearch',
+    link: 'investmentresearch',
     img: service2,
     title: 'investments research',
     description:
       'Our indepth experience in the stock market analysis over the past periods has enabled us to always provide for our reputable clients/investors the updates on the stock market',
   },
   {
-    link: '/services/securitydealings',
+    link: 'securitydealings',
     img: service3,
     title: 'security dealings',
     description:
-      'Our indepth experience in the stock market analysis over the past periods has enabled us to always provide for our reputable clients/investors the updates on the stock market',
+      'We provide stock broking services to a wide array of clientele. Our services are available to government parastatals, multinational and indigenous companies and high net worth individuals.',
   },
   {
-    link: '/services/advisoryservices',
+    link: 'advisoryservices',
     img: service4,
     title: 'advisory services',
     description:
-      'Our indepth experience in the stock market analysis over the past periods has enabled us to always provide for our reputable clients/investors the updates on the stock market',
+      'We assist clients in project conception,packaging, financing,implementationas well as in reorganisation of existing projects into bankable ventures.',
   },
 ];
