@@ -73,7 +73,6 @@ const Section = styled.article`
 
   .description {
     display: flex;
-    align-items: center;
     margin-top: 5rem;
     padding-bottom: 5rem;
     gap: 10rem;
@@ -82,7 +81,6 @@ const Section = styled.article`
       flex-direction: column-reverse;
       gap: 2rem;
       font-size: 2rem;
-      text-align: center;
       margin-top: 3rem;
       padding-bottom: 2rem;
     }

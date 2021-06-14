@@ -14,12 +14,12 @@ export const testimonials = [
     img: client3,
     name: 'Kenneth Preye',
     testimonial:
-      'We know Skyview Capital and The Network are dedicated to helping their clients grow and provide the support and resources to help us run our business as we see fit.”',
+      'Skyview Capital platform really places clients firstand allows us to give back to the community. Everything we did as part of this move and every decision we made was with our own clients in mind. When someone walks through the door at Claritas, we want them to know the whole company works for them',
   },
   {
     img: client2,
     name: 'Patience Momodu',
     testimonial:
-      " Skyview Capital doesn't have any proprietary funds or products; rather, we were told to select whichever products we felt were best for the client’s situation. This client-centric approach really resonated with me and felt right.Thus began my avenue toward the independent model.",
+      'Skyview Capital platform really places clients firstand allows us to give back to the community. Everything we did as part of this move and every decision we made was with our own clients in mind. When someone walks through the door at Claritas, we want them to know the whole company works for them',
   },
 ];
