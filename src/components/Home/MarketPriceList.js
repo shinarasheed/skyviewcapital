@@ -11,8 +11,10 @@ const MarketPriceList = () => {
         <div>
           <table>
             <thead>
-              <tr className="Tabletitle">
-                <th colSpan="2">Market Statistics</th>
+              <tr style={{ border: 'none' }} className="Tabletitle">
+                <th style={{ border: 'none' }} colSpan="2">
+                  Market Statistics
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -44,12 +46,12 @@ const MarketPriceList = () => {
         <div>
           <table>
             <thead>
-              <tr className="Tabletitle">
+              <tr style={{ border: 'none' }} className="Tabletitle">
                 <th colSpan="4">TOP GAINERS - 24th May, 2021</th>
               </tr>
               <tr className="conetnts">
-                <th>Company</th>
-                <th>Prev</th>
+                <th style={{ borderTop: 'none' }}>Company</th>
+                <th style={{ borderTop: 'none' }}>Prev</th>
                 <th>Current</th>
                 <th>Change</th>
               </tr>

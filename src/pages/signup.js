@@ -26,7 +26,7 @@ const Signup = () => {
             <Form.Control type="password" placeholder="Confirm Password" />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button className="mt-4" variant="primary" type="submit">
             Submit
           </Button>
         </Form>
