@@ -6,12 +6,18 @@ const Service = ({ title, link, img, description }) => {
     <article>
       <h5
         data-aos="fade-up"
-        data-aos-delay="900"
+        data-aos-duration="1000"
+        data-aos-delay="9"
         className="service__title text-uppercase"
       >
         {title}
       </h5>
-      <div data-aos="zoom-in" data-aos-duration="900" className="service">
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="1500"
+        data-aos-delay="1000"
+        className="service"
+      >
         <img className="w-100" src={img} alt={title} />
         <div className="service__description">
           <p>{description}</p>

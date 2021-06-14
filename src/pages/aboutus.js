@@ -20,7 +20,11 @@ const AboutUs = () => {
         <article className="secondSectionCard">
           <h5>Who we are</h5>
           <div className="cardDescription">
-            <div className="description">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="900"
+              className="description"
+            >
               <p>
                 Skyview Capital Limited was incorporated on February 22, 2008 as
                 a Limited Liability Company with main objects which include
@@ -33,7 +37,12 @@ const AboutUs = () => {
             </div>
 
             <div className="banner">
-              <img src={about1} alt="about us" />
+              <img
+                data-aos="fade-up"
+                data-aos-delay="900"
+                src={about1}
+                alt="about us"
+              />
             </div>
           </div>
         </article>
@@ -41,7 +50,11 @@ const AboutUs = () => {
         <article className="secondSectionCard">
           <h5>mission and vision</h5>
           <div className="cardDescription-2">
-            <div className="description">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="900"
+              className="description"
+            >
               <p>
                 Skyview Capital Limited will re-define the whole concept of
                 wealth creation through exploiting current and emerging
@@ -54,7 +67,12 @@ const AboutUs = () => {
             </div>
 
             <div className="banner">
-              <img src={about2} alt="about us" />
+              <img
+                data-aos="fade-up"
+                data-aos-delay="900"
+                src={about2}
+                alt="about us"
+              />
             </div>
           </div>
         </article>
@@ -62,7 +80,11 @@ const AboutUs = () => {
         <article className="secondSectionCard">
           <h5>Why Skyview capital</h5>
           <div className="cardDescription">
-            <div className="description">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="900"
+              className="description"
+            >
               <p>
                 Skyview Capital seeks to challenge the status quo in terms of
                 quality service delivery in an already robust market and will
@@ -78,7 +100,7 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="banner">
+            <div data-aos="fade-up" data-aos-delay="900" className="banner">
               <img src={about3} alt="about us" />
             </div>
           </div>
