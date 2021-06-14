@@ -104,7 +104,12 @@ const Section = styled.article`
     gap: 10rem;
     font-size: 1.5rem;
     @media (max-width: 768px) {
-      flex-direction: column;
+      flex-direction: column-reverse;
+      gap: 2rem;
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+      padding-bottom: 2rem;
     }
 
     h6 {
@@ -113,8 +118,22 @@ const Section = styled.article`
       margin-top: 2rem;
     }
 
-    ul {
-      list-style-type: square;
+    ul li:before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #000;
+      margin-right: 7px;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    ul li {
+      display: flex;
+      align-items: center;
     }
 
     .banner {

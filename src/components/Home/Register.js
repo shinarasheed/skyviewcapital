@@ -22,7 +22,7 @@ const Register = () => {
         </p>
         <p>strong emphasis on excellent customer satisfaction.</p>
 
-        <Link to="/">Register Now</Link>
+        <Link to="/signup">Register Now</Link>
       </div>
       <div className="registerOverlay"></div>
     </section>

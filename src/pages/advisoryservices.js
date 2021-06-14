@@ -77,9 +77,13 @@ const Section = styled.article`
     gap: 10rem;
     font-size: 1.5rem;
     @media (max-width: 768px) {
-      flex-direction: column;
+      flex-direction: column-reverse;
+      gap: 2rem;
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+      padding-bottom: 2rem;
     }
-
     h6 {
       font-size: 2rem;
       margin-bottom: 2rem;

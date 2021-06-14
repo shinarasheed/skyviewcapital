@@ -64,6 +64,9 @@ footer {
   ul li a {
     color: $primary-color;
     font-size: 1.5rem;
+    @media screen and(max-width:768px) {
+      font-size: 1.8rem;
+    }
   }
 
   ul li a:hover {
