@@ -15,8 +15,19 @@ export const Hero = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-          <div className="description">
-            <h3>PRESERVING THE TRADITIONAL</h3>
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+            className="description"
+          >
+            <h3
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+              data-aos-delay="500"
+            >
+              PRESERVING THE TRADITIONAL
+            </h3>
             <h3>VALUES OF WEALTH CREATION</h3>
           </div>
           <p>Consistently Adding Values to Your Wealth. </p>
@@ -32,7 +43,12 @@ export const Hero = () => {
         />
 
         <Carousel.Caption>
-          <div className="description">
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+            className="description"
+          >
             <h3>Decision Making</h3>
           </div>
           <p>Making the Right Decisions</p>
@@ -49,7 +65,12 @@ export const Hero = () => {
         />
 
         <Carousel.Caption>
-          <div className="description">
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+            className="description"
+          >
             <h3>Take Charge of Your</h3>
             <h3>Finances.</h3>
           </div>

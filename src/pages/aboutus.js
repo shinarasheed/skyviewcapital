@@ -1,10 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Team from '../components/Home/Team';
+
 import about1 from '../assets/images/about1.png';
 import about2 from '../assets/images/about2.png';
 import about3 from '../assets/images/about3.png';
 import '../styles/aboutus.scss';
+import Management from '../components/Management';
 
 const AboutUs = () => {
   return (
@@ -13,7 +14,9 @@ const AboutUs = () => {
         <title>AboutUs</title>
       </Helmet>
       <section className="aboutusHero">
-        <p>About Us</p>
+        <p data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+          About Us
+        </p>
         <div className="aboutHeroOverlay"></div>
       </section>
       <section className="aboutSecondSection">
@@ -107,7 +110,7 @@ const AboutUs = () => {
         </article>
       </section>
 
-      <Team />
+      <Management />
     </>
   );
 };
