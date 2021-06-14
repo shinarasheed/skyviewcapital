@@ -16,6 +16,7 @@ const Service = ({ title, link, img, description }) => {
         data-aos="zoom-in"
         data-aos-duration="1500"
         data-aos-delay="1000"
+        data-aos-easing="ease-in-out"
         className="service"
       >
         <img className="w-100" src={img} alt={title} />
