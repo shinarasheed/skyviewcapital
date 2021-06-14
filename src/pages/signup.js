@@ -22,7 +22,7 @@ const Signup = () => {
           </Form.Group>
 
           <Form.Group>
-            <Form.Label className="formLabel">Password</Form.Label>
+            <Form.Label className="formLabel">Confirm Password</Form.Label>
             <Form.Control type="password" placeholder="Confirm Password" />
           </Form.Group>
 
