@@ -17,7 +17,7 @@ const MarketPriceList = () => {
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="leftTable">
               <tr>
                 <td>Index</td>
                 <td>40,576.10</td>
@@ -56,7 +56,7 @@ const MarketPriceList = () => {
                 <th>Change</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="centerTable">
               {priceList.topGainers.map((company) => (
                 <tr key={company.id}>
                   <td>{company.company}</td>
@@ -83,7 +83,7 @@ const MarketPriceList = () => {
                 <th>Change</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="rightTable">
               {priceList.topLosers.map((company) => (
                 <tr key={company.id}>
                   <td>{company.company}</td>

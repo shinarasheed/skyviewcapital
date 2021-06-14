@@ -393,6 +393,18 @@
   row-gap: 2rem;
 }
 
+.rightTable > tr > :nth-child(4),
+.rightTable > tr > :nth-child(3) {
+  color: red;
+  text-align: center;
+}
+
+.centerTable > tr > :nth-child(4),
+.centerTable > tr > :nth-child(3) {
+  color: green;
+  text-align: center;
+}
+
 table {
   width: 100%;
   font-size: 1.5rem;
