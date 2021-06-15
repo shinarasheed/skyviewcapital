@@ -55,7 +55,13 @@ const AdvisoryServices = () => {
               </div>
             </div>
             <div className="bannerSection">
-              <img className="banner" src={banner} alt="capital market" />
+              <img
+                data-aos="zoom-in"
+                data-aos-duration="900"
+                className="banner"
+                src={banner}
+                alt="capital market"
+              />
             </div>
           </article>
         </Section>
@@ -90,9 +96,12 @@ const Section = styled.article`
       margin-top: 2rem;
     }
 
+    ul li {
+      font-size: 1.5rem;
+    }
+
     ul li:not(:last-child) {
       margin-bottom: 1rem;
-      font-size: 1.5rem;
     }
 
     .banner {

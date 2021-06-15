@@ -84,7 +84,13 @@ const SecurityDealings = () => {
               </div>
             </div>
             <div className="bannerSection">
-              <img className="banner" src={banner} alt="capital market" />
+              <img
+                data-aos="zoom-in"
+                data-aos-duration="900"
+                className="banner"
+                src={banner}
+                alt="capital market"
+              />
             </div>
           </article>
         </Section>

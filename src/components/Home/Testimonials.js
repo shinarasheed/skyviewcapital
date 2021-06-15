@@ -45,7 +45,7 @@ export default class Fade extends Component {
       slidesToScroll: 1,
     };
     return (
-      <div>
+      <div style={{ maxWidth: '100vw' }}>
         <Title title="client testimonials" />
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
