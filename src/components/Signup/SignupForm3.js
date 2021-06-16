@@ -7,10 +7,15 @@ const ThirdSignupForm = ({ handleChange, values, prevStep }) => {
     prevStep();
   };
 
+  const handleFormSubmission = (e) => {
+    e.preventDefault();
+    console.log(values);
+  };
+
   return (
     <section className="loginsection">
       <div className="loginForm">
-        <Form>
+        <Form onSubmit={(e) => handleFormSubmission(e)}>
           <Form.Group>
             <Form.Label className="formLabel">PhoneNumber</Form.Label>
             <Form.Control
