@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SignUpForms from '../components/Signup/SignupForms';
 
-const signup = () => {
+const Signup = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return <SignUpForms />;
 };
 
-export default signup;
+export default Signup;

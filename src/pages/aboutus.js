@@ -7,7 +7,7 @@ import about3 from '../assets/images/about3.png';
 import '../styles/aboutus.scss';
 import Management from '../components/Management';
 
-const AboutUs = () => {
+const AboutusPage = () => {
   return (
     <>
       <Helmet>
@@ -115,4 +115,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default AboutusPage;
