@@ -6,7 +6,7 @@ import logo from '../../assets/images/logo.png';
 
 const Appbar = () => {
   return (
-    <Navbar style={{ marginLeft: '7rem' }} className="appbar" expand="lg">
+    <Navbar className="appbar" expand="lg">
       <LinkContainer className="brand__logo" to="/">
         <Navbar.Brand href="#home">
           <img src={logo} alt="brand logo" />
