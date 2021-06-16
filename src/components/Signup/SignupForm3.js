@@ -49,6 +49,10 @@ const ThirdSignupForm = ({ handleChange, values, prevStep }) => {
             />
           </Form.Group>
 
+          <Button className="mt-4" variant="primary" type="submit">
+            Submit
+          </Button>
+
           <Button
             onClick={(e) => goBackToPreviousStep(e)}
             className="mt-4"
@@ -56,10 +60,6 @@ const ThirdSignupForm = ({ handleChange, values, prevStep }) => {
             type="button"
           >
             Go Back
-          </Button>
-
-          <Button className="mt-4" variant="primary" type="submit">
-            Submit
           </Button>
         </Form>
       </div>
