@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-
-import about1 from '../assets/images/about1.png';
-import about2 from '../assets/images/about2.png';
-import about3 from '../assets/images/about3.png';
-import '../styles/aboutus.scss';
 import Management from '../components/Management';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
+import Client from '../Contentful';
+
+import '../styles/aboutus.scss';
 
 const AboutusPage = () => {
+  const [aboutContent, setAbountContent] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await Client.getEntries({
+        content_type: 'about',
+      });
+      setAbountContent(response.items);
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -20,94 +33,46 @@ const AboutusPage = () => {
         <div className="aboutHeroOverlay"></div>
       </section>
       <section className="aboutSecondSection">
-        <article className="secondSectionCard">
-          <h5>Who we are</h5>
-          <div className="cardDescription">
-            <div
-              data-aos="fade-right"
-              data-aos-duration="900"
-              className="description"
-            >
-              <p>
-                Skyview Capital Limited was incorporated on February 22, 2008 as
-                a Limited Liability Company with main objects which include
-                amongst others: To undertakeand carry on all or any of the
-                trades and businesses of stock brokers, dealers, corporate
-                investment and financial portfolio managers, registrars,
-                trustees and to apply and register as an active player in the
-                Nigerian Stock Exchange
-              </p>
-            </div>
+        {aboutContent.length > 0 && (
+          <>
+            {aboutContent.map((content) => {
+              const {
+                fields: {
+                  title,
+                  description,
+                  banner: {
+                    fields: {
+                      file: { url },
+                    },
+                  },
+                },
+              } = content;
+              return (
+                <article className="secondSectionCard">
+                  <h5>{title}</h5>
+                  <div className="cardDescription">
+                    <div
+                      data-aos="fade-right"
+                      data-aos-duration="900"
+                      className="description"
+                    >
+                      <p>{documentToReactComponents(description)}</p>
+                    </div>
 
-            <div className="banner">
-              <img
-                data-aos="fade-up"
-                data-aos-delay="900"
-                src={about1}
-                alt="about us"
-              />
-            </div>
-          </div>
-        </article>
-
-        <article className="secondSectionCard">
-          <h5>mission and vision</h5>
-          <div className="cardDescription-2">
-            <div
-              data-aos="fade-up"
-              data-aos-delay="900"
-              className="description"
-            >
-              <p>
-                Skyview Capital Limited will re-define the whole concept of
-                wealth creation through exploiting current and emerging
-                opportunities in the Capital Market to the benefit of our
-                discerning clients. This is deliberate! New innovations served
-                with the highest level of efficiency and coupled with a strong
-                financial base will enable our clients enjoy maximum benefits
-                from their partnership with Skyview.
-              </p>
-            </div>
-
-            <div className="banner">
-              <img
-                data-aos="fade-up"
-                data-aos-delay="900"
-                src={about2}
-                alt="about us"
-              />
-            </div>
-          </div>
-        </article>
-
-        <article className="secondSectionCard">
-          <h5>Why Skyview capital</h5>
-          <div className="cardDescription">
-            <div
-              data-aos="fade-up"
-              data-aos-delay="900"
-              className="description"
-            >
-              <p>
-                Skyview Capital seeks to challenge the status quo in terms of
-                quality service delivery in an already robust market and will
-                effectively emerge as one of Nigeria's. leading investment banks
-                within the next five years.
-              </p>
-
-              <p>
-                To achieve these objectives, Skyview Capital has put together a
-                team of highly dedicated, adaptable and flexible young people
-                with the right attitude, skills, knowledge and character to
-                deliver quality service in a challenging business environment.,
-              </p>
-            </div>
-
-            <div data-aos="fade-up" data-aos-delay="900" className="banner">
-              <img src={about3} alt="about us" />
-            </div>
-          </div>
-        </article>
+                    <div className="banner">
+                      <img
+                        data-aos="fade-up"
+                        data-aos-delay="900"
+                        src={url}
+                        alt={title}
+                      />
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </>
+        )}
       </section>
 
       <Management />
