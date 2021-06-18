@@ -41,7 +41,6 @@ export const Hero = ({ heroImages }) => {
               </div>
               <p>{description}</p>
             </Carousel.Caption>
-            <div className="homeHeroOverlay"></div>
           </Carousel.Item>
         );
       })}
