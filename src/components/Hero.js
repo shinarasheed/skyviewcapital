@@ -1,20 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import Client from '../Contentful';
 
-export const Hero = () => {
-  const [heroImages, setHeroImages] = useState([]);
-  useEffect(() => {
-    async function fetchData() {
-      const response = await Client.getEntries({
-        content_type: 'homeHero',
-      });
-      setHeroImages(response.items);
-    }
-
-    fetchData();
-  }, []);
-
+export const Hero = ({ heroImages }) => {
   return (
     <Carousel fade controls={false}>
       {heroImages.map((heroImage, index) => {
