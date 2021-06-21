@@ -57,23 +57,23 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
             />
           </Form.Group>
 
-          <Button
-            onClick={(e) => continueToNextStep(e)}
-            className="mt-4"
-            variant="primary"
-            type="button"
-          >
-            Continue
-          </Button>
+          <div className="buttonContainer">
+            <Button
+              onClick={(e) => goBackToPreviousStep(e)}
+              variant="primary"
+              type="button"
+            >
+              Go Back
+            </Button>
 
-          <Button
-            onClick={(e) => goBackToPreviousStep(e)}
-            className="mt-4"
-            variant="primary"
-            type="button"
-          >
-            Go Back
-          </Button>
+            <Button
+              onClick={(e) => continueToNextStep(e)}
+              variant="primary"
+              type="button"
+            >
+              Continue
+            </Button>
+          </div>
         </Form>
       </div>
     </section>
