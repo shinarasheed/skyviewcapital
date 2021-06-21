@@ -1,7 +1,12 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const NextOfKin = ({ handleChange, values, prevStep }) => {
+const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
+  const continueToNextStep = (e) => {
+    e.preventDefault();
+    nextStep();
+  };
+
   const goBackToPreviousStep = (e) => {
     e.preventDefault();
     prevStep();
@@ -49,8 +54,13 @@ const NextOfKin = ({ handleChange, values, prevStep }) => {
             />
           </Form.Group>
 
-          <Button className="mt-4" variant="primary" type="submit">
-            Submit
+          <Button
+            onClick={(e) => continueToNextStep(e)}
+            className="mt-4"
+            variant="primary"
+            type="button"
+          >
+            Continue
           </Button>
 
           <Button
