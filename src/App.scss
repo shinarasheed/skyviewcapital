@@ -497,7 +497,8 @@ table td {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50rem;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
 }
 
 .loginForm {
@@ -531,12 +532,28 @@ table td {
   }
 
   button {
-    font-size: 2rem;
+    font-size: 1.8rem;
     display: block;
     width: 100%;
     margin-top: 1rem;
     background-color: $primary-color;
     border: none;
+  }
+
+  button:nth-child(1) {
+    margin-right: 2rem;
+    @media screen and(max-width:768px) {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    @media screen and(max-width:768px) {
+      flex-direction: column-reverse;
+    }
   }
 
   .sinupCta {

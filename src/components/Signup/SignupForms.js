@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 import PersonalInfo from './PersonalInfo';
+import PersonalInfoSecond from './PersonalInfoSecond';
+import PersonalInfoThird from './PersonalInfoThird';
+import PersonalInfoFourth from './PersonalInfoFourth';
 import BankDetails from './BankDetails';
 import NextOfKin from './NextOfKin';
 import Identity from './Identity';
@@ -17,7 +20,6 @@ class SignUpForms extends Component {
     otherName: '',
     dateOfBirth: '',
     gender: '',
-    phoneNumber: '',
     residenceAddress: '',
     city: '',
     country: '',
@@ -74,7 +76,6 @@ class SignUpForms extends Component {
       otherName,
       dateOfBirth,
       gender,
-      phoneNumber,
       residenceAddress,
       city,
       country,
@@ -112,7 +113,6 @@ class SignUpForms extends Component {
       otherName,
       dateOfBirth,
       gender,
-      phoneNumber,
       residenceAddress,
       city,
       country,
@@ -153,7 +153,7 @@ class SignUpForms extends Component {
         );
       case 2:
         return (
-          <BankDetails
+          <PersonalInfoSecond
             handleChange={this.handleChange}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
@@ -163,7 +163,7 @@ class SignUpForms extends Component {
 
       case 3:
         return (
-          <NextOfKin
+          <PersonalInfoThird
             handleChange={this.handleChange}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
@@ -173,7 +173,7 @@ class SignUpForms extends Component {
 
       case 4:
         return (
-          <Identity
+          <PersonalInfoFourth
             handleChange={this.handleChange}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
@@ -183,7 +183,7 @@ class SignUpForms extends Component {
 
       case 5:
         return (
-          <Confirm
+          <BankDetails
             handleChange={this.handleChange}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
@@ -193,7 +193,7 @@ class SignUpForms extends Component {
 
       case 6:
         return (
-          <Documents
+          <NextOfKin
             handleChange={this.handleChange}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
@@ -202,6 +202,36 @@ class SignUpForms extends Component {
         );
 
       case 7:
+        return (
+          <Identity
+            handleChange={this.handleChange}
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+          />
+        );
+
+      case 8:
+        return (
+          <Confirm
+            handleChange={this.handleChange}
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+          />
+        );
+
+      case 9:
+        return (
+          <Documents
+            handleChange={this.handleChange}
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+          />
+        );
+
+      case 10:
         return (
           <Summary
             handleChange={this.handleChange}
