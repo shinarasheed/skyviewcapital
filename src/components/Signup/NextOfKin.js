@@ -20,6 +20,9 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
   return (
     <section className="loginsection">
       <div className="loginForm">
+        <h3 style={{ color: 'white' }} className="text-center">
+          Next Of Kin
+        </h3>
         <Form onSubmit={(e) => handleFormSubmission(e)}>
           <Form.Group>
             <Form.Label className="formLabel">PhoneNumber</Form.Label>

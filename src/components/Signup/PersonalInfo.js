@@ -10,6 +10,9 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
   return (
     <section className="loginsection">
       <div className="loginForm">
+        <h3 style={{ color: 'white' }} className="text-center">
+          Personal Information
+        </h3>
         <Form>
           <Form.Group>
             <Form.Label className="formLabel">Email address</Form.Label>

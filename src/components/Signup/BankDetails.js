@@ -15,6 +15,9 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
   return (
     <section className="loginsection">
       <div className="loginForm">
+        <h3 style={{ color: 'white' }} className="text-center">
+          Bank Details
+        </h3>
         <Form>
           <Form.Group>
             <Form.Label className="formLabel">FirstName</Form.Label>
