@@ -1,7 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Service = ({ title, link, img, description }) => {
+const Service = ({
+  fields: {
+    title,
+    description,
+    banner: {
+      fields: {
+        file: { url },
+      },
+    },
+  },
+}) => {
   return (
     <article>
       <h5
@@ -19,10 +29,10 @@ const Service = ({ title, link, img, description }) => {
         data-aos-easing="ease-in-out"
         className="service"
       >
-        <img className="w-100" src={img} alt={title} />
+        <img className="w-100" src={url} alt={title} />
         <div className="service__description">
           <p>{description}</p>
-          <Link to={`/services/${link}`}>LEARN MORE</Link>
+          <Link to="/">LEARN MORE</Link>
         </div>
       </div>
     </article>

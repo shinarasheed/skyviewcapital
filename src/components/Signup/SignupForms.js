@@ -1,19 +1,49 @@
 import React, { Component } from 'react';
 
-import FirstSignupForm from './SignupForm1';
-import SecondSignUpForm from './SignupForm2';
-import ThirdSignUpForm from './SignupForm3';
+import PersonalInfo from './PersonalInfo';
+import BankDetails from './BankDetails';
+import NextOfKin from './NextOfKin';
+import Confirm from './Confirm';
+import Documents from './Documents';
+import Summary from './Summary';
 
 class SignUpForms extends Component {
   state = {
     step: 1,
+    title: '',
+    surName: '',
     firstName: '',
-    lastName: '',
-    userName: '',
-    password: '',
-    passwordConfirm: '',
-    email: '',
+    otherName: '',
+    dateOfBirth: '',
+    gender: '',
     phoneNumber: '',
+    residenceAddress: '',
+    city: '',
+    country: '',
+    stateOfOrigin: '',
+    LocalGovernmentArea: '',
+    emailAddress: '',
+    mobilePhoneNumber: '',
+    homePhoneNumber: '',
+    profession: '',
+    employmentType: '',
+    companyName: '',
+    political: '',
+    bankName: '',
+    bankAccountNumber: '',
+    bvnNumber: '',
+    nextOfKinName: '',
+    relationNextOfKin: '',
+    contactNextOfKin: '',
+    phoneNumberNextOfKin: '',
+    emailNextOfKin: '',
+    idForm: '',
+    idNumber: '',
+    idExpireDate: '',
+    photoPassport: null,
+    photoID: null,
+    photoSignature: null,
+    photoUtilityBill: '',
   };
 
   nextStep = () => {
@@ -37,24 +67,22 @@ class SignUpForms extends Component {
   render() {
     const {
       step,
-      email,
+      emailAddress,
       password,
       passwordConfirm,
+      surName,
       firstName,
-      lastName,
-      userName,
       phoneNumber,
       country,
       occupation,
     } = this.state;
 
     const values = {
-      email,
+      emailAddress,
       password,
       passwordConfirm,
       firstName,
-      lastName,
-      userName,
+      surName,
       phoneNumber,
       country,
       occupation,
@@ -63,7 +91,7 @@ class SignUpForms extends Component {
     switch (step) {
       case 1:
         return (
-          <FirstSignupForm
+          <PersonalInfo
             handleChange={this.handleChange}
             nextStep={this.nextStep}
             values={values}
@@ -71,7 +99,7 @@ class SignUpForms extends Component {
         );
       case 2:
         return (
-          <SecondSignUpForm
+          <BankDetails
             handleChange={this.handleChange}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
@@ -81,7 +109,37 @@ class SignUpForms extends Component {
 
       case 3:
         return (
-          <ThirdSignUpForm
+          <NextOfKin
+            handleChange={this.handleChange}
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+          />
+        );
+
+      case 4:
+        return (
+          <Confirm
+            handleChange={this.handleChange}
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+          />
+        );
+
+      case 5:
+        return (
+          <Documents
+            handleChange={this.handleChange}
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+          />
+        );
+
+      case 6:
+        return (
+          <Summary
             handleChange={this.handleChange}
             prevStep={this.prevStep}
             values={values}
@@ -89,7 +147,7 @@ class SignUpForms extends Component {
         );
 
       default:
-        return <FirstSignupForm />;
+        return <PersonalInfo />;
     }
   }
 }

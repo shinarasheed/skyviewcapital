@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const ThirdSignupForm = ({ handleChange, values, prevStep }) => {
+const NextOfKin = ({ handleChange, values, prevStep }) => {
   const goBackToPreviousStep = (e) => {
     e.preventDefault();
     prevStep();
@@ -67,4 +67,4 @@ const ThirdSignupForm = ({ handleChange, values, prevStep }) => {
   );
 };
 
-export default ThirdSignupForm;
+export default NextOfKin;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const SecondSignupForm = ({ handleChange, values, prevStep, nextStep }) => {
+const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
   const continueToNextStep = (e) => {
     e.preventDefault();
     nextStep();
@@ -72,4 +72,4 @@ const SecondSignupForm = ({ handleChange, values, prevStep, nextStep }) => {
   );
 };
 
-export default SecondSignupForm;
+export default BankDetails;

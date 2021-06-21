@@ -111,7 +111,8 @@ const Section = styled.article`
     margin-top: 5rem;
     padding-bottom: 5rem;
     gap: 10rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-family: 'Raleway', sans-serif;
     @media (max-width: 768px) {
       flex-direction: column-reverse;
       gap: 2rem;

@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import Management from '../components/Management';
+import Team from '../components/Team';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-
 import Client from '../Contentful';
 
 import '../styles/aboutus.scss';
 
 const AboutusPage = () => {
   const [aboutContent, setAbountContent] = useState([]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     async function fetchData() {
@@ -48,7 +51,7 @@ const AboutusPage = () => {
                 },
               } = content;
               return (
-                <article className="secondSectionCard">
+                <article key={content.sys.id} className="secondSectionCard">
                   <h5>{title}</h5>
                   <div className="cardDescription">
                     <div
@@ -56,7 +59,7 @@ const AboutusPage = () => {
                       data-aos-duration="900"
                       className="description"
                     >
-                      <p>{documentToReactComponents(description)}</p>
+                      <div>{documentToReactComponents(description)}</div>
                     </div>
 
                     <div className="banner">
@@ -75,7 +78,7 @@ const AboutusPage = () => {
         )}
       </section>
 
-      <Management />
+      <Team />
     </>
   );
 };

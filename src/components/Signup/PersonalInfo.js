@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 
-const FirstSignupForm = ({ handleChange, values, nextStep }) => {
+const PersonalInfo = ({ handleChange, values, nextStep }) => {
   const continueToNextStep = (e) => {
     e.preventDefault();
     nextStep();
@@ -63,4 +63,4 @@ const FirstSignupForm = ({ handleChange, values, nextStep }) => {
   );
 };
 
-export default FirstSignupForm;
+export default PersonalInfo;

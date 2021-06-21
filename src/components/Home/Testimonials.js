@@ -20,13 +20,11 @@ export default class Fade extends Component {
 
     return (
       <>
-        {clientsTestimonial.length === 0 ? (
-          <p>Loading Testimonail</p>
-        ) : (
+        {clientsTestimonial.length > 0 ? (
           <div style={{ maxWidth: '100vw' }}>
             <Title title="client testimonials" />
             <Slider {...settings}>
-              {clientsTestimonial.map((clientTestimonial, index) => {
+              {clientsTestimonial.map((clientTestimonial) => {
                 const {
                   fields: {
                     name,
@@ -39,7 +37,7 @@ export default class Fade extends Component {
                   },
                 } = clientTestimonial;
                 return (
-                  <div className="testimonial" key={index}>
+                  <div className="testimonial" key={clientTestimonial.sys.id}>
                     <img className="mx-auto" src={url} alt={name} />
                     <h5>{testimonial}</h5>
                     <p>- {name}</p>
@@ -48,6 +46,8 @@ export default class Fade extends Component {
               })}
             </Slider>
           </div>
+        ) : (
+          <p>Loading Testimonail</p>
         )}
       </>
     );
