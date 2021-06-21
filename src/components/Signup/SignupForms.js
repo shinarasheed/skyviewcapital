@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PersonalInfo from './PersonalInfo';
 import BankDetails from './BankDetails';
 import NextOfKin from './NextOfKin';
+import Identity from './Identity';
 import Confirm from './Confirm';
 import Documents from './Documents';
 import Summary from './Summary';
@@ -43,7 +44,7 @@ class SignUpForms extends Component {
     photoPassport: null,
     photoID: null,
     photoSignature: null,
-    photoUtilityBill: '',
+    photoUtilityBill: null,
   };
 
   nextStep = () => {
@@ -67,25 +68,78 @@ class SignUpForms extends Component {
   render() {
     const {
       step,
-      emailAddress,
-      password,
-      passwordConfirm,
+      title,
       surName,
       firstName,
+      otherName,
+      dateOfBirth,
+      gender,
       phoneNumber,
+      residenceAddress,
+      city,
       country,
-      occupation,
+      stateOfOrigin,
+      LocalGovernmentArea,
+      emailAddress,
+      mobilePhoneNumber,
+      homePhoneNumber,
+      profession,
+      employmentType,
+      companyName,
+      political,
+      bankName,
+      bankAccountNumber,
+      bvnNumber,
+      nextOfKinName,
+      relationNextOfKin,
+      contactNextOfKin,
+      phoneNumberNextOfKin,
+      emailNextOfKin,
+      idForm,
+      idNumber,
+      idExpireDate,
+      photoPassport,
+      photoID,
+      photoSignature,
+      photoUtilityBill,
     } = this.state;
 
     const values = {
-      emailAddress,
-      password,
-      passwordConfirm,
-      firstName,
+      step,
+      title,
       surName,
+      firstName,
+      otherName,
+      dateOfBirth,
+      gender,
       phoneNumber,
+      residenceAddress,
+      city,
       country,
-      occupation,
+      stateOfOrigin,
+      LocalGovernmentArea,
+      emailAddress,
+      mobilePhoneNumber,
+      homePhoneNumber,
+      profession,
+      employmentType,
+      companyName,
+      political,
+      bankName,
+      bankAccountNumber,
+      bvnNumber,
+      nextOfKinName,
+      relationNextOfKin,
+      contactNextOfKin,
+      phoneNumberNextOfKin,
+      emailNextOfKin,
+      idForm,
+      idNumber,
+      idExpireDate,
+      photoPassport,
+      photoID,
+      photoSignature,
+      photoUtilityBill,
     };
 
     switch (step) {
@@ -119,7 +173,7 @@ class SignUpForms extends Component {
 
       case 4:
         return (
-          <Confirm
+          <Identity
             handleChange={this.handleChange}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
@@ -129,7 +183,7 @@ class SignUpForms extends Component {
 
       case 5:
         return (
-          <Documents
+          <Confirm
             handleChange={this.handleChange}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
@@ -138,6 +192,16 @@ class SignUpForms extends Component {
         );
 
       case 6:
+        return (
+          <Documents
+            handleChange={this.handleChange}
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+          />
+        );
+
+      case 7:
         return (
           <Summary
             handleChange={this.handleChange}

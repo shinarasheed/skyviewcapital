@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const Documents = ({ handleChange, values, prevStep, nextStep }) => {
+const Identity = ({ handleChange, values, prevStep, nextStep }) => {
   const continueToNextStep = (e) => {
     e.preventDefault();
     nextStep();
@@ -72,4 +72,4 @@ const Documents = ({ handleChange, values, prevStep, nextStep }) => {
   );
 };
 
-export default Documents;
+export default Identity;
