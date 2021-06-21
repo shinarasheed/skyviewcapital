@@ -7,6 +7,7 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
     e.preventDefault();
     nextStep();
   };
+
   return (
     <section className="loginsection">
       <div className="loginForm">
@@ -20,8 +21,8 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="title"
               placeholder="Enter Title"
               name="title"
-              onChange={handleChange('title')}
-              defaultValue={values.title}
+              onChange={(e) => handleChange(e)}
+              value={values.title}
             />
           </Form.Group>
 
@@ -31,8 +32,9 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="text"
               placeholder="surName"
               name="surName"
-              onChange={handleChange('surName')}
-              defaultValue={values.surName}
+              // onChange={handleChange('surName')}
+              onChange={(e) => handleChange(e)}
+              value={values.surName}
             />
           </Form.Group>
 
@@ -42,8 +44,9 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="text"
               placeholder="First Name"
               name="firstName"
-              onChange={handleChange('firstName')}
-              defaultValue={values.firstName}
+              // onChange={handleChange('firstName')}
+              onChange={(e) => handleChange(e)}
+              value={values.firstName}
             />
           </Form.Group>
 
@@ -53,8 +56,9 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="text"
               placeholder="Date of Birth"
               name="dateOfBirth"
-              onChange={handleChange('dateOfBirth')}
-              defaultValue={values.dateOfBirth}
+              // onChange={handleChange('dateOfBirth')}
+              onChange={(e) => handleChange(e)}
+              value={values.dateOfBirth}
             />
           </Form.Group>
 
@@ -64,8 +68,9 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="text"
               placeholder="Gender"
               name="gender"
-              onChange={handleChange('gender')}
-              defaultValue={values.gender}
+              // onChange={handleChange('gender')}
+              onChange={(e) => handleChange(e)}
+              value={values.gender}
             />
           </Form.Group>
 

@@ -25,8 +25,9 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Enter Your FirstName"
               name="firstName"
-              onChange={handleChange('firstName')}
-              defaultValue={values.firstName}
+              // onChange={handleChange('firstName')}
+              onChange={(e) => handleChange(e)}
+              value={values.firstName}
             />
           </Form.Group>
 
@@ -36,8 +37,9 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Enter Your LastName"
               name="lastName"
-              onChange={handleChange('lastName')}
-              defaultValue={values.lastName}
+              // onChange={handleChange('lastName')}
+              onChange={(e) => handleChange(e)}
+              value={values.lastName}
             />
           </Form.Group>
 
@@ -47,8 +49,9 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Enter Your UserName"
               name="userName"
-              onChange={handleChange('userName')}
-              defaultValue={values.userName}
+              // onChange={handleChange('userName')}
+              onChange={(e) => handleChange(e)}
+              value={values.userName}
             />
           </Form.Group>
 

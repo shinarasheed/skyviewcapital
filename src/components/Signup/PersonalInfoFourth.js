@@ -25,8 +25,9 @@ const PersonalInfo = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Company Name"
               name="companyName"
-              onChange={handleChange('companyName')}
-              defaultValue={values.companyName}
+              // onChange={handleChange('companyName')}
+              onChange={(e) => handleChange(e)}
+              value={values.companyName}
             />
           </Form.Group>
 
@@ -38,8 +39,9 @@ const PersonalInfo = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Political?"
               name="political"
-              onChange={handleChange('political')}
-              defaultValue={values.political}
+              // onChange={handleChange('political')}
+              onChange={(e) => handleChange(e)}
+              value={values.political}
             />
           </Form.Group>
 

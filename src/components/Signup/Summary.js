@@ -7,6 +7,10 @@ const Summary = ({ handleChange, values, prevStep }) => {
     prevStep();
   };
 
+  const handleFormSubmit = () => {
+    console.log(values);
+  };
+
   return (
     <section className="loginsection">
       <div className="loginForm">
@@ -20,8 +24,9 @@ const Summary = ({ handleChange, values, prevStep }) => {
               type="text"
               placeholder="Enter Your FirstName"
               name="firstName"
-              onChange={handleChange('firstName')}
-              defaultValue={values.firstName}
+              // onChange={handleChange('firstName')}
+              onChange={(e) => handleChange(e)}
+              value={values.firstName}
             />
           </Form.Group>
 
@@ -31,8 +36,9 @@ const Summary = ({ handleChange, values, prevStep }) => {
               type="text"
               placeholder="Enter Your LastName"
               name="lastName"
-              onChange={handleChange('lastName')}
-              defaultValue={values.lastName}
+              // onChange={handleChange('lastName')}
+              onChange={(e) => handleChange(e)}
+              value={values.lastName}
             />
           </Form.Group>
 
@@ -42,8 +48,9 @@ const Summary = ({ handleChange, values, prevStep }) => {
               type="text"
               placeholder="Enter Your UserName"
               name="userName"
-              onChange={handleChange('userName')}
-              defaultValue={values.userName}
+              // onChange={handleChange('userName')}
+              onChange={(e) => handleChange(e)}
+              value={values.userName}
             />
           </Form.Group>
 
@@ -54,6 +61,15 @@ const Summary = ({ handleChange, values, prevStep }) => {
             type="button"
           >
             Go Back
+          </Button>
+
+          <Button
+            onClick={(e) => handleFormSubmit()}
+            className="mt-4"
+            variant="primary"
+            type="button"
+          >
+            Submit
           </Button>
         </Form>
       </div>

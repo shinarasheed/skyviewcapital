@@ -25,8 +25,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Local Government Area"
               name="LocalGovernmentArea"
-              onChange={handleChange('LocalGovernmentArea')}
-              defaultValue={values.LocalGovernmentArea}
+              // onChange={handleChange('LocalGovernmentArea')}
+              onChange={(e) => handleChange(e)}
+              value={values.LocalGovernmentArea}
             />
           </Form.Group>
 
@@ -36,8 +37,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Residence Address"
               name="residenceAddress"
-              onChange={handleChange('residenceAddress')}
-              defaultValue={values.residenceAddress}
+              // onChange={handleChange('residenceAddress')}
+              onChange={(e) => handleChange(e)}
+              value={values.residenceAddress}
             />
           </Form.Group>
 
@@ -47,8 +49,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="City"
               name="city"
-              onChange={handleChange('city')}
-              defaultValue={values.city}
+              // onChange={handleChange('city')}
+              onChange={(e) => handleChange(e)}
+              value={values.city}
             />
           </Form.Group>
 
@@ -58,8 +61,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Country"
               name="country"
-              onChange={handleChange('country')}
-              defaultValue={values.country}
+              // onChange={handleChange('country')}
+              onChange={(e) => handleChange(e)}
+              value={values.country}
             />
           </Form.Group>
 
@@ -69,8 +73,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="State of Origin"
               name="stateOfOrigin"
-              onChange={handleChange('stateOfOrigin')}
-              defaultValue={values.stateOfOrigin}
+              // onChange={handleChange('stateOfOrigin')}
+              onChange={(e) => handleChange(e)}
+              value={values.stateOfOrigin}
             />
           </Form.Group>
 

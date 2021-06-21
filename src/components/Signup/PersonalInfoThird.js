@@ -25,8 +25,9 @@ const PersonalInfoThird = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Employment Type"
               name="employmentType"
-              onChange={handleChange('employmentType')}
-              defaultValue={values.employmentType}
+              // onChange={handleChange('employmentType')}
+              onChange={(e) => handleChange(e)}
+              value={values.employmentType}
             />
           </Form.Group>
 
@@ -36,8 +37,9 @@ const PersonalInfoThird = ({ handleChange, values, prevStep, nextStep }) => {
               type="email"
               placeholder="Email"
               name="emailAddress"
-              onChange={handleChange('emailAddress')}
-              defaultValue={values.emailAddress}
+              // onChange={handleChange('emailAddress')}
+              onChange={(e) => handleChange(e)}
+              value={values.emailAddress}
             />
           </Form.Group>
 
@@ -47,8 +49,9 @@ const PersonalInfoThird = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Mobile Phone Number"
               name="mobilePhoneNumber"
-              onChange={handleChange('mobilePhoneNumber')}
-              defaultValue={values.mobilePhoneNumber}
+              // onChange={handleChange('mobilePhoneNumber')}
+              onChange={(e) => handleChange(e)}
+              value={values.mobilePhoneNumber}
             />
           </Form.Group>
 
@@ -58,8 +61,9 @@ const PersonalInfoThird = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Home Phone Number"
               name="homePhoneNumber"
-              onChange={handleChange('homePhoneNumber')}
-              defaultValue={values.homePhoneNumber}
+              // onChange={handleChange('homePhoneNumber')}
+              onChange={(e) => handleChange(e)}
+              value={values.homePhoneNumber}
             />
           </Form.Group>
 
@@ -69,8 +73,9 @@ const PersonalInfoThird = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Profession"
               name="profession"
-              onChange={handleChange('profession')}
-              defaultValue={values.profession}
+              // onChange={handleChange('profession')}
+              onChange={(e) => handleChange(e)}
+              value={values.profession}
             />
           </Form.Group>
 
