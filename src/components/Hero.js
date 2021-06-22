@@ -19,7 +19,7 @@ const Hero = ({ heroImages }) => {
               },
             } = heroImage;
             return (
-              <Carousel.Item key={heroImage.sys.id}>
+              <Carousel.Item className="homePageHero" key={heroImage.sys.id}>
                 <img
                   style={{ minHeight: '30vh' }}
                   className="d-block w-100"
