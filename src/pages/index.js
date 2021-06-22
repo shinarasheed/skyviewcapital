@@ -12,7 +12,6 @@ import Client from '../Contentful';
 
 const Home = () => {
   const [clientsTestimonial, setClientsTestimonial] = useState([]);
-  const [heroImages, setHeroImages] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -29,24 +28,13 @@ const Home = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await Client.getEntries({
-        content_type: 'homeHero',
-      });
-      setHeroImages(response.items);
-    }
-
-    fetchData();
-  }, []);
-
   return (
     <>
       <Helmet>
         <title>SkyviewCapital</title>
       </Helmet>
       <section>
-        <Hero heroImages={heroImages} />
+        <Hero />
         <Services />
         <MarketPriceList />
         <Register />

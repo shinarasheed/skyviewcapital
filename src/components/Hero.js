@@ -1,60 +1,85 @@
 import React from 'react';
-import { Carousel, Spinner } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
+import banner1 from '../assets/images/homehero1.png';
+import banner2 from '../assets/images/homehero2.png';
+import banner3 from '../assets/images/homehero3.png';
 
-const Hero = ({ heroImages }) => {
+const Hero = () => {
   return (
-    <>
-      {heroImages.length > 0 ? (
-        <Carousel fade controls={false}>
-          {heroImages.map((heroImage) => {
-            const {
-              fields: {
-                title,
-                description,
-                banner: {
-                  fields: {
-                    file: { url },
-                  },
-                },
-              },
-            } = heroImage;
-            return (
-              <Carousel.Item className="homePageHero" key={heroImage.sys.id}>
-                <img
-                  style={{ minHeight: '30vh' }}
-                  className="d-block w-100"
-                  src={url}
-                  alt="First slide"
-                />
-                <Carousel.Caption>
-                  <div
-                    data-aos="fade-right"
-                    data-aos-duration="1000"
-                    data-aos-delay="500"
-                    className="description"
-                  >
-                    <h3
-                      data-aos="zoom-in"
-                      data-aos-duration="1000"
-                      data-aos-delay="500"
-                    >
-                      {title}
-                    </h3>
-                  </div>
-                  <p>{description}</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-            );
-          })}
-        </Carousel>
-      ) : (
-        <div className="d-flex align-items-center justify-content-center">
-          <Spinner animation="grow" variant="primary" role="status">
-            <span className="sr-only">Loading...</span>
-          </Spinner>
-        </div>
-      )}
-    </>
+    <Carousel fade controls={false}>
+      <Carousel.Item>
+        <img
+          style={{ minHeight: '30vh' }}
+          className="d-block w-100"
+          src={banner1}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+            className="description"
+          >
+            <h3
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+              data-aos-delay="500"
+            >
+              PRESERVING THE TRADITIONAL
+            </h3>
+            <h3>VALUES OF WEALTH CREATION</h3>
+          </div>
+          <p>Consistently Adding Values to Your Wealth. </p>
+        </Carousel.Caption>
+        <div className="homeHeroOverlay"></div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          style={{ minHeight: '30vh' }}
+          className="d-block w-100"
+          src={banner2}
+          alt="Second slide"
+        />
+
+        <Carousel.Caption>
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+            className="description"
+          >
+            <h3>Decision Making</h3>
+          </div>
+          <p>Making the Right Decisions</p>
+          <p>at the Right Time.</p>
+        </Carousel.Caption>
+        <div className="homeHeroOverlay"></div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          style={{ minHeight: '30vh' }}
+          className="d-block w-100"
+          src={banner3}
+          alt="Third slide"
+        />
+
+        <Carousel.Caption>
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+            className="description"
+          >
+            <h3>Take Charge of Your</h3>
+            <h3>Finances.</h3>
+          </div>
+          <p>Make this the year you take control,</p>
+          <p>Skyview capital makes it easy.</p>
+        </Carousel.Caption>
+        <div className="homeHeroOverlay"></div>
+      </Carousel.Item>
+    </Carousel>
   );
 };
 
