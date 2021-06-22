@@ -6,14 +6,9 @@ import banner3 from '../assets/images/homehero3.png';
 
 const Hero = () => {
   return (
-    <Carousel fade controls={false}>
-      <Carousel.Item>
-        <img
-          style={{ minHeight: '30vh' }}
-          className="d-block w-100"
-          src={banner1}
-          alt="First slide"
-        />
+    <Carousel controls={false} fade>
+      <Carousel.Item className="homePageHero">
+        <img className="d-block w-100" src={banner1} alt="First slide" />
         <Carousel.Caption>
           <div
             data-aos="fade-right"
@@ -32,15 +27,9 @@ const Hero = () => {
           </div>
           <p>Consistently Adding Values to Your Wealth. </p>
         </Carousel.Caption>
-        <div className="homeHeroOverlay"></div>
       </Carousel.Item>
-      <Carousel.Item>
-        <img
-          style={{ minHeight: '30vh' }}
-          className="d-block w-100"
-          src={banner2}
-          alt="Second slide"
-        />
+      <Carousel.Item className="homePageHero">
+        <img className="d-block w-100" src={banner2} alt="Second slide" />
 
         <Carousel.Caption>
           <div
@@ -54,15 +43,9 @@ const Hero = () => {
           <p>Making the Right Decisions</p>
           <p>at the Right Time.</p>
         </Carousel.Caption>
-        <div className="homeHeroOverlay"></div>
       </Carousel.Item>
-      <Carousel.Item>
-        <img
-          style={{ minHeight: '30vh' }}
-          className="d-block w-100"
-          src={banner3}
-          alt="Third slide"
-        />
+      <Carousel.Item className="homePageHero">
+        <img className="d-block w-100" src={banner3} alt="Third slide" />
 
         <Carousel.Caption>
           <div
@@ -77,7 +60,6 @@ const Hero = () => {
           <p>Make this the year you take control,</p>
           <p>Skyview capital makes it easy.</p>
         </Carousel.Caption>
-        <div className="homeHeroOverlay"></div>
       </Carousel.Item>
     </Carousel>
   );

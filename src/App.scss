@@ -4,6 +4,10 @@
 .homePageHero {
   position: relative;
 
+  p {
+    line-height: 1.8;
+  }
+
   &::after {
     content: '';
     position: absolute;
