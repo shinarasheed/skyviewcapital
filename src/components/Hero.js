@@ -48,9 +48,11 @@ const Hero = ({ heroImages }) => {
           })}
         </Carousel>
       ) : (
-        <Spinner animation="grow" variant="primary" role="status">
-          <span className="sr-only">Loading...</span>
-        </Spinner>
+        <div className="d-flex align-items-center justify-content-center">
+          <Spinner animation="grow" variant="primary" role="status">
+            <span className="sr-only">Loading...</span>
+          </Spinner>
+        </div>
       )}
     </>
   );
