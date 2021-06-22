@@ -33,7 +33,6 @@ const AboutusPage = () => {
         <p data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
           About Us
         </p>
-        <div className="aboutHeroOverlay"></div>
       </section>
       <section className="aboutSecondSection">
         {aboutContent.length > 0 && (

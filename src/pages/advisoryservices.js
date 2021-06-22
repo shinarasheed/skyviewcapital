@@ -21,7 +21,6 @@ const AdvisoryServices = () => {
         <p data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">
           Consistently Adding Values to Your Wealth.{' '}
         </p>
-        <div className="servicesHeroOverlay"></div>
       </article>
       <section className="capitalMarkets">
         <Section>
