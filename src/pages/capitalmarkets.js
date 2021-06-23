@@ -148,6 +148,10 @@ const Section = styled.article`
 
     .descriptionSection {
       flex: 2;
+
+      P {
+        line-height: 1.7;
+      }
     }
 
     .bannerSection {
