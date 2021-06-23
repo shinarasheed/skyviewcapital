@@ -51,6 +51,7 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
           <Form.Group>
             <Form.Label className="formLabel">Date of Expiry</Form.Label>
             <Form.Control
+              className="halfFormInput"
               type="text"
               placeholder="Enter Date"
               name="idExpireDate"

@@ -524,9 +524,10 @@ table td {
     }
   }
 
-  .formLabel {
-    font-size: 1.5rem;
-    color: white;
+  .formLabel,
+  .label {
+    font-size: 1.5rem !important;
+    color: white !important;
   }
 
   .formText {
@@ -676,5 +677,30 @@ table td {
   display: flex;
   @media screen and(max-width:768px) {
     flex-direction: column;
+  }
+}
+
+.form-control-file {
+  font-size: 15px;
+  border-radius: 5px;
+  background: transparent;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.formInputContainer {
+  label {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .halfFormInput {
+    width: 50%;
+    @media screen and(max-width:768px) {
+      width: 100%;
+    }
   }
 }

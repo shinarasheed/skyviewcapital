@@ -18,12 +18,14 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
           <Form.Group>
             <Form.Label className="formLabel">Title</Form.Label>
             <Form.Control
-              type="title"
-              placeholder="Enter Title"
+              as="select"
               name="title"
               onChange={(e) => handleChange(e)}
               value={values.title}
-            />
+            >
+              <option>Mrs</option>
+              <option>Miss</option>
+            </Form.Control>
           </Form.Group>
 
           <Form.Group>

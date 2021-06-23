@@ -49,6 +49,7 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
           <Form.Group>
             <Form.Label className="formLabel">BVN</Form.Label>
             <Form.Control
+              className="halfFormInput"
               type="text"
               placeholder="Enter Your BVN"
               name="bvnNumber"
