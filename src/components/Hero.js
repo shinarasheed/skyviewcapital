@@ -6,7 +6,7 @@ import banner3 from '../assets/images/homehero3.png';
 
 const Hero = () => {
   return (
-    <Carousel controls={false} fade>
+    <Carousel indicators={false} controls={false} fade={true}>
       <Carousel.Item className="homePageHero">
         <img
           className="d-block w-100 homeHeroBanner"
@@ -29,7 +29,8 @@ const Hero = () => {
             </h3>
             <h3>VALUES OF WEALTH CREATION</h3>
           </div>
-          <p>Consistently Adding Values to Your Wealth. </p>
+          <p>Consistently Adding </p>
+          <p> Values to Your Wealth.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item className="homePageHero">
