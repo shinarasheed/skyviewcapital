@@ -24,7 +24,7 @@ const Documents = ({ handleChange, values, prevStep, nextStep }) => {
         <div className="formInputContainer">
           <Form.Group>
             <Form.File
-              name="namePhoto"
+              name="photoPassport"
               label="Passport Photo"
               onChange={(e) => handleChange(e)}
               value={values.photoPassport}
