@@ -98,6 +98,7 @@ const Section = styled.article`
 
     ul li {
       font-size: 1.5rem;
+      font-weight: bold;
     }
 
     ul li:not(:last-child) {
