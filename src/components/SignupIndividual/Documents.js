@@ -61,6 +61,17 @@ const Documents = ({ handleChange, values, prevStep, nextStep }) => {
           </Form.Group>
         </div>
 
+        <div className="formInputContainer">
+          <Form.Group>
+            <Form.File
+              label="Bank Statement"
+              name="bankStatement"
+              onChange={(e) => handleChange(e)}
+              value={values.bankStatement}
+            />
+          </Form.Group>
+        </div>
+
         <div className="buttonContainer">
           <Button
             onClick={(e) => goBackToPreviousStep(e)}

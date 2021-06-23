@@ -49,12 +49,48 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
           <Form.Group>
             <Form.Label className="formLabel">BVN</Form.Label>
             <Form.Control
-              className="halfFormInput"
               type="text"
               placeholder="Enter Your BVN"
               name="bvnNumber"
               onChange={(e) => handleChange(e)}
               value={values.bvnNumber}
+            />
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label className="formLabel">AccountType</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Account Type"
+              name="bankAccountType"
+              onChange={(e) => handleChange(e)}
+              value={values.bankAccountType}
+            />
+          </Form.Group>
+        </div>
+
+        <div className="formInputContainer">
+          <Form.Group>
+            <Form.Label className="formLabel">Sort Code</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Sort Code"
+              name="sortCode"
+              onChange={(e) => handleChange(e)}
+              value={values.sortCode}
+            />
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label className="formLabel">
+              Date Account was Opened
+            </Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter Date"
+              name="accountOpeningDate"
+              onChange={(e) => handleChange(e)}
+              value={values.accountOpeningDate}
             />
           </Form.Group>
         </div>
