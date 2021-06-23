@@ -75,6 +75,7 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
           <Form.Group>
             <Form.Label className="formLabel">Next Of Kin Email</Form.Label>
             <Form.Control
+              className="halfFormInput"
               type="email"
               placeholder="Enter Email"
               name="emailNextOfKin"

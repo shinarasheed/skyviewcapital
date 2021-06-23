@@ -14,27 +14,26 @@ const Documents = ({ handleChange, values, prevStep, nextStep }) => {
 
   return (
     <>
-      <h3 style={{ color: 'white' }} className="text-center">
+      <h3
+        style={{ color: 'white', marginBottom: '3rem' }}
+        className="text-center"
+      >
         Document
       </h3>
       <Form>
         <div className="formInputContainer">
           <Form.Group>
-            <Form.Label className="formLabel">Passport Photo</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Passport Photo"
-              name="photoPassport"
+            <Form.File
+              name="namePhoto"
+              label="Passport Photo"
               onChange={(e) => handleChange(e)}
               value={values.photoPassport}
             />
           </Form.Group>
 
           <Form.Group>
-            <Form.Label className="formLabel">ID</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="ID"
+            <Form.File
+              label="ID"
               name="photoID"
               onChange={(e) => handleChange(e)}
               value={values.photoID}
@@ -44,10 +43,8 @@ const Documents = ({ handleChange, values, prevStep, nextStep }) => {
 
         <div className="formInputContainer">
           <Form.Group>
-            <Form.Label className="formLabel">Signature</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Signature"
+            <Form.File
+              label="Signature"
               name="photoSignature"
               onChange={(e) => handleChange(e)}
               value={values.photoSignature}
@@ -55,10 +52,8 @@ const Documents = ({ handleChange, values, prevStep, nextStep }) => {
           </Form.Group>
 
           <Form.Group>
-            <Form.Label className="formLabel">Utility Bill</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Utility Bill"
+            <Form.File
+              label="Utility Bill"
               name="photoUtilityBill"
               onChange={(e) => handleChange(e)}
               value={values.photoUtilityBill}

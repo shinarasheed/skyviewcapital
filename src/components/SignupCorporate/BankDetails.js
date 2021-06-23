@@ -18,7 +18,7 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
         style={{ color: 'white', marginBottom: '2rem' }}
         className="text-center"
       >
-        Please Provide Your Bank Details{' '}
+        Please Provide Your Bank Details
       </h3>
       <Form>
         <div className="formInputContainer">
@@ -49,6 +49,7 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
           <Form.Group>
             <Form.Label className="formLabel">BVN</Form.Label>
             <Form.Control
+              className="halfFormInput"
               type="text"
               placeholder="Enter Your BVN"
               name="bvnNumber"
