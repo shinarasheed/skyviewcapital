@@ -458,6 +458,9 @@ table td {
 
 .capitalMarkets {
   padding: 0 6rem;
+  @media (max-width: 768px) {
+    padding: 0 4rem;
+  }
 }
 .servicesHero {
   background-image: url('./assets/images/serviceshero.png');

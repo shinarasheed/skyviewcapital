@@ -15,15 +15,17 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
       </h3>
       <Form>
         <div className="formInputContainer">
-          <Form.Group>
+          <Form.Group controlId="exampleForm.ControlSelect1">
             <Form.Label className="formLabel">Title</Form.Label>
             <Form.Control
-              type="title"
-              placeholder="Enter Title"
-              name="title"
-              onChange={(e) => handleChange(e)}
-              value={values.title}
-            />
+              as="select"
+              // name="title"
+              // onChange={(e) => handleChange(e)}
+            >
+              <option>Mr</option>
+              <option>Mrs</option>
+              <option>Miss</option>
+            </Form.Control>
           </Form.Group>
 
           <Form.Group>

@@ -22,7 +22,7 @@ const InvestmentResearch = () => {
             data-aos-duration="1500"
             data-aos-delay="500"
           >
-            Consistently Adding Values to Your Wealth.{' '}
+            Consistently Adding <br /> Values to Your Wealth
           </p>
         </article>
         <section className="capitalMarkets">
