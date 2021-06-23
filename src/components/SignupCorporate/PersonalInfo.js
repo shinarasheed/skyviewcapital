@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 
 const PersonalInfo = ({ handleChange, values, nextStep }) => {
@@ -120,10 +120,10 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
         </Button>
       </Form>
 
-      <div className="sinupCta">
+      {/* <div className="sinupCta">
         <p className="mr-2">Already have an Account?</p>
         <Link to="/login">Login</Link>
-      </div>
+      </div> */}
     </>
   );
 };
