@@ -25,10 +25,10 @@ const Login = () => {
           Submit
         </Button>
       </Form>
-      <div className="sinupCta">
+      {/* <div className="sinupCta">
         <p className="mr-2">Don't have an Account?</p>
         <Link to="/signup">SignUp</Link>
-      </div>
+      </div> */}
     </>
   );
 };

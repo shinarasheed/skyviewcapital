@@ -14,57 +14,61 @@ const AdvisoryServices = () => {
         <Helmet>
           <title>AdvisoryServices</title>
         </Helmet>
-      </FadeIn>
 
-      <article className="servicesHero">
-        <h5>services</h5>
-        <p data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">
-          Consistently Adding Values to Your Wealth.{' '}
-        </p>
-      </article>
-      <section className="capitalMarkets">
-        <Section>
-          <h5>Advisory Services</h5>
+        <article className="servicesHero">
+          <h5>services</h5>
+          <p
+            data-aos="fade-right"
+            data-aos-duration="1500"
+            data-aos-delay="500"
+          >
+            Consistently Adding Values to Your Wealth.{' '}
+          </p>
+        </article>
+        <section className="capitalMarkets">
+          <Section>
+            <h5>Advisory Services</h5>
 
-          <article className="description">
-            <div className="descriptionSection">
-              <p>
-                Skyview Capital is a financial advisory powerhouse. We provide
-                guidance on valuation, deal structuring, mergers and
-                acquisition, or business combination mandates of multiple
-                business entities.
-              </p>
-              <p>
-                We service from small to large companies irrespective of the
-                business area or sector of the economy. We assist clients in
-                project conception, packaging, financing, implementationas well
-                as in reorganisation of existing projects into bankable
-                ventures.
-              </p>
+            <article className="description">
+              <div className="descriptionSection">
+                <p>
+                  Skyview Capital is a financial advisory powerhouse. We provide
+                  guidance on valuation, deal structuring, mergers and
+                  acquisition, or business combination mandates of multiple
+                  business entities.
+                </p>
+                <p>
+                  We service from small to large companies irrespective of the
+                  business area or sector of the economy. We assist clients in
+                  project conception, packaging, financing, implementationas
+                  well as in reorganisation of existing projects into bankable
+                  ventures.
+                </p>
 
-              <div>
-                <h6>Skyview capital financial advisory services include:</h6>
+                <div>
+                  <h6>Skyview capital financial advisory services include:</h6>
 
-                <ul>
-                  <li>MERGERS & ACQUISITIONS</li>
-                  <li>BUYOUTS/BUSINESS VALUATION</li>
-                  <li>CORPORATE RESTRUCTURING</li>
-                  <li>SALES & DIVESTITURES</li>
-                </ul>
+                  <ul>
+                    <li>MERGERS & ACQUISITIONS</li>
+                    <li>BUYOUTS/BUSINESS VALUATION</li>
+                    <li>CORPORATE RESTRUCTURING</li>
+                    <li>SALES & DIVESTITURES</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div className="bannerSection">
-              <img
-                data-aos="zoom-in"
-                data-aos-duration="900"
-                className="banner"
-                src={banner}
-                alt="capital market"
-              />
-            </div>
-          </article>
-        </Section>
-      </section>
+              <div className="bannerSection">
+                <img
+                  data-aos="zoom-in"
+                  data-aos-duration="900"
+                  className="banner"
+                  src={banner}
+                  alt="capital market"
+                />
+              </div>
+            </article>
+          </Section>
+        </section>
+      </FadeIn>
     </>
   );
 };

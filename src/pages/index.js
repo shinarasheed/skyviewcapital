@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import FadeIn from 'react-fade-in';
 import { Helmet } from 'react-helmet';
 import Hero from '../components/Hero';
 import LatestNews from '../components/Home/LatestNews';
@@ -30,18 +31,20 @@ const Home = () => {
 
   return (
     <>
-      <Helmet>
-        <title>SkyviewCapital</title>
-      </Helmet>
-      <section>
-        <Hero />
-        <Services />
-        <MarketPriceList />
-        <Register />
-        <LatestNews />
-        <Testimonials clientsTestimonial={clientsTestimonial} />
-        <Team />
-      </section>
+      <FadeIn transitionDuration={600}>
+        <Helmet>
+          <title>SkyviewCapital</title>
+        </Helmet>
+        <section>
+          <Hero />
+          <Services />
+          <MarketPriceList />
+          <Register />
+          <LatestNews />
+          <Testimonials clientsTestimonial={clientsTestimonial} />
+          <Team />
+        </section>
+      </FadeIn>
     </>
   );
 };
