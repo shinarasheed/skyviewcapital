@@ -1,12 +1,16 @@
 @import './styles/base';
 @import './styles/variables';
 
+.homeHeroBanner {
+  @media screen and(max-width:768px) {
+    height: 40vh;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
 .homePageHero {
   position: relative;
-
-  p {
-    line-height: 1.8;
-  }
 
   &::after {
     content: '';
@@ -59,9 +63,10 @@
     font-size: 3rem;
     text-transform: uppercase;
     line-height: 1.2;
+    text-align: center;
 
     @media screen and(max-width:768px) {
-      font-size: 2rem;
+      font-size: 2.8rem;
     }
   }
   p {
@@ -69,6 +74,7 @@
     line-height: 0.8;
     @media screen and(max-width:768px) {
       line-height: 1.2;
+      font-size: 2rem;
     }
   }
 }

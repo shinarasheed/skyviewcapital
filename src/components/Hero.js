@@ -8,7 +8,11 @@ const Hero = () => {
   return (
     <Carousel controls={false} fade>
       <Carousel.Item className="homePageHero">
-        <img className="d-block w-100" src={banner1} alt="First slide" />
+        <img
+          className="d-block w-100 homeHeroBanner"
+          src={banner1}
+          alt="First slide"
+        />
         <Carousel.Caption>
           <div
             data-aos="fade-right"
@@ -29,7 +33,11 @@ const Hero = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item className="homePageHero">
-        <img className="d-block w-100" src={banner2} alt="Second slide" />
+        <img
+          className="d-block w-100 homeHeroBanner"
+          src={banner2}
+          alt="Second slide"
+        />
 
         <Carousel.Caption>
           <div
@@ -45,7 +53,11 @@ const Hero = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item className="homePageHero">
-        <img className="d-block w-100" src={banner3} alt="Third slide" />
+        <img
+          className="d-block w-100 homeHeroBanner"
+          src={banner3}
+          alt="Third slide"
+        />
 
         <Carousel.Caption>
           <div
