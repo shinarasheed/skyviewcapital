@@ -5,6 +5,7 @@ const Service = ({
   fields: {
     title,
     description,
+    slug,
     banner: {
       fields: {
         file: { url },
@@ -32,7 +33,7 @@ const Service = ({
         <img className="w-100" src={url} alt={title} />
         <div className="service__description">
           <p>{description}</p>
-          <Link to="/">LEARN MORE</Link>
+          <Link to={`/services/${slug}`}>LEARN MORE</Link>
         </div>
       </div>
     </article>

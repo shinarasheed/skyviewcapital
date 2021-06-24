@@ -28,16 +28,16 @@ const Appbar = () => {
             title="Services"
             id="basic-nav-dropdown"
           >
-            <LinkContainer to="/services/capitalmarkets">
+            <LinkContainer to="/services/capital-markets">
               <NavDropdown.Item>Capital Markets</NavDropdown.Item>
             </LinkContainer>
-            <LinkContainer to="/services/investmentresearch">
+            <LinkContainer to="/services/investment-research">
               <NavDropdown.Item>Investment Research</NavDropdown.Item>
             </LinkContainer>
-            <LinkContainer to="/services/securitydealings">
+            <LinkContainer to="/services/security-dealings">
               <NavDropdown.Item>Security Dealings</NavDropdown.Item>
             </LinkContainer>
-            <LinkContainer to="/services/advisoryservices">
+            <LinkContainer to="/services/advisory-services">
               <NavDropdown.Item>Advisory Services</NavDropdown.Item>
             </LinkContainer>
           </NavDropdown>

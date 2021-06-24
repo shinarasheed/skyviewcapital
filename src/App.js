@@ -5,10 +5,10 @@ import Header from './components/Header';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import AboutPage from './pages/aboutus';
-import CarpitalMarkets from './pages/capitalmarkets';
-import InvestmentResearch from './pages/investmentresearch';
-import SecurityDealings from './pages/securitydealings';
-import AdvisoryServices from './pages/advisoryservices';
+// import CarpitalMarkets from './pages/capitalmarkets';
+// import InvestmentResearch from './pages/investmentresearch';
+// import SecurityDealings from './pages/securitydealings';
+// import AdvisoryServices from './pages/advisoryservices';
 import Login from './pages/login';
 import Signup from './pages/signup';
 import Contact from './pages/contact';
@@ -16,6 +16,7 @@ import Contact from './pages/contact';
 import './App.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import SingleService from './pages/singleService';
 
 function App() {
   useEffect(() => {
@@ -30,7 +31,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/aboutus" component={AboutPage} />
-        <Route
+        {/* <Route
           exact
           path="/services/capitalmarkets"
           component={CarpitalMarkets}
@@ -49,10 +50,12 @@ function App() {
           exact
           path="/services/advisoryservices"
           component={AdvisoryServices}
-        />
+        /> */}
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/contact" component={Contact} />
+
+        <Route path="/services/:slug" component={SingleService} />
       </Switch>
       <Footer />
     </Router>
