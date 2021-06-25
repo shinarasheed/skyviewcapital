@@ -24,10 +24,6 @@ const Service = (props) => {
     fetchData();
   }, [slug]);
 
-  console.log(service.fields);
-
-  if (!service) return <Spinner />;
-
   return (
     <>
       {service.fields !== undefined ? (
@@ -59,7 +55,7 @@ const Service = (props) => {
                     data-aos="zoom-in"
                     data-aos-duration="900"
                     className="banner"
-                    src={service.fields.banner.fields.file.url}
+                    src={service.fields.image.fields.file.url}
                     alt={service.fields.title}
                   />
                 </div>
