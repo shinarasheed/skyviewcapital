@@ -85,7 +85,7 @@ const Section = styled.article`
   h5 {
     font-size: 2rem;
     margin-top: 4rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   h4 {
