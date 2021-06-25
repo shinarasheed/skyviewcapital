@@ -576,13 +576,35 @@ table td {
 }
 
 .contactHero {
-  background-image: url('./assets/images/contact1.jpg');
+  background-image: url('./assets/images/HeroImage.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
   @media screen and(max-width:768px) {
     height: 30rem;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+  }
+
+  h5 {
+    color: #fff;
+    font-size: 4rem;
+    z-index: 2;
   }
 }
 

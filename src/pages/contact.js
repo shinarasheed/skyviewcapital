@@ -18,7 +18,9 @@ const Contact = () => {
         <Helmet>
           <title>ContactUs</title>
         </Helmet>
-        <div className="contactHero"></div>
+        <div className="contactHero">
+          <h5>Contact Us</h5>
+        </div>
         <section className="contactSection">
           <Map location={location} zoomLevel={16} />
 
@@ -49,7 +51,7 @@ const Contact = () => {
                 <Form.Control
                   size="lg"
                   type="text"
-                  placeholder="Enter Phone Number"
+                  placeholder="Enter PhoneNumber"
                 />
               </Form.Group>
 

@@ -5,7 +5,14 @@ import styled from 'styled-components';
 
 const LocationPin = ({ text }) => (
   <div className="pin">
-    <GoLocation style={{ fontSize: '4rem', marginRight: '1rem' }} />
+    <GoLocation
+      style={{
+        fontSize: '4rem',
+        marginRight: '1rem',
+        fill: 'red',
+      }}
+    />
+
     <p className="pin-text">{text}</p>
   </div>
 );
