@@ -3,13 +3,13 @@ import FadeIn from 'react-fade-in';
 import { Helmet } from 'react-helmet';
 import { Form, Button } from 'react-bootstrap';
 
-// import Map from '../components/Map';
+import Map from '../components/Map';
 
-// const location = {
-//   address: '1600 Amphitheatre Parkway, Mountain View, california.',
-//   lat: 37.42216,
-//   lng: -122.08427,
-// };
+const location = {
+  address: '71 Norman Williams St, Ikoyi, Lagos',
+  lat: 6.4451655438511075,
+  lng: 3.409805057561379,
+};
 
 const Contact = () => {
   return (
@@ -19,12 +19,16 @@ const Contact = () => {
           <title>ContactUs</title>
         </Helmet>
         <div className="contactHero"></div>
-        <section className="contactsection">
-          {/* <div>
-          <Map location={location} zoomLevel={17} />
-        </div> */}
+        <section className="contactSection">
+          <Map location={location} zoomLevel={16} />
 
           <div className="contactForm">
+            <h5
+              className="text-center"
+              style={{ fontSize: '2rem', marginBottom: '4rem' }}
+            >
+              Please feel free to reach out to us
+            </h5>
             <Form>
               <Form.Group>
                 <Form.Label className="formLabel">Name</Form.Label>
