@@ -4,11 +4,10 @@ import { Helmet } from 'react-helmet';
 import FadeIn from 'react-fade-in';
 import styled from 'styled-components';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import banner from '../assets/images/3.png';
 
 import Client from '../Contentful';
 
-const SingleService = (props) => {
+const Service = (props) => {
   const [service, setService] = useState({});
   const { slug } = props.match.params;
 
@@ -31,7 +30,7 @@ const SingleService = (props) => {
 
   return (
     <>
-      {service.fields !== undefined && (
+      {service.fields !== undefined ? (
         <FadeIn transitionDuration="600">
           <Helmet>
             <title>{service.fields.title}</title>
@@ -60,20 +59,31 @@ const SingleService = (props) => {
                     data-aos="zoom-in"
                     data-aos-duration="900"
                     className="banner"
-                    src={banner}
-                    alt="capital market"
+                    src={service.fields.banner.fields.file.url}
+                    alt={service.fields.title}
                   />
                 </div>
               </article>
             </Section>
           </section>
         </FadeIn>
+      ) : (
+        <SpinnerContainer>
+          <Spinner animation="grow" variant="primary" />
+        </SpinnerContainer>
       )}
     </>
   );
 };
 
-export default SingleService;
+export default Service;
+
+const SpinnerContainer = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Section = styled.article`
   h5 {

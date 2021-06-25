@@ -11,10 +11,6 @@ const AboutusPage = () => {
   const [aboutContent, setAbountContent] = useState([]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
     async function fetchData() {
       const response = await Client.getEntries({
         content_type: 'about',

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import FadeIn from 'react-fade-in';
 import { Helmet } from 'react-helmet';
 import IndividualAccount from '../components/SignupIndividual/IndividualAccount';
@@ -6,9 +6,6 @@ import CorporateAccount from '../components/SignupCorporate/CorporateAccount';
 
 const Signup = () => {
   const [accountType, setAccountType] = useState('individual');
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const signupTemplate = () => {
     switch (accountType) {

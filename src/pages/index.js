@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import FadeIn from 'react-fade-in';
 import { Helmet } from 'react-helmet';
+
 import Hero from '../components/Hero';
 import LatestNews from '../components/Home/LatestNews';
 import MarketPriceList from '../components/Home/MarketPriceList';
@@ -13,10 +14,6 @@ import Client from '../Contentful';
 
 const Home = () => {
   const [clientsTestimonial, setClientsTestimonial] = useState([]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   useEffect(() => {
     async function fetchData() {

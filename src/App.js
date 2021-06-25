@@ -1,22 +1,20 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import Home from './pages/index';
 import Header from './components/Header';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import AboutPage from './pages/aboutus';
-// import CarpitalMarkets from './pages/capitalmarkets';
-// import InvestmentResearch from './pages/investmentresearch';
-// import SecurityDealings from './pages/securitydealings';
-// import AdvisoryServices from './pages/advisoryservices';
 import Login from './pages/login';
 import Signup from './pages/signup';
 import Contact from './pages/contact';
+import Service from './pages/service';
+import ScrollToTop from './components/ScrollToTop';
 
 import './App.scss';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import SingleService from './pages/singleService';
 
 function App() {
   useEffect(() => {
@@ -26,36 +24,16 @@ function App() {
   }, []);
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/aboutus" component={AboutPage} />
-        {/* <Route
-          exact
-          path="/services/capitalmarkets"
-          component={CarpitalMarkets}
-        />
-        <Route
-          exact
-          path="/services/investmentresearch"
-          component={InvestmentResearch}
-        />
-        <Route
-          exact
-          path="/services/securitydealings"
-          component={SecurityDealings}
-        />
-        <Route
-          exact
-          path="/services/advisoryservices"
-          component={AdvisoryServices}
-        /> */}
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/contact" component={Contact} />
-
-        <Route path="/services/:slug" component={SingleService} />
+        <Route path="/services/:slug" component={Service} />
       </Switch>
       <Footer />
     </Router>
