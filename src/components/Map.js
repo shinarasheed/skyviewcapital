@@ -5,13 +5,13 @@ import styled from 'styled-components';
 
 const LocationPin = ({ text }) => (
   <div className="pin">
-    <GoLocation style={{ fontSize: '4rem' }} />
+    <GoLocation style={{ fontSize: '4rem', marginRight: '1rem' }} />
     <p className="pin-text">{text}</p>
   </div>
 );
 
 const Map = ({ location, zoomLevel }) => (
-  <MapContainer>
+  <MapContainer className="googleMapContainer">
     <div className="google-map">
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLEMAP_API_KEY }}
@@ -44,10 +44,6 @@ const MapContainer = styled.div`
   }
 
   @media screen and (min-width: 799px) {
-    .google-map {
-      height: 80vh;
-    }
-
     .pin {
       width: 15vw;
     }
