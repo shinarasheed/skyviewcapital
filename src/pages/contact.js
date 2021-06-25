@@ -49,7 +49,7 @@ const Contact = () => {
                 <Form.Control
                   size="lg"
                   type="text"
-                  placeholder="Enter PhoneNumber"
+                  placeholder="Enter Phone Number"
                 />
               </Form.Group>
 
