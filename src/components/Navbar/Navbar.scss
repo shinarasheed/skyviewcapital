@@ -4,6 +4,7 @@
   position: sticky !important;
   top: 0 !important;
   z-index: 9999 !important;
+  transition: all 1s ease-in;
 
   .brand__logo {
     margin-right: 20rem;

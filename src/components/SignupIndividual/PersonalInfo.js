@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import SignupTitle from '../SignupTitle';
 import { Form, Button } from 'react-bootstrap';
 
 const PersonalInfo = ({ handleChange, values, nextStep }) => {
@@ -10,19 +10,13 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
 
   return (
     <>
-      <h3 style={{ color: 'white' }} className="text-center">
-        Personal Information
-      </h3>
+      <SignupTitle title="Personal Information" />
       <Form>
         <div className="formInputContainer">
           <Form.Group>
             <Form.Label className="formLabel">Title</Form.Label>
-            <Form.Control
-              as="select"
-              name="title"
-              onChange={(e) => handleChange(e)}
-              value={values.title}
-            >
+            <Form.Control as="select">
+              <option>Mr</option>
               <option>Mrs</option>
               <option>Miss</option>
             </Form.Control>

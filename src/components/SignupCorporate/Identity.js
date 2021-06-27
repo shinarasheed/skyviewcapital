@@ -1,6 +1,8 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 
+import SignupTitle from '../SignupTitle';
+
 const Identity = ({ handleChange, values, prevStep, nextStep }) => {
   const continueToNextStep = (e) => {
     e.preventDefault();
@@ -14,12 +16,8 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
 
   return (
     <>
-      <h3
-        style={{ color: 'white', marginBottom: '2rem' }}
-        className="text-center"
-      >
-        Give us your Identification Details
-      </h3>
+      <SignupTitle title="give us your identification details" />
+
       <Form>
         <div className="formInputContainer">
           <Form.Group>

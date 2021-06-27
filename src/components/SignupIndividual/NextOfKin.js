@@ -1,6 +1,8 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 
+import SignupTitle from '../SignupTitle';
+
 const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
   const continueToNextStep = (e) => {
     e.preventDefault();
@@ -14,12 +16,7 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
 
   return (
     <>
-      <h3
-        style={{ color: 'white', marginBottom: '2rem' }}
-        className="text-center"
-      >
-        Next Of Kin
-      </h3>
+      <SignupTitle title="next of kin" />
       <Form>
         <div className="formInputContainer">
           <Form.Group>

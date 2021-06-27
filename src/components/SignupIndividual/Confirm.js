@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import SignupTitle from '../SignupTitle';
 
 const Confirm = ({ prevStep, nextStep }) => {
   const continueToNextStep = (e) => {
@@ -14,12 +15,7 @@ const Confirm = ({ prevStep, nextStep }) => {
 
   return (
     <>
-      <h3
-        style={{ color: 'white', marginBottom: '2rem' }}
-        className="text-center"
-      >
-        Confirm
-      </h3>
+      <SignupTitle title="confirm" />
 
       <div style={{ fontSize: '1.5rem', color: '#fff' }}>
         <p className="mb-3">

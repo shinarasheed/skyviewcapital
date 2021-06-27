@@ -1,6 +1,7 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
+
+import SignupTitle from '../SignupTitle';
 
 const PersonalInfo = ({ handleChange, values, nextStep }) => {
   const continueToNextStep = (e) => {
@@ -10,9 +11,8 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
 
   return (
     <>
-      <h3 style={{ color: 'white' }} className="text-center">
-        Personal Information
-      </h3>
+      <SignupTitle title="personal information" />
+
       <Form>
         <div className="formInputContainer">
           <Form.Group controlId="exampleForm.ControlSelect1">

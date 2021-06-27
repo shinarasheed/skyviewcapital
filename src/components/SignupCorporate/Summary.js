@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
+import SignupTitle from '../SignupTitle';
+
 const Summary = ({ values, prevStep }) => {
   const goBackToPreviousStep = (e) => {
     e.preventDefault();
@@ -13,12 +15,7 @@ const Summary = ({ values, prevStep }) => {
 
   return (
     <>
-      <h3
-        style={{ color: 'white', marginBottom: '2rem' }}
-        className="text-center"
-      >
-        Summary
-      </h3>
+      <SignupTitle title="summary" />
 
       <div>
         <p style={{ fontSize: '1.5rem', color: '#fff' }}>

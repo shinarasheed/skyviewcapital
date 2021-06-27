@@ -1,6 +1,8 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 
+import SignupTitle from '../SignupTitle';
+
 const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
   const continueToNextStep = (e) => {
     e.preventDefault();
@@ -14,22 +16,10 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
 
   return (
     <>
-      <h3 style={{ color: 'white' }} className="text-center">
-        Personal Information
-      </h3>
+      <SignupTitle title="personal information" />
+
       <Form>
         <div className="formInputContainer">
-          <Form.Group>
-            <Form.Label className="formLabel">Country</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Country"
-              name="country"
-              onChange={(e) => handleChange(e)}
-              value={values.country}
-            />
-          </Form.Group>
-
           <Form.Group>
             <Form.Label className="formLabel">State of Origin</Form.Label>
             <Form.Control
@@ -40,9 +30,7 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               value={values.stateOfOrigin}
             />
           </Form.Group>
-        </div>
 
-        <div className="formInputContainer">
           <Form.Group>
             <Form.Label className="formLabel">Local Government Area</Form.Label>
             <Form.Control
@@ -53,7 +41,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               value={values.LocalGovernmentArea}
             />
           </Form.Group>
+        </div>
 
+        <div className="formInputContainer">
           <Form.Group>
             <Form.Label className="formLabel">Email Address</Form.Label>
             <Form.Control
@@ -64,9 +54,7 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               value={values.emailAddress}
             />
           </Form.Group>
-        </div>
 
-        <div className="formInputContainer">
           <Form.Group>
             <Form.Label className="formLabel">Mobile Phone Number</Form.Label>
             <Form.Control
@@ -77,7 +65,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               value={values.mobilePhoneNumber}
             />
           </Form.Group>
+        </div>
 
+        <div className="formInputContainer">
           <Form.Group>
             <Form.Label className="formLabel">Home Phone Number</Form.Label>
             <Form.Control
@@ -88,9 +78,7 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               value={values.homePhoneNumber}
             />
           </Form.Group>
-        </div>
 
-        <div className="formInputContainer">
           <Form.Group>
             <Form.Label className="formLabel">Profession/Occupation</Form.Label>
             <Form.Control
@@ -101,8 +89,10 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               value={values.profession}
             />
           </Form.Group>
+        </div>
 
-          <Form.Group>
+        <div className="formInputContainer">
+          <Form.Group className="halfFormInput">
             <Form.Label className="formLabel">Type of Employment</Form.Label>
             <Form.Control
               type="text"

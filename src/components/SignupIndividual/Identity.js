@@ -1,5 +1,8 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+import 'react-day-picker/lib/style.css';
+import SignupTitle from '../SignupTitle';
 
 const Identity = ({ handleChange, values, prevStep, nextStep }) => {
   const continueToNextStep = (e) => {
@@ -14,12 +17,7 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
 
   return (
     <>
-      <h3
-        style={{ color: 'white', marginBottom: '2rem' }}
-        className="text-center"
-      >
-        Give us your Identification Details
-      </h3>
+      <SignupTitle title="Give us your Identification Details" />
       <Form>
         <div className="formInputContainer">
           <Form.Group>
@@ -28,7 +26,7 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
             </Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter Form of ID"
+              placeholder="Enter Form of identification"
               name="idForm"
               onChange={(e) => handleChange(e)}
               value={values.idForm}
@@ -48,17 +46,16 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
         </div>
 
         <div className="formInputContainer">
-          <Form.Group>
-            <Form.Label className="formLabel">Date of Expiry</Form.Label>
-            <Form.Control
-              className="halfFormInput"
+          <div className="halfFormInput">
+            <DayPickerInput
               type="text"
               placeholder="Enter Date"
               name="idExpireDate"
               onChange={(e) => handleChange(e)}
               value={values.idExpireDate}
+              modifiers={modifiers}
             />
-          </Form.Group>
+          </div>
         </div>
 
         <div className="buttonContainer">
@@ -83,4 +80,7 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
   );
 };
 
+const modifiers = {
+  color: '2rem',
+};
 export default Identity;

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 
+import SignupTitle from '../SignupTitle';
+
 const Documents = ({ handleChange, values, prevStep, nextStep }) => {
   const continueToNextStep = (e) => {
     e.preventDefault();
@@ -14,12 +16,7 @@ const Documents = ({ handleChange, values, prevStep, nextStep }) => {
 
   return (
     <>
-      <h3
-        style={{ color: 'white', marginBottom: '3rem' }}
-        className="text-center"
-      >
-        Document
-      </h3>
+      <SignupTitle title="document" />
       <Form>
         <div className="formInputContainer">
           <Form.Group>
