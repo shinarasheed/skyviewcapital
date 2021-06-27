@@ -5,14 +5,14 @@ const Subscribe = () => {
     <>
       <h5 className="mb-4">Subscribe to our Newsletter</h5>
       <form className="subscribeform">
-        <div className="formControl">
+        <div style={{ marginBottom: '1rem' }} className="formControl">
           <input
             className="subscribe__name"
             type="text"
             placeholder="Enter Name"
           />
         </div>
-        <div className="formControl">
+        <div style={{ marginBottom: '1rem' }} className="formControl">
           <input
             className="subscribe__email"
             type="text"
