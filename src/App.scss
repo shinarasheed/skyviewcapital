@@ -710,7 +710,9 @@ table td {
 }
 
 .activeLinkBorder {
-  border-bottom: 4px solid $primary-color;
+  // box-shadow: 0px 4px $primary-color;
+  transition: all 0.3s linear;
+  box-shadow: 0px 4px $primary-color;
   @media screen and(max-width:768px) {
     flex-direction: column;
   }
