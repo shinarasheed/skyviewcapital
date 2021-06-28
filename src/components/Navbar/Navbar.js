@@ -39,7 +39,7 @@ export default function Navbar() {
         <img src={logo} alt="brand logo" />
       </Link>
 
-      <ul className={isOpen ? 'navMenu active' : 'navMenu'}>
+      <ul className={isOpen ? 'navMenu isopen' : 'navMenu'}>
         <li className="navItem">
           <Link to="/" className="navLink" onClick={closeMobileMenu}>
             Home

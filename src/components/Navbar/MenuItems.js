@@ -11,12 +11,12 @@ export const MenuItems = [
   },
   {
     title: 'security dealings',
-    path: '/',
+    path: 'security-dealings',
     cName: 'dropdownLink',
   },
   {
     title: 'advisory services',
-    path: '/',
+    path: 'advisory-services',
     cName: 'dropdownLink',
   },
 ];

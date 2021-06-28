@@ -5,12 +5,11 @@
   position: absolute;
   top: 80px;
   list-style: none;
-  z-index: 2;
-  transition: all 1s ease;
+  z-index: 10;
+  background-color: black;
 }
 
 .dropdownMenu li {
-  background-color: black;
   cursor: pointer;
 }
 
