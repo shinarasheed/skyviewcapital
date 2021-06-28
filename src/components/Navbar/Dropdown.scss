@@ -1,0 +1,32 @@
+@import '../../styles/variables';
+
+.dropdownMenu {
+  width: 200px;
+  position: absolute;
+  top: 80px;
+  list-style: none;
+  z-index: 2;
+  transition: all 1s ease;
+}
+
+.dropdownMenu li {
+  background-color: black;
+  cursor: pointer;
+}
+
+.dropdownMenu.clicked {
+  display: none;
+}
+
+.dropdownLink {
+  display: block;
+  font-size: 16px;
+  text-decoration: none !important;
+  color: #fff;
+  padding: 16px;
+  text-transform: capitalize;
+
+  &:hover {
+    color: $primary-color;
+  }
+}

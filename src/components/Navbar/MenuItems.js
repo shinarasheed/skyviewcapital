@@ -2,21 +2,21 @@ export const MenuItems = [
   {
     title: 'capital markets',
     path: 'capital-markets',
-    cName: 'dropdown-link',
+    cName: 'dropdownLink',
   },
   {
     title: 'investment research',
     path: 'investment-research',
-    cName: 'dropdown-link',
+    cName: 'dropdownLink',
   },
   {
-    title: 'security-dealings',
+    title: 'security dealings',
     path: '/',
-    cName: 'dropdown-link',
+    cName: 'dropdownLink',
   },
   {
     title: 'advisory services',
     path: '/',
-    cName: 'dropdown-link',
+    cName: 'dropdownLink',
   },
 ];

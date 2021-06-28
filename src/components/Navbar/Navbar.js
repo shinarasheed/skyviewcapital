@@ -18,11 +18,19 @@ export default function Navbar() {
   };
 
   const onMouseEnter = () => {
-    setDropdown(true);
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
   };
 
   const onMouseLeave = () => {
-    setDropdown(false);
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
   };
 
   return (
@@ -39,7 +47,7 @@ export default function Navbar() {
         </li>
 
         <li className="navItem">
-          <Link to="/" className="navLink" onClick={closeMobileMenu}>
+          <Link to="/aboutus" className="navLink" onClick={closeMobileMenu}>
             About Us
           </Link>
         </li>
@@ -48,13 +56,13 @@ export default function Navbar() {
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
-          <Link to="/services" className="navLink" onClick={closeMobileMenu}>
+          <Link to="/" className="navLink" onClick={closeMobileMenu}>
             Services <i className="fas fa-caret-down" />
           </Link>
           {dropdown && <Dropdown />}
         </li>
         <li className="navItem">
-          <Link to="/products" className="navLink" onClick={closeMobileMenu}>
+          <Link to="/" className="navLink" onClick={closeMobileMenu}>
             Reseach
           </Link>
         </li>
@@ -64,12 +72,12 @@ export default function Navbar() {
           </Link>
         </li>
         <li className="navItem">
-          <Link to="/contact-us" className="navLink" onClick={closeMobileMenu}>
+          <Link to="/contact" className="navLink" onClick={closeMobileMenu}>
             Contact Us
           </Link>
         </li>
         <li className="navItem">
-          <Link to="/sign-up" className="navLink" onClick={closeMobileMenu}>
+          <Link to="/signup" className="navLink" onClick={closeMobileMenu}>
             Create Account
           </Link>
         </li>
