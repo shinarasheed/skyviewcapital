@@ -15,6 +15,7 @@ import Service from './pages/service';
 import ScrollToTop from './components/ScrollToTop';
 
 import './App.scss';
+import TermsConditions from './pages/terms';
 
 function App() {
   useEffect(() => {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/contact" component={Contact} />
+        <Route path="/policy" component={TermsConditions} />
         <Route path="/services/:slug" component={Service} />
       </Switch>
       <Footer />

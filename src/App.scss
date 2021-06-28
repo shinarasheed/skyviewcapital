@@ -766,3 +766,28 @@ table td {
     }
   }
 }
+
+.termsConditions {
+  color: #000;
+  padding: 5rem 10rem;
+  background-color: #f5f5f5;
+
+  p,
+  h5,
+  h6,
+  li {
+    font-size: 1.5rem;
+  }
+
+  ul {
+    margin-bottom: 2rem;
+  }
+
+  li {
+    line-height: 2;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+  }
+}

@@ -35,6 +35,6 @@ export const footerlinks = [
   },
   {
     text: 'Policy',
-    path: '/',
+    path: '/policy',
   },
 ];
