@@ -1,5 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+import 'react-day-picker/lib/style.css';
 
 import SignupTitle from '../SignupTitle';
 
@@ -46,17 +48,15 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
         </div>
 
         <div className="formInputContainer">
-          <Form.Group>
-            <Form.Label className="formLabel">Date of Expiry</Form.Label>
-            <Form.Control
-              className="halfFormInput"
+          <div className="halfFormInput">
+            <DayPickerInput
               type="text"
               placeholder="Enter Date"
               name="idExpireDate"
               onChange={(e) => handleChange(e)}
               value={values.idExpireDate}
             />
-          </Form.Group>
+          </div>
         </div>
 
         <div className="buttonContainer">

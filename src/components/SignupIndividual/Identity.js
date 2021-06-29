@@ -53,7 +53,6 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
               name="idExpireDate"
               onChange={(e) => handleChange(e)}
               value={values.idExpireDate}
-              modifiers={modifiers}
             />
           </div>
         </div>
@@ -80,7 +79,4 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
   );
 };
 
-const modifiers = {
-  color: '2rem',
-};
 export default Identity;

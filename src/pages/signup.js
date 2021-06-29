@@ -3,9 +3,11 @@ import FadeIn from 'react-fade-in';
 import { Helmet } from 'react-helmet';
 import IndividualAccount from '../components/SignupIndividual/IndividualAccount';
 import CorporateAccount from '../components/SignupCorporate/CorporateAccount';
+import { LoginForm } from '../components/LoginForm';
 
 const Signup = () => {
   const [accountType, setAccountType] = useState('individual');
+  let step = 1;
 
   const signupTemplate = () => {
     switch (accountType) {
@@ -32,8 +34,8 @@ const Signup = () => {
           <title>Create Account</title>
         </Helmet>
         <section className="loginsection">
-          <article
-            className="loginForm"
+          <LoginForm
+            step={step}
             style={{
               backgroundColor:
                 accountType === 'individual' ? '#002f57' : '#001a33',
@@ -68,7 +70,7 @@ const Signup = () => {
 
             {/* form section */}
             <div>{signupTemplate()}</div>
-          </article>
+          </LoginForm>
         </section>
       </FadeIn>
     </>
