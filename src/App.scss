@@ -385,18 +385,15 @@
     }
   }
 
-  .form-control {
-    margin-bottom: 2rem;
-    color: red;
-  }
-
   button {
     border: none;
     background: $primary-color;
     color: #fff;
     font-size: 15px;
     border-radius: 5px;
-    padding: 5px 30px 5px 30px;
+    padding: 9px 0 9px 1rem;
+    display: block;
+    width: 100%;
   }
 }
 
@@ -536,7 +533,8 @@ table td {
 
   .form-control {
     font-size: 1.5rem;
-    padding: 2rem 0 2rem 1rem;
+    padding: 10px;
+    height: auto !important;
 
     &::placeholder {
       font-size: 1.5rem;
