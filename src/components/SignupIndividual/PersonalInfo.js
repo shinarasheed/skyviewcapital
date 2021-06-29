@@ -15,7 +15,12 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
         <div className="formInputContainer">
           <Form.Group>
             <Form.Label className="formLabel">Title</Form.Label>
-            <Form.Control as="select">
+            <Form.Control
+              as="select"
+              name="title"
+              onChange={(e) => handleChange(e)}
+              value={values.title}
+            >
               <option>Mr</option>
               <option>Mrs</option>
               <option>Miss</option>
