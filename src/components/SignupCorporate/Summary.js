@@ -17,12 +17,11 @@ const Summary = ({ values, prevStep }) => {
     <>
       <SignupTitle title="summary" />
 
-      <div className="d-flex justify-content-between">
+      <div className="summaryTablesContainer">
         <Table
           style={{
             color: 'white',
             border: '1px solid white',
-            marginRight: '2rem',
           }}
           striped
           bordered
@@ -274,23 +273,25 @@ const Summary = ({ values, prevStep }) => {
         </Table>
       </div>
 
-      <Button
-        onClick={(e) => goBackToPreviousStep(e)}
-        className="mt-4"
-        variant="primary"
-        type="button"
-      >
-        Go Back
-      </Button>
+      <div className="summaryButtonContainer">
+        <Button
+          onClick={(e) => goBackToPreviousStep(e)}
+          className="mt-4"
+          variant="primary"
+          type="button"
+        >
+          Go Back
+        </Button>
 
-      <Button
-        onClick={(e) => handleFormSubmit()}
-        className="mt-4"
-        variant="primary"
-        type="button"
-      >
-        Submit
-      </Button>
+        <Button
+          onClick={(e) => handleFormSubmit()}
+          className="mt-4"
+          variant="primary"
+          type="button"
+        >
+          Submit
+        </Button>
+      </div>
     </>
   );
 };

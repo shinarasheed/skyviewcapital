@@ -741,3 +741,17 @@ table td {
     font-size: 1.8rem;
   }
 }
+
+.summaryTablesContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  @media screen and(max-width:768px) {
+    flex-direction: column;
+  }
+}
+
+.summaryButtonContainer {
+  display: flex;
+  gap: 5px;
+}
