@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
-import 'react-day-picker/lib/style.css';
+import DateInput from '../DateInput';
+
 import SignupTitle from '../SignupTitle';
 
 const Identity = ({ handleChange, values, prevStep, nextStep }) => {
@@ -47,7 +47,7 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
 
         <div className="formInputContainer">
           <div className="halfFormInput">
-            <DayPickerInput
+            <DateInput
               type="text"
               placeholder="Enter Date"
               name="idExpireDate"
