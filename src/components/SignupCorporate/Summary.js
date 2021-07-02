@@ -10,7 +10,7 @@ const Summary = ({ values, prevStep }) => {
   };
 
   const handleFormSubmit = () => {
-    // console.log(values);
+    console.log(values);
   };
 
   return (
@@ -125,12 +125,6 @@ const Summary = ({ values, prevStep }) => {
               <td>16</td>
               <td>Company Name</td>
               <td>{values.companyName}</td>
-            </tr>
-
-            <tr>
-              <td>17</td>
-              <td>Political?</td>
-              <td>{values.political}</td>
             </tr>
 
             <tr>

@@ -100,11 +100,23 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               onChange={(e) => handleChange(e)}
               value={values.employmentType}
             >
+              <option>Select Employment Type</option>
               <option>Salaried</option>
               <option>Self Employed</option>
               <option>Retired</option>
               <option>Unemployed</option>
             </Form.Control>
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label className="formLabel">Company Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Company Name"
+              name="companyName"
+              onChange={(e) => handleChange(e)}
+              value={values.companyName}
+            />
           </Form.Group>
         </div>
 

@@ -62,6 +62,7 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               onChange={(e) => handleChange(e)}
               value={values.bankAccountType}
             >
+              <option>Select Account Type</option>
               <option>Savings</option>
               <option>Current</option>
             </Form.Control>

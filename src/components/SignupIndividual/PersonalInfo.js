@@ -21,6 +21,7 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               onChange={(e) => handleChange(e)}
               value={values.title}
             >
+              <option>Select Title</option>
               <option>Mr</option>
               <option>Mrs</option>
               <option>Miss</option>
@@ -83,6 +84,7 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               onChange={(e) => handleChange(e)}
               value={values.gender}
             >
+              <option>Select Gender</option>
               <option>Male</option>
               <option>Female</option>
             </Form.Control>

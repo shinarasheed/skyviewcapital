@@ -24,12 +24,17 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
               Form of Identification
             </Form.Label>
             <Form.Control
-              type="text"
-              placeholder="Enter Form of identification"
+              as="select"
               name="idForm"
               onChange={(e) => handleChange(e)}
               value={values.idForm}
-            />
+            >
+              <option>Select Form of ID</option>
+              <option>Driver License</option>
+              <option>National Identity Card</option>
+              <option>Voters' Card</option>
+              <option>International Passport</option>
+            </Form.Control>
           </Form.Group>
 
           <Form.Group>
