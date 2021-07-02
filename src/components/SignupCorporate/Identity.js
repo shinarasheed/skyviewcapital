@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
-import DateInput from '../DateInput';
+
 import SignupTitle from '../SignupTitle';
 
 const Identity = ({ handleChange, values, prevStep, nextStep }) => {
@@ -16,8 +16,7 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
 
   return (
     <>
-      <SignupTitle title="give us your identification details" />
-
+      <SignupTitle title="Give us your Identification Details" />
       <Form>
         <div className="formInputContainer">
           <Form.Group>
@@ -26,7 +25,7 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
             </Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter Form of ID"
+              placeholder="Enter Form of identification"
               name="idForm"
               onChange={(e) => handleChange(e)}
               value={values.idForm}
@@ -46,10 +45,10 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
         </div>
 
         <div className="formInputContainer">
-          <div className="halfFormInput">
+          <div className="dateInput">
             <Form.Label className="formLabel">Date of Expiry</Form.Label>
-            <DateInput
-              type="text"
+            <input
+              type="date"
               placeholder="Enter Date"
               name="idExpireDate"
               onChange={(e) => handleChange(e)}

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
-import DateInput from '../DateInput';
 import SignupTitle from '../SignupTitle';
 
 const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
@@ -81,18 +80,18 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
             />
           </Form.Group>
 
-          <Form.Group>
+          <div className="dateInput">
             <Form.Label className="formLabel">
               Date Account was Opened
             </Form.Label>
-            <DateInput
-              type="text"
+            <input
+              type="date"
               placeholder="Enter Date"
               name="accountOpeningDate"
               onChange={(e) => handleChange(e)}
               value={values.accountOpeningDate}
             />
-          </Form.Group>
+          </div>
         </div>
 
         <div className="buttonContainer">

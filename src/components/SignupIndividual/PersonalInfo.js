@@ -1,7 +1,6 @@
 import React from 'react';
 import SignupTitle from '../SignupTitle';
 import { Form, Button } from 'react-bootstrap';
-import DateInput from '../DateInput';
 
 const PersonalInfo = ({ handleChange, values, nextStep }) => {
   const continueToNextStep = (e) => {
@@ -65,10 +64,10 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
         </div>
 
         <div className="formInputContainer">
-          <div>
+          <div className="dateInput">
             <Form.Label className="formLabel">Date of Birth</Form.Label>
-            <DateInput
-              type="text"
+            <input
+              type="date"
               placeholder="Date of Birth"
               name="dateOfBirth"
               onChange={(e) => handleChange(e)}

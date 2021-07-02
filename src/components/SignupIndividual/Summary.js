@@ -10,7 +10,7 @@ const Summary = ({ values, prevStep }) => {
   };
 
   const handleFormSubmit = () => {
-    console.log(values);
+    console.log(values.dateOfBirth);
   };
 
   return (

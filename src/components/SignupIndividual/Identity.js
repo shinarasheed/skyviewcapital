@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
-import DateInput from '../DateInput';
 
 import SignupTitle from '../SignupTitle';
 
@@ -46,10 +45,10 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
         </div>
 
         <div className="formInputContainer">
-          <div className="halfFormInput">
+          <div className="dateInput">
             <Form.Label className="formLabel">Date of Expiry</Form.Label>
-            <DateInput
-              type="text"
+            <input
+              type="date"
               placeholder="Enter Date"
               name="idExpireDate"
               onChange={(e) => handleChange(e)}

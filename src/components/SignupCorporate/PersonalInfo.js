@@ -1,8 +1,6 @@
 import React from 'react';
-import { Form, Button } from 'react-bootstrap';
-import DateInput from '../DateInput';
-
 import SignupTitle from '../SignupTitle';
+import { Form, Button } from 'react-bootstrap';
 
 const PersonalInfo = ({ handleChange, values, nextStep }) => {
   const continueToNextStep = (e) => {
@@ -12,11 +10,10 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
 
   return (
     <>
-      <SignupTitle title="personal information" />
-
+      <SignupTitle title="Personal Information" />
       <Form>
         <div className="formInputContainer">
-          <Form.Group controlId="exampleForm.ControlSelect1">
+          <Form.Group>
             <Form.Label className="formLabel">Title</Form.Label>
             <Form.Control
               as="select"
@@ -67,16 +64,17 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
         </div>
 
         <div className="formInputContainer">
-          <div>
+          <div className="dateInput">
             <Form.Label className="formLabel">Date of Birth</Form.Label>
-            <DateInput
-              type="text"
+            <input
+              type="date"
               placeholder="Date of Birth"
               name="dateOfBirth"
               onChange={(e) => handleChange(e)}
               value={values.dateOfBirth}
             />
           </div>
+
           <Form.Group>
             <Form.Label className="formLabel">Gender</Form.Label>
             <Form.Control
@@ -124,11 +122,6 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
           Continue
         </Button>
       </Form>
-
-      {/* <div className="sinupCta">
-        <p className="mr-2">Already have an Account?</p>
-        <Link to="/login">Login</Link>
-      </div> */}
     </>
   );
 };
