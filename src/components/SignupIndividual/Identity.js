@@ -47,6 +47,7 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
 
         <div className="formInputContainer">
           <div className="halfFormInput">
+            <Form.Label className="formLabel">Date of Expiry</Form.Label>
             <DateInput
               type="text"
               placeholder="Enter Date"

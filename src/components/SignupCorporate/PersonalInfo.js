@@ -20,8 +20,9 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
             <Form.Label className="formLabel">Title</Form.Label>
             <Form.Control
               as="select"
-              // name="title"
-              // onChange={(e) => handleChange(e)}
+              name="title"
+              onChange={(e) => handleChange(e)}
+              value={values.title}
             >
               <option>Mr</option>
               <option>Mrs</option>
@@ -79,12 +80,14 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
           <Form.Group>
             <Form.Label className="formLabel">Gender</Form.Label>
             <Form.Control
-              type="text"
-              placeholder="Gender"
+              as="select"
               name="gender"
               onChange={(e) => handleChange(e)}
               value={values.gender}
-            />
+            >
+              <option>Male</option>
+              <option>Female</option>
+            </Form.Control>
           </Form.Group>
         </div>
 

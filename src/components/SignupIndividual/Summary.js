@@ -10,7 +10,7 @@ const Summary = ({ values, prevStep }) => {
   };
 
   const handleFormSubmit = () => {
-    // console.log(values);
+    console.log(values);
   };
 
   return (
@@ -287,7 +287,7 @@ const Summary = ({ values, prevStep }) => {
           onClick={(e) => handleFormSubmit()}
           className="mt-4"
           variant="primary"
-          type="button"
+          type="submit"
         >
           Submit
         </Button>

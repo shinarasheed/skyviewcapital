@@ -57,12 +57,15 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
           <Form.Group>
             <Form.Label className="formLabel">AccountType</Form.Label>
             <Form.Control
-              type="text"
+              as="select"
               placeholder="Account Type"
               name="bankAccountType"
               onChange={(e) => handleChange(e)}
               value={values.bankAccountType}
-            />
+            >
+              <option>Savings</option>
+              <option>Current</option>
+            </Form.Control>
           </Form.Group>
         </div>
 

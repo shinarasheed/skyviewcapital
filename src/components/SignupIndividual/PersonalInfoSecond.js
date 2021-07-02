@@ -94,12 +94,17 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
           <Form.Group className="halfFormInput">
             <Form.Label className="formLabel">Type of Employment</Form.Label>
             <Form.Control
-              type="text"
+              as="select"
               placeholder="Employment Type"
               name="employmentType"
               onChange={(e) => handleChange(e)}
               value={values.employmentType}
-            />
+            >
+              <option>Salaried</option>
+              <option>Self Employed</option>
+              <option>Retired</option>
+              <option>Unemployed</option>
+            </Form.Control>
           </Form.Group>
         </div>
 
