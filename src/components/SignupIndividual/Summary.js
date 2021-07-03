@@ -9,28 +9,29 @@ const Summary = ({ values, prevStep }) => {
     prevStep();
   };
 
-  // let body = {
-  //   sheet1: {
-  //     ...values,
-  //   },
-  // };
+  let body = {
+    sheet1: {
+      ...values,
+    },
+  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(values);
-
-    // fetch(process.env.REACT_APP_SPREAD_SHEET_ENDPOINT, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(body),
-    // })
-    //   .then((response) => response.json())
-    //   .then((json) => {
-    //     console.log(json.sheet1);
-    //   });
+    fetch(
+      'https://api.sheety.co/4ae3e54ffabbc7f764b475b50f938e82/skyviewcapital/sheet1',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      }
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json.sheet1);
+      });
   };
 
   return (
@@ -192,7 +193,7 @@ const Summary = ({ values, prevStep }) => {
               <tr>
                 <td>22</td>
                 <td>Bank Statement</td>
-                <td>{values.bankStatement}</td>
+                <td>{values.photoBankstatement.name}</td>
               </tr>
 
               <tr>
@@ -264,25 +265,25 @@ const Summary = ({ values, prevStep }) => {
               <tr>
                 <td>34</td>
                 <td>Passport Photo</td>
-                <td>{values.photoPassport}</td>
+                <td>{values.photoPassport.name}</td>
               </tr>
 
               <tr>
                 <td>35</td>
                 <td>Photo ID</td>
-                <td>{values.photoID}</td>
+                <td>{values.photoID.name}</td>
               </tr>
 
               <tr>
                 <td>36</td>
                 <td>Signature</td>
-                <td>{values.photoSignature}</td>
+                <td>{values.photoSignature.name}</td>
               </tr>
 
               <tr>
                 <td>37</td>
                 <td>Utility Bill</td>
-                <td>{values.photoUtilityBill}</td>
+                <td>{values.photoUtilityBill.name}</td>
               </tr>
             </tbody>
           </Table>

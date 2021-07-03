@@ -10,6 +10,13 @@ import Documents from './Documents';
 import Summary from './Summary';
 
 const SignupForms = () => {
+  const [photoPassport, setPhotoPassport] = useState('');
+  const [photoID, setPhotoID] = useState('');
+  const [photoSignature, setPhotoSignature] = useState('');
+  const [photoUtilityBill, setPhotoUtilityBill] = useState('');
+  const [photoBankstatement, setPhotoBankstatment] = useState('');
+  // const [photoIncorporation, setPhotoIncorporation] = useState('');
+
   const [formValues, setFormvalues] = useState({
     step: 1,
     title: '',
@@ -34,7 +41,6 @@ const SignupForms = () => {
     bankAccountType: '',
     sortCode: '',
     accountOpeningDate: '',
-    bankStatement: '',
     nextOfKinName: '',
     relationNextOfKin: '',
     contactNextOfKin: '',
@@ -44,10 +50,6 @@ const SignupForms = () => {
     idForm: '',
     idNumber: '',
     idExpireDate: '',
-    photoPassport: '',
-    photoID: '',
-    photoSignature: '',
-    photoUtilityBill: '',
   });
 
   const {
@@ -74,7 +76,6 @@ const SignupForms = () => {
     sortCode,
     accountOpeningDate,
     bankAccountType,
-    bankStatement,
     nextOfKinName,
     relationNextOfKin,
     contactNextOfKin,
@@ -84,10 +85,6 @@ const SignupForms = () => {
     idForm,
     idNumber,
     idExpireDate,
-    photoPassport,
-    photoID,
-    photoSignature,
-    photoUtilityBill,
   } = formValues;
 
   const values = {
@@ -114,7 +111,6 @@ const SignupForms = () => {
     sortCode,
     accountOpeningDate,
     bankAccountType,
-    bankStatement,
     nextOfKinName,
     chnNextOfKin,
     relationNextOfKin,
@@ -128,6 +124,7 @@ const SignupForms = () => {
     photoID,
     photoSignature,
     photoUtilityBill,
+    photoBankstatement,
   };
 
   const nextStep = () => {
@@ -209,7 +206,14 @@ const SignupForms = () => {
           handleChange={handleChange}
           nextStep={nextStep}
           prevStep={prevStep}
-          values={values}
+          photoPassport={photoPassport}
+          setPhotoPassport={setPhotoPassport}
+          setPhotoID={setPhotoID}
+          setPhotoSignature={setPhotoSignature}
+          setPhotoUtilityBill={setPhotoUtilityBill}
+          setPhotoBankstatment={setPhotoBankstatment}
+          // photoIncorporation={photoIncorporation}
+          // setPhotoIncorporation={setPhotoIncorporation}
         />
       );
 
