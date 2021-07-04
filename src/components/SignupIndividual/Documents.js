@@ -11,6 +11,7 @@ const Documents = ({
   setPhotoSignature,
   setPhotoUtilityBill,
   setPhotoBankstatment,
+  setPassportPreview,
 }) => {
   const continueToNextStep = (e) => {
     e.preventDefault();
@@ -24,6 +25,11 @@ const Documents = ({
 
   const handlePassportChange = (e) => {
     setPhotoPassport(e.target.files[0]);
+    const reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onloadend = () => {
+      setPassportPreview(reader.result);
+    };
   };
 
   const handlePhotoIDChange = (e) => {

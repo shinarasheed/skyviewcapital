@@ -10,28 +10,41 @@ const Summary = ({ values, prevStep }) => {
   };
 
   let body = {
-    sheet1: {
-      ...values,
-    },
+    ...values,
   };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    fetch(
-      'https://api.sheety.co/4ae3e54ffabbc7f764b475b50f938e82/skyviewcapital/sheet1',
-      {
+    // try {
+    //   const response = await fetch(
+    //     'https://api.sheety.co/4ae3e54ffabbc7f764b475b50f938e82/skyviewcapital/sheet1',
+    //     {
+    //       method: 'POST',
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //       body: JSON.stringify(body),
+    //     }
+    //   );
+
+    //   const data = await response.json();
+    //   console.log(data.sheet1);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+
+    try {
+      await fetch('http://localhost:8080/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(body),
-      }
-    )
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json.sheet1);
       });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
