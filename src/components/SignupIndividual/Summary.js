@@ -9,38 +9,97 @@ const Summary = ({ values, prevStep }) => {
     prevStep();
   };
 
-  let body = {
-    ...values,
-  };
+  const {
+    title,
+    surName,
+    firstName,
+    otherName,
+    dateOfBirth,
+    gender,
+    residenceAddress,
+    city,
+    stateOfOrigin,
+    LocalGovernmentArea,
+    emailAddress,
+    mobilePhoneNumber,
+    homePhoneNumber,
+    profession,
+    employmentType,
+    companyName,
+    bankName,
+    bankAccountNumber,
+    bvnNumber,
+    sortCode,
+    accountOpeningDate,
+    bankAccountType,
+    nextOfKinName,
+    chnNextOfKin,
+    relationNextOfKin,
+    contactNextOfKin,
+    phoneNumberNextOfKin,
+    emailNextOfKin,
+    idForm,
+    idNumber,
+    idExpireDate,
+    photoPassport,
+    photoID,
+    photoSignature,
+    photoUtilityBill,
+    photoBankstatement,
+  } = values;
+
+  const data = new FormData();
+
+  data.append('title', title);
+  data.append('surName', surName);
+  data.append('firstName', firstName);
+  data.append('otherName', otherName);
+  data.append('dateOfBirth', dateOfBirth);
+  data.append('gender', gender);
+  data.append('residenceAddress', residenceAddress);
+
+  data.append('city', city);
+  data.append('stateOfOrigin', stateOfOrigin);
+  data.append('localGovernmentArea', LocalGovernmentArea);
+  data.append('emailAddress', emailAddress);
+  data.append('mobilePhoneNumber', mobilePhoneNumber);
+  data.append('homePhoneNumber', homePhoneNumber);
+  data.append('profession', profession);
+  data.append('employmentType', employmentType);
+
+  data.append('companyName', companyName);
+  data.append('bankName', bankName);
+  data.append('bankAccountNumber', bankAccountNumber);
+  data.append('bvnNumber', bvnNumber);
+  data.append('sortCode', sortCode);
+  data.append('accountOpeningDate', accountOpeningDate);
+  data.append('bankAccountType', bankAccountType);
+  data.append('nextOfKinName', nextOfKinName);
+  data.append('chnNextOfKin', chnNextOfKin);
+  data.append('relationNextOfKin', relationNextOfKin);
+  data.append('contactNextOfKin', contactNextOfKin);
+  data.append('phoneNumberNextOfKin', phoneNumberNextOfKin);
+
+  data.append('emailNextOfKin', emailNextOfKin);
+  data.append('idForm', idForm);
+  data.append('idNumber', idNumber);
+  data.append('idExpireDate', idExpireDate);
+  data.append('photoPassport', photoPassport);
+  data.append('photoID', photoID);
+  data.append('photoSignature', photoSignature);
+  data.append('photoUtilityBill', photoUtilityBill);
+  data.append('photoBankstatement', photoBankstatement);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
-    // try {
-    //   const response = await fetch(
-    //     'https://api.sheety.co/4ae3e54ffabbc7f764b475b50f938e82/skyviewcapital/sheet1',
-    //     {
-    //       method: 'POST',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify(body),
-    //     }
-    //   );
-
-    //   const data = await response.json();
-    //   console.log(data.sheet1);
-    // } catch (error) {
-    //   console.log(error);
-    // }
 
     try {
       await fetch('http://localhost:8080/api/register', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'multipart/form-data',
         },
-        body: JSON.stringify(body),
+        body: data,
       });
     } catch (error) {
       console.log(error);

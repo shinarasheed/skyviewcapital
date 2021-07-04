@@ -11,7 +11,6 @@ import Summary from './Summary';
 
 const SignupForms = () => {
   const [photoPassport, setPhotoPassport] = useState('');
-  const [passportPreview, setPassportPreview] = useState('');
   const [photoID, setPhotoID] = useState('');
   const [photoSignature, setPhotoSignature] = useState('');
   const [photoUtilityBill, setPhotoUtilityBill] = useState('');
@@ -88,7 +87,6 @@ const SignupForms = () => {
   } = formValues;
 
   const values = {
-    step,
     title,
     surName,
     firstName,
@@ -125,7 +123,6 @@ const SignupForms = () => {
     photoSignature,
     photoUtilityBill,
     photoBankstatement,
-    passportPreview,
   };
 
   const nextStep = () => {
@@ -212,9 +209,6 @@ const SignupForms = () => {
           setPhotoSignature={setPhotoSignature}
           setPhotoUtilityBill={setPhotoUtilityBill}
           setPhotoBankstatment={setPhotoBankstatment}
-          setPassportPreview={setPassportPreview}
-          photoPassport={photoPassport}
-          passportPreview={passportPreview}
         />
       );
 
