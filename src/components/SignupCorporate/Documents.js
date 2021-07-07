@@ -6,12 +6,12 @@ import SignupTitle from '../SignupTitle';
 const Documents = ({
   prevStep,
   nextStep,
-  setPhotoPassport,
-  setPhotoID,
-  setPhotoSignature,
-  setPhotoUtilityBill,
-  setPhotoBankstatment,
-  setPhotoIncorporation,
+  setPassport,
+  setIdentitycard,
+  setsignature,
+  setUtilitybill,
+  setBankstatment,
+  setIncorporationCertificate,
 }) => {
   const continueToNextStep = (e) => {
     e.preventDefault();
@@ -24,27 +24,27 @@ const Documents = ({
   };
 
   const handlePassportChange = (e) => {
-    setPhotoPassport(e.target.files[0]);
+    setPassport(e.target.files[0]);
   };
 
   const handlePhotoIDChange = (e) => {
-    setPhotoID(e.target.files[0]);
+    setIdentitycard(e.target.files[0]);
   };
 
   const handleSignatureChange = (e) => {
-    setPhotoSignature(e.target.files[0]);
+    setsignature(e.target.files[0]);
   };
 
   const handleUtilityBillChange = (e) => {
-    setPhotoUtilityBill(e.target.files[0]);
+    setUtilitybill(e.target.files[0]);
   };
 
   const handleBankStatementChange = (e) => {
-    setPhotoBankstatment(e.target.files[0]);
+    setBankstatment(e.target.files[0]);
   };
 
   const handleIncorporationChange = (e) => {
-    setPhotoIncorporation(e.target.files[0]);
+    setIncorporationCertificate(e.target.files[0]);
   };
 
   return (

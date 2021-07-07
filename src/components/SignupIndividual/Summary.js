@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Table } from 'react-bootstrap';
+import axios from 'axios';
 
 import SignupTitle from '../SignupTitle';
 
@@ -41,66 +42,68 @@ const Summary = ({ values, prevStep }) => {
     idForm,
     idNumber,
     idExpireDate,
-    photoPassport,
-    photoID,
-    photoSignature,
-    photoUtilityBill,
-    photoBankstatement,
+    passport,
+    identityCaard,
+    signature,
+    utilitybill,
+    bankstatement,
   } = values;
-
-  const data = new FormData();
-
-  data.append('title', title);
-  data.append('surName', surName);
-  data.append('firstName', firstName);
-  data.append('otherName', otherName);
-  data.append('dateOfBirth', dateOfBirth);
-  data.append('gender', gender);
-  data.append('residenceAddress', residenceAddress);
-
-  data.append('city', city);
-  data.append('stateOfOrigin', stateOfOrigin);
-  data.append('localGovernmentArea', LocalGovernmentArea);
-  data.append('emailAddress', emailAddress);
-  data.append('mobilePhoneNumber', mobilePhoneNumber);
-  data.append('homePhoneNumber', homePhoneNumber);
-  data.append('profession', profession);
-  data.append('employmentType', employmentType);
-
-  data.append('companyName', companyName);
-  data.append('bankName', bankName);
-  data.append('bankAccountNumber', bankAccountNumber);
-  data.append('bvnNumber', bvnNumber);
-  data.append('sortCode', sortCode);
-  data.append('accountOpeningDate', accountOpeningDate);
-  data.append('bankAccountType', bankAccountType);
-  data.append('nextOfKinName', nextOfKinName);
-  data.append('chnNextOfKin', chnNextOfKin);
-  data.append('relationNextOfKin', relationNextOfKin);
-  data.append('contactNextOfKin', contactNextOfKin);
-  data.append('phoneNumberNextOfKin', phoneNumberNextOfKin);
-
-  data.append('emailNextOfKin', emailNextOfKin);
-  data.append('idForm', idForm);
-  data.append('idNumber', idNumber);
-  data.append('idExpireDate', idExpireDate);
-  data.append('photoPassport', photoPassport);
-  data.append('photoID', photoID);
-  data.append('photoSignature', photoSignature);
-  data.append('photoUtilityBill', photoUtilityBill);
-  data.append('photoBankstatement', photoBankstatement);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
+    const formData = new FormData();
+
+    formData.append('title', title);
+    formData.append('surName', surName);
+    formData.append('firstName', firstName);
+    formData.append('otherName', otherName);
+    formData.append('dateOfBirth', dateOfBirth);
+    formData.append('gender', gender);
+    formData.append('residenceAddress', residenceAddress);
+
+    formData.append('city', city);
+    formData.append('stateOfOrigin', stateOfOrigin);
+    formData.append('localGovernmentArea', LocalGovernmentArea);
+    formData.append('emailAddress', emailAddress);
+    formData.append('mobilePhoneNumber', mobilePhoneNumber);
+    formData.append('homePhoneNumber', homePhoneNumber);
+    formData.append('profession', profession);
+    formData.append('employmentType', employmentType);
+
+    formData.append('companyName', companyName);
+    formData.append('bankName', bankName);
+    formData.append('bankAccountNumber', bankAccountNumber);
+    formData.append('bvnNumber', bvnNumber);
+    formData.append('sortCode', sortCode);
+    formData.append('accountOpeningDate', accountOpeningDate);
+    formData.append('bankAccountType', bankAccountType);
+    formData.append('nextOfKinName', nextOfKinName);
+    formData.append('chnNextOfKin', chnNextOfKin);
+    formData.append('relationNextOfKin', relationNextOfKin);
+    formData.append('contactNextOfKin', contactNextOfKin);
+    formData.append('phoneNumberNextOfKin', phoneNumberNextOfKin);
+
+    formData.append('emailNextOfKin', emailNextOfKin);
+    formData.append('idForm', idForm);
+    formData.append('idNumber', idNumber);
+    formData.append('idExpireDate', idExpireDate);
+    formData.append('passport', passport);
+    formData.append('identityCaard', identityCaard);
+    formData.append('signature', signature);
+    formData.append('utilitybill', utilitybill);
+    formData.append('bankstatement', bankstatement);
+
+    console.log(values);
+
+    const config = {
+      headers: {
+        'Content-Type': 'multipart/form-formData',
+      },
+    };
+
     try {
-      await fetch('http://localhost:8080/api/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-        body: data,
-      });
+      await axios.post('http://localhost:8080/api/register', formData, config);
     } catch (error) {
       console.log(error);
     }
@@ -265,7 +268,7 @@ const Summary = ({ values, prevStep }) => {
               <tr>
                 <td>22</td>
                 <td>Bank Statement</td>
-                <td>{values.photoBankstatement.name}</td>
+                <td>{values.bankstatement.name}</td>
               </tr>
 
               <tr>
@@ -337,25 +340,25 @@ const Summary = ({ values, prevStep }) => {
               <tr>
                 <td>34</td>
                 <td>Passport Photo</td>
-                <td>{values.photoPassport.name}</td>
+                <td>{values.passport.name}</td>
               </tr>
 
               <tr>
                 <td>35</td>
                 <td>Photo ID</td>
-                <td>{values.photoID.name}</td>
+                <td>{values.identityCaard.name}</td>
               </tr>
 
               <tr>
                 <td>36</td>
                 <td>Signature</td>
-                <td>{values.photoSignature.name}</td>
+                <td>{values.signature.name}</td>
               </tr>
 
               <tr>
                 <td>37</td>
                 <td>Utility Bill</td>
-                <td>{values.photoUtilityBill.name}</td>
+                <td>{values.utilitybill.name}</td>
               </tr>
             </tbody>
           </Table>

@@ -6,12 +6,11 @@ import SignupTitle from '../SignupTitle';
 const Documents = ({
   prevStep,
   nextStep,
-  setPhotoPassport,
-  setPhotoID,
-  setPhotoSignature,
-  setPhotoUtilityBill,
+  setPassport,
+  setIdentitycard,
+  setPhotosignature,
+  setUtilitybill,
   setPhotoBankstatment,
-  setPassportPreview,
 }) => {
   const continueToNextStep = (e) => {
     e.preventDefault();
@@ -24,27 +23,22 @@ const Documents = ({
   };
 
   const handlePassportChange = (e) => {
-    setPhotoPassport(e.target.files[0]);
-    const reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-    reader.onloadend = () => {
-      setPassportPreview(reader.result);
-    };
+    setPassport(e.target.files[0]);
   };
 
-  const handlePhotoIDChange = (e) => {
-    setPhotoID(e.target.files[0]);
+  const handleidentitycardChange = (e) => {
+    setIdentitycard(e.target.files[0]);
   };
 
-  const handleSignatureChange = (e) => {
-    setPhotoSignature(e.target.files[0]);
+  const handlesignatureChange = (e) => {
+    setPhotosignature(e.target.files[0]);
   };
 
   const handleUtilityBillChange = (e) => {
-    setPhotoUtilityBill(e.target.files[0]);
+    setUtilitybill(e.target.files[0]);
   };
 
-  const handleBankStatementChange = (e) => {
+  const handleBankstatementChange = (e) => {
     setPhotoBankstatment(e.target.files[0]);
   };
 
@@ -55,7 +49,7 @@ const Documents = ({
         <div className="formInputContainer">
           <Form.Group>
             <Form.File
-              name="photoPassport"
+              name="passport"
               label="Passport Photo"
               onChange={(e) => handlePassportChange(e)}
             />
@@ -64,8 +58,8 @@ const Documents = ({
           <Form.Group>
             <Form.File
               label="ID"
-              name="photoID"
-              onChange={(e) => handlePhotoIDChange(e)}
+              name="identitycard"
+              onChange={(e) => handleidentitycardChange(e)}
             />
           </Form.Group>
         </div>
@@ -73,16 +67,16 @@ const Documents = ({
         <div className="formInputContainer">
           <Form.Group>
             <Form.File
-              label="Signature"
-              name="photoSignature"
-              onChange={(e) => handleSignatureChange(e)}
+              label="signature"
+              name="photosignature"
+              onChange={(e) => handlesignatureChange(e)}
             />
           </Form.Group>
 
           <Form.Group>
             <Form.File
               label="Utility Bill"
-              name="photoUtilityBill"
+              name="utilitybill"
               onChange={(e) => handleUtilityBillChange(e)}
             />
           </Form.Group>
@@ -92,8 +86,8 @@ const Documents = ({
           <Form.Group>
             <Form.File
               label="Bank Statement"
-              name="bankStatement"
-              onChange={(e) => handleBankStatementChange(e)}
+              name="bankstatement"
+              onChange={(e) => handleBankstatementChange(e)}
             />
           </Form.Group>
         </div>

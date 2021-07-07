@@ -10,12 +10,12 @@ import Documents from './Documents';
 import Summary from './Summary';
 
 const SignupForms = () => {
-  const [photoPassport, setPhotoPassport] = useState('');
-  const [photoID, setPhotoID] = useState('');
-  const [photoSignature, setPhotoSignature] = useState('');
-  const [photoUtilityBill, setPhotoUtilityBill] = useState('');
-  const [photoBankstatement, setPhotoBankstatment] = useState('');
-  const [photoIncorporation, setPhotoIncorporation] = useState('');
+  const [passport, setPassport] = useState('');
+  const [identitycard, setIdentitycard] = useState('');
+  const [signature, setSignature] = useState('');
+  const [utilitybill, setUtilitybill] = useState('');
+  const [bankstatement, setBankstatment] = useState('');
+  const [incorporationcertificate, setIncorporationCertificate] = useState('');
 
   const [formValues, setFormvalues] = useState({
     step: 1,
@@ -123,12 +123,12 @@ const SignupForms = () => {
     idForm,
     idNumber,
     idExpireDate,
-    photoPassport,
-    photoID,
-    photoSignature,
-    photoUtilityBill,
-    photoBankstatement,
-    photoIncorporation,
+    passport,
+    identitycard,
+    signature,
+    utilitybill,
+    bankstatement,
+    incorporationcertificate,
   };
 
   const nextStep = () => {
@@ -210,12 +210,12 @@ const SignupForms = () => {
           handleChange={handleChange}
           nextStep={nextStep}
           prevStep={prevStep}
-          setPhotoPassport={setPhotoPassport}
-          setPhotoID={setPhotoID}
-          setPhotoSignature={setPhotoSignature}
-          setPhotoUtilityBill={setPhotoUtilityBill}
-          setPhotoBankstatment={setPhotoBankstatment}
-          setPhotoIncorporation={setPhotoIncorporation}
+          setPassport={setPassport}
+          setIdentitycard={setIdentitycard}
+          setSignature={setSignature}
+          setUtilitybill={setUtilitybill}
+          setBankstatment={setBankstatment}
+          setIncorporationCertificate={setIncorporationCertificate}
         />
       );
 
