@@ -36,9 +36,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
             <Form.Control
               type="text"
               placeholder="Local Government Area"
-              name="LocalGovernmentArea"
+              name="localGovernment"
               onChange={(e) => handleChange(e)}
-              value={values.LocalGovernmentArea}
+              value={values.localGovernment}
             />
           </Form.Group>
         </div>

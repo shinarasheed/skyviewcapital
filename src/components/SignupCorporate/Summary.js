@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Table } from 'react-bootstrap';
 import axios from 'axios';
 
 import SignupTitle from '../SignupTitle';
 
 const Summary = ({ values, prevStep }) => {
+  const [submitState, setSubmitState] = useState('Submit');
+
   const goBackToPreviousStep = (e) => {
     e.preventDefault();
     prevStep();
@@ -96,16 +98,17 @@ const Summary = ({ values, prevStep }) => {
     formData.append('bankstatement', bankstatement);
     formData.append('incorporationcertificate', incorporationcertificate);
 
-    console.log(values);
-
     const config = {
       headers: {
         'Content-Type': 'multipart/form-formData',
       },
     };
 
+    setSubmitState('Submiting...');
+
     try {
       await axios.post('http://localhost:8080/api/users', formData, config);
+      setSubmitState('Submitted');
     } catch (error) {
       console.log(error);
     }
@@ -383,7 +386,7 @@ const Summary = ({ values, prevStep }) => {
           </Button>
 
           <Button className="mt-4" variant="primary" type="submit">
-            Submit
+            {submitState}
           </Button>
         </div>
       </form>
