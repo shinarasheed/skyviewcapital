@@ -20,7 +20,7 @@ const Summary = ({ values, prevStep }) => {
     residenceAddress,
     city,
     stateOfOrigin,
-    LocalGovernmentArea,
+    localGovernment,
     emailAddress,
     mobilePhoneNumber,
     homePhoneNumber,
@@ -43,7 +43,7 @@ const Summary = ({ values, prevStep }) => {
     idNumber,
     idExpireDate,
     passport,
-    identityCaard,
+    identitycard,
     signature,
     utilitybill,
     bankstatement,
@@ -64,7 +64,7 @@ const Summary = ({ values, prevStep }) => {
 
     formData.append('city', city);
     formData.append('stateOfOrigin', stateOfOrigin);
-    formData.append('localGovernmentArea', LocalGovernmentArea);
+    formData.append('localGovernment', localGovernment);
     formData.append('emailAddress', emailAddress);
     formData.append('mobilePhoneNumber', mobilePhoneNumber);
     formData.append('homePhoneNumber', homePhoneNumber);
@@ -89,13 +89,15 @@ const Summary = ({ values, prevStep }) => {
     formData.append('idNumber', idNumber);
     formData.append('idExpireDate', idExpireDate);
     formData.append('passport', passport);
-    formData.append('identityCaard', identityCaard);
+    formData.append('identitycard', identitycard);
     formData.append('signature', signature);
     formData.append('utilitybill', utilitybill);
     formData.append('bankstatement', bankstatement);
 
-    console.log(values);
 
+  console.log(values)
+
+  
     const config = {
       headers: {
         'Content-Type': 'multipart/form-formData',
@@ -103,7 +105,7 @@ const Summary = ({ values, prevStep }) => {
     };
 
     try {
-      await axios.post('http://localhost:8080/api/register', formData, config);
+      await axios.post('http://localhost:8080/api/users', formData, config);
     } catch (error) {
       console.log(error);
     }
@@ -185,7 +187,7 @@ const Summary = ({ values, prevStep }) => {
               <tr>
                 <td>10</td>
                 <td>Local Government Area</td>
-                <td>{values.LocalGovernmentArea}</td>
+                <td>{values.localGovernment}</td>
               </tr>
 
               <tr>
@@ -346,7 +348,7 @@ const Summary = ({ values, prevStep }) => {
               <tr>
                 <td>35</td>
                 <td>Photo ID</td>
-                <td>{values.identityCaard.name}</td>
+                <td>{values.identitycard.name}</td>
               </tr>
 
               <tr>

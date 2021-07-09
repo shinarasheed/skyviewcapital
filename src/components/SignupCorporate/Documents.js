@@ -8,7 +8,7 @@ const Documents = ({
   nextStep,
   setPassport,
   setIdentitycard,
-  setsignature,
+  setSignature,
   setUtilitybill,
   setBankstatment,
   setIncorporationCertificate,
@@ -27,19 +27,19 @@ const Documents = ({
     setPassport(e.target.files[0]);
   };
 
-  const handlePhotoIDChange = (e) => {
+  const handleidentitycardChange = (e) => {
     setIdentitycard(e.target.files[0]);
   };
 
-  const handleSignatureChange = (e) => {
-    setsignature(e.target.files[0]);
+  const handlesignatureChange = (e) => {
+    setSignature(e.target.files[0]);
   };
 
   const handleUtilityBillChange = (e) => {
     setUtilitybill(e.target.files[0]);
   };
 
-  const handleBankStatementChange = (e) => {
+  const handleBankstatementChange = (e) => {
     setBankstatment(e.target.files[0]);
   };
 
@@ -54,7 +54,7 @@ const Documents = ({
         <div className="formInputContainer">
           <Form.Group>
             <Form.File
-              name="photoPassport"
+              name="passport"
               label="Passport Photo"
               onChange={(e) => handlePassportChange(e)}
             />
@@ -63,8 +63,8 @@ const Documents = ({
           <Form.Group>
             <Form.File
               label="ID"
-              name="photoID"
-              onChange={(e) => handlePhotoIDChange(e)}
+              name="identitycard"
+              onChange={(e) => handleidentitycardChange(e)}
             />
           </Form.Group>
         </div>
@@ -72,16 +72,16 @@ const Documents = ({
         <div className="formInputContainer">
           <Form.Group>
             <Form.File
-              label="Signature"
-              name="photoSignature"
-              onChange={(e) => handleSignatureChange(e)}
+              label="signature"
+              name="photosignature"
+              onChange={(e) => handlesignatureChange(e)}
             />
           </Form.Group>
 
           <Form.Group>
             <Form.File
               label="Utility Bill"
-              name="photoUtilityBill"
+              name="utilitybill"
               onChange={(e) => handleUtilityBillChange(e)}
             />
           </Form.Group>
@@ -92,7 +92,7 @@ const Documents = ({
             <Form.File
               label="Bank Statement"
               name="bankStatement"
-              onChange={(e) => handleBankStatementChange(e)}
+              onChange={(e) => handleBankstatementChange(e)}
             />
           </Form.Group>
 

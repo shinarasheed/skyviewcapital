@@ -8,9 +8,9 @@ const Documents = ({
   nextStep,
   setPassport,
   setIdentitycard,
-  setPhotosignature,
+  setSignature,
   setUtilitybill,
-  setPhotoBankstatment,
+  setBankstatment,
 }) => {
   const continueToNextStep = (e) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ const Documents = ({
   };
 
   const handlesignatureChange = (e) => {
-    setPhotosignature(e.target.files[0]);
+    setSignature(e.target.files[0]);
   };
 
   const handleUtilityBillChange = (e) => {
@@ -39,7 +39,7 @@ const Documents = ({
   };
 
   const handleBankstatementChange = (e) => {
-    setPhotoBankstatment(e.target.files[0]);
+    setBankstatment(e.target.files[0]);
   };
 
   return (
