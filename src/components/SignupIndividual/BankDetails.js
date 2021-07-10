@@ -2,14 +2,12 @@ import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 import SignupTitle from '../SignupTitle';
 
-const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
+const BankDetails = ({ register, prevStep, nextStep, errors }) => {
   const continueToNextStep = (e) => {
-    e.preventDefault();
     nextStep();
   };
 
   const goBackToPreviousStep = (e) => {
-    e.preventDefault();
     prevStep();
   };
 
@@ -24,9 +22,9 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Bank Name"
               name="bankName"
-              onChange={(e) => handleChange(e)}
-              value={values.bankName}
+              {...register('bankName')}
             />
+            <p>{errors.banKName?.message}</p>
           </Form.Group>
 
           <Form.Group>
@@ -35,9 +33,9 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Account Number"
               name="bankAccountNumber"
-              onChange={(e) => handleChange(e)}
-              value={values.bankAccountNumber}
+              {...register('bankAccountNumber')}
             />
+            <p>{errors.bankAccountNumber?.message}</p>
           </Form.Group>
         </div>
 
@@ -48,9 +46,9 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Enter Your BVN"
               name="bvnNumber"
-              onChange={(e) => handleChange(e)}
-              value={values.bvnNumber}
+              {...register('bvnNumber')}
             />
+            <p>{errors.bvnNumber?.message}</p>
           </Form.Group>
 
           <Form.Group>
@@ -59,13 +57,13 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               as="select"
               placeholder="Account Type"
               name="bankAccountType"
-              onChange={(e) => handleChange(e)}
-              value={values.bankAccountType}
+              {...register('bankAccountType')}
             >
               <option>Select Account Type</option>
               <option>Savings</option>
               <option>Current</option>
             </Form.Control>
+            <p>{errors.bankAccountType?.message}</p>
           </Form.Group>
         </div>
 
@@ -76,9 +74,9 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Sort Code"
               name="sortCode"
-              onChange={(e) => handleChange(e)}
-              value={values.sortCode}
+              {...register('sortCode')}
             />
+            <p>{errors.sortCode?.message}</p>
           </Form.Group>
 
           <div className="dateInput">
@@ -89,9 +87,9 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               type="date"
               placeholder="Enter Date"
               name="accountOpeningDate"
-              onChange={(e) => handleChange(e)}
-              value={values.accountOpeningDate}
+              {...register('accountOpeningDate')}
             />
+            <p>{errors.accountOpeningDate?.message}</p>
           </div>
         </div>
 
