@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 
@@ -15,7 +15,7 @@ import Documents from './Documents';
 import Summary from './Summary';
 
 const SignupForms = () => {
-  const [submitState, setSubmitState] = useState('Submit');
+  // const [submitState, setSubmitState] = useState('Submit');
   const {
     register,
     formState: { errors },
@@ -211,7 +211,7 @@ const SignupForms = () => {
           getValues={getValues}
           onSubmit={onSubmit}
           handleSubmit={handleSubmit}
-          submitState={submitState}
+          // submitState={submitState}
         />
       );
 
