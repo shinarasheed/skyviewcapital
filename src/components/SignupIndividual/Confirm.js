@@ -4,12 +4,10 @@ import SignupTitle from '../SignupTitle';
 
 const Confirm = ({ prevStep, nextStep }) => {
   const continueToNextStep = (e) => {
-    e.preventDefault();
     nextStep();
   };
 
   const goBackToPreviousStep = (e) => {
-    e.preventDefault();
     prevStep();
   };
 

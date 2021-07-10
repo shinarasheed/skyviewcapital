@@ -3,14 +3,12 @@ import { Form, Button } from 'react-bootstrap';
 
 import SignupTitle from '../SignupTitle';
 
-const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
+const NextOfKin = ({ register, prevStep, nextStep, errors }) => {
   const continueToNextStep = (e) => {
-    e.preventDefault();
     nextStep();
   };
 
   const goBackToPreviousStep = (e) => {
-    e.preventDefault();
     prevStep();
   };
 
@@ -25,9 +23,9 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Enter Name"
               name="nextOfKinName"
-              onChange={(e) => handleChange(e)}
-              value={values.nextOfKinName}
+              {...register('nextOfKinName')}
             />
+            <p>{errors.nextOfKinName?.message}</p>
           </Form.Group>
 
           <Form.Group>
@@ -38,9 +36,9 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Enter Relationship"
               name="relationNextOfKin"
-              onChange={(e) => handleChange(e)}
-              value={values.relationNextOfKin}
+              {...register('relationNextOfKin')}
             />
+            <p>{errors.relationNextOfKin?.message}</p>
           </Form.Group>
         </div>
 
@@ -51,9 +49,9 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Enter Contact Address"
               name="contactNextOfKin"
-              onChange={(e) => handleChange(e)}
-              defaultValue={values.contactNextOfKin}
+              {...register('contactNextOfKin')}
             />
+            <p>{errors.contactNextOfKin?.message}</p>
           </Form.Group>
 
           <Form.Group>
@@ -62,9 +60,9 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Enter Phone Number"
               name="phoneNumberNextOfKin"
-              onChange={(e) => handleChange(e)}
-              defaultValue={values.phoneNumberNextOfKin}
+              {...register('phoneNumberNextOfKin')}
             />
+            <p>{errors.phoneNumberNextOfKin?.message}</p>
           </Form.Group>
         </div>
 
@@ -75,9 +73,9 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
               type="email"
               placeholder="Enter Email"
               name="emailNextOfKin"
-              onChange={(e) => handleChange(e)}
-              value={values.emailNextOfKin}
+              {...register('emailNextOfKin')}
             />
+            <p>{errors.emailNextOfKin?.message}</p>
           </Form.Group>
 
           <Form.Group>
@@ -86,9 +84,9 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
               type="email"
               placeholder="Enter CHN"
               name="chnNextOfKin"
-              onChange={(e) => handleChange(e)}
-              value={values.chnNextOfKin}
+              {...register('chnNextOfKin')}
             />
+            <p>{errors.chnNextOfKin?.message}</p>
           </Form.Group>
         </div>
 

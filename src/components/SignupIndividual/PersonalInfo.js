@@ -2,9 +2,8 @@ import React from 'react';
 import SignupTitle from '../SignupTitle';
 import { Form, Button } from 'react-bootstrap';
 
-const PersonalInfo = ({ handleChange, values, nextStep }) => {
-  const continueToNextStep = (e) => {
-    e.preventDefault();
+const PersonalInfo = ({ register, nextStep, handleSubmit, errors }) => {
+  const continueToNextStep = () => {
     nextStep();
   };
 
@@ -15,17 +14,13 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
         <div className="formInputContainer">
           <Form.Group>
             <Form.Label className="formLabel">Title</Form.Label>
-            <Form.Control
-              as="select"
-              name="title"
-              onChange={(e) => handleChange(e)}
-              value={values.title}
-            >
+            <Form.Control as="select" name="title" {...register('title')}>
               <option>Select Title</option>
               <option>Mr</option>
               <option>Mrs</option>
               <option>Miss</option>
             </Form.Control>
+            <p className="InputErrorText">{errors.title?.message}</p>
           </Form.Group>
 
           <Form.Group>
@@ -34,9 +29,9 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="text"
               placeholder="surName"
               name="surName"
-              onChange={(e) => handleChange(e)}
-              value={values.surName}
+              {...register('surName')}
             />
+            <p className="InputErrorText">{errors.surName?.message}</p>
           </Form.Group>
         </div>
 
@@ -47,9 +42,9 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="text"
               placeholder="First Name"
               name="firstName"
-              onChange={(e) => handleChange(e)}
-              value={values.firstName}
+              {...register('firstName')}
             />
+            <p className="InputErrorText">{errors.firstName?.message}</p>
           </Form.Group>
 
           <Form.Group>
@@ -58,9 +53,9 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="text"
               placeholder="Other Names"
               name="otherName"
-              onChange={(e) => handleChange(e)}
-              value={values.otherName}
+              {...register('otherName')}
             />
+            <p className="InputErrorText">{errors.otherName?.message}</p>
           </Form.Group>
         </div>
 
@@ -71,23 +66,19 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="date"
               placeholder="Date of Birth"
               name="dateOfBirth"
-              onChange={(e) => handleChange(e)}
-              value={values.dateOfBirth}
+              {...register('dateOfBirth')}
             />
+            <p>{errors.dateOfBirth?.message}</p>
           </div>
 
           <Form.Group>
             <Form.Label className="formLabel">Gender</Form.Label>
-            <Form.Control
-              as="select"
-              name="gender"
-              onChange={(e) => handleChange(e)}
-              value={values.gender}
-            >
+            <Form.Control as="select" name="gender" {...register('gender')}>
               <option>Select Gender</option>
               <option>Male</option>
               <option>Female</option>
             </Form.Control>
+            <p>{errors.gender?.message}</p>
           </Form.Group>
         </div>
 
@@ -98,9 +89,9 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="text"
               placeholder="Residence Address"
               name="residenceAddress"
-              onChange={(e) => handleChange(e)}
-              value={values.residenceAddress}
+              {...register('residenceAddress')}
             />
+            <p>{errors.residenceAddress?.message}</p>
           </Form.Group>
 
           <Form.Group>
@@ -109,14 +100,14 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="text"
               placeholder="City"
               name="city"
-              onChange={(e) => handleChange(e)}
-              value={values.city}
+              {...register('city')}
             />
+            <p>{errors.city?.message}</p>
           </Form.Group>
         </div>
 
         <Button
-          onClick={(e) => continueToNextStep(e)}
+          onClick={handleSubmit(continueToNextStep)}
           className="mt-4"
           variant="primary"
           type="button"
@@ -124,11 +115,6 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
           Continue
         </Button>
       </Form>
-
-      {/* <div className="sinupCta">
-        <p className="mr-2">Already have an Account?</p>
-        <Link to="/login">Login</Link>
-      </div> */}
     </>
   );
 };

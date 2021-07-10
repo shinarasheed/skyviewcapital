@@ -3,14 +3,12 @@ import { Form, Button } from 'react-bootstrap';
 
 import SignupTitle from '../SignupTitle';
 
-const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
+const PersonalInfoSecond = ({ prevStep, register, nextStep, errors }) => {
   const continueToNextStep = (e) => {
-    e.preventDefault();
     nextStep();
   };
 
   const goBackToPreviousStep = (e) => {
-    e.preventDefault();
     prevStep();
   };
 
@@ -25,9 +23,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="State of Origin"
               name="stateOfOrigin"
-              onChange={(e) => handleChange(e)}
-              value={values.stateOfOrigin}
+              {...register('stateOfOrigin')}
             />
+            <p>{errors.stateOfOrigin?.message}</p>
           </Form.Group>
 
           <Form.Group>
@@ -36,9 +34,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Local Government Area"
               name="localGovernment"
-              onChange={(e) => handleChange(e)}
-              value={values.localGovernment}
+              {...register('localGovernment')}
             />
+            <p>{errors.localGovernment?.message}</p>
           </Form.Group>
         </div>
 
@@ -49,9 +47,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="email"
               placeholder="Email"
               name="emailAddress"
-              onChange={(e) => handleChange(e)}
-              value={values.emailAddress}
+              {...register('emailAddress')}
             />
+            <p>{errors.emailAddress?.message}</p>
           </Form.Group>
 
           <Form.Group>
@@ -60,9 +58,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Mobile Phone Number"
               name="mobilePhoneNumber"
-              onChange={(e) => handleChange(e)}
-              value={values.mobilePhoneNumber}
+              {...register('mobilePhoneNumber')}
             />
+            <p>{errors.mobilePhoneNumber?.message}</p>
           </Form.Group>
         </div>
 
@@ -73,9 +71,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Home Phone Number"
               name="homePhoneNumber"
-              onChange={(e) => handleChange(e)}
-              value={values.homePhoneNumber}
+              {...register('homePhoneNumber')}
             />
+            <p>{errors.homePhoneNumber?.message}</p>
           </Form.Group>
 
           <Form.Group>
@@ -84,9 +82,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Profession"
               name="profession"
-              onChange={(e) => handleChange(e)}
-              value={values.profession}
+              {...register('profession')}
             />
+            <p>{errors.profession?.message}</p>
           </Form.Group>
         </div>
 
@@ -97,8 +95,7 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               as="select"
               placeholder="Employment Type"
               name="employmentType"
-              onChange={(e) => handleChange(e)}
-              value={values.employmentType}
+              {...register('employmentType')}
             >
               <option>Select Employment Type</option>
               <option>Salaried</option>
@@ -106,6 +103,7 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               <option>Retired</option>
               <option>Unemployed</option>
             </Form.Control>
+            <p>{errors.employmentType?.message}</p>
           </Form.Group>
 
           <Form.Group>
@@ -114,9 +112,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Company Name"
               name="companyName"
-              onChange={(e) => handleChange(e)}
-              value={values.companyName}
+              {...register('companyName')}
             />
+            <p>{errors.companyName?.message}</p>
           </Form.Group>
         </div>
 

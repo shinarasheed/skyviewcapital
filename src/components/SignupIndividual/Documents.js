@@ -3,43 +3,13 @@ import { Form, Button } from 'react-bootstrap';
 
 import SignupTitle from '../SignupTitle';
 
-const Documents = ({
-  prevStep,
-  nextStep,
-  setPassport,
-  setIdentitycard,
-  setSignature,
-  setUtilitybill,
-  setBankstatment,
-}) => {
+const Documents = ({ register, prevStep, nextStep, errors }) => {
   const continueToNextStep = (e) => {
-    e.preventDefault();
     nextStep();
   };
 
   const goBackToPreviousStep = (e) => {
-    e.preventDefault();
     prevStep();
-  };
-
-  const handlePassportChange = (e) => {
-    setPassport(e.target.files[0]);
-  };
-
-  const handleidentitycardChange = (e) => {
-    setIdentitycard(e.target.files[0]);
-  };
-
-  const handlesignatureChange = (e) => {
-    setSignature(e.target.files[0]);
-  };
-
-  const handleUtilityBillChange = (e) => {
-    setUtilitybill(e.target.files[0]);
-  };
-
-  const handleBankstatementChange = (e) => {
-    setBankstatment(e.target.files[0]);
   };
 
   return (
@@ -51,16 +21,18 @@ const Documents = ({
             <Form.File
               name="passport"
               label="Passport Photo"
-              onChange={(e) => handlePassportChange(e)}
+              {...register('passport')}
             />
+            <p>{errors.passport?.message}</p>
           </Form.Group>
 
           <Form.Group>
             <Form.File
               label="ID"
               name="identitycard"
-              onChange={(e) => handleidentitycardChange(e)}
+              {...register('identitycard')}
             />
+            <p>{errors.identitycard?.message}</p>
           </Form.Group>
         </div>
 
@@ -68,17 +40,19 @@ const Documents = ({
           <Form.Group>
             <Form.File
               label="signature"
-              name="photosignature"
-              onChange={(e) => handlesignatureChange(e)}
+              name="signature"
+              {...register('signature')}
             />
+            <p>{errors.signature?.message}</p>
           </Form.Group>
 
           <Form.Group>
             <Form.File
               label="Utility Bill"
               name="utilitybill"
-              onChange={(e) => handleUtilityBillChange(e)}
+              {...register('utilitybill')}
             />
+            <p>{errors.utilitybill?.message}</p>
           </Form.Group>
         </div>
 
@@ -87,8 +61,9 @@ const Documents = ({
             <Form.File
               label="Bank Statement"
               name="bankstatement"
-              onChange={(e) => handleBankstatementChange(e)}
+              {...register('bankstatement')}
             />
+            <p>{errors.bankstatement?.message}</p>
           </Form.Group>
         </div>
 

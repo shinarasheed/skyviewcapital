@@ -3,14 +3,12 @@ import { Form, Button } from 'react-bootstrap';
 
 import SignupTitle from '../SignupTitle';
 
-const Identity = ({ handleChange, values, prevStep, nextStep }) => {
+const Identity = ({ register, prevStep, nextStep, errors }) => {
   const continueToNextStep = (e) => {
-    e.preventDefault();
     nextStep();
   };
 
   const goBackToPreviousStep = (e) => {
-    e.preventDefault();
     prevStep();
   };
 
@@ -23,18 +21,14 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
             <Form.Label className="formLabel">
               Form of Identification
             </Form.Label>
-            <Form.Control
-              as="select"
-              name="idForm"
-              onChange={(e) => handleChange(e)}
-              value={values.idForm}
-            >
+            <Form.Control as="select" name="idForm" {...register('idForm')}>
               <option>Select Form of ID</option>
               <option>Driver License</option>
               <option>National Identity Card</option>
               <option>Voters' Card</option>
               <option>International Passport</option>
             </Form.Control>
+            <p>{errors.idForm?.message}</p>
           </Form.Group>
 
           <Form.Group>
@@ -43,9 +37,9 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Enter ID Number"
               name="idNumber"
-              onChange={(e) => handleChange(e)}
-              value={values.idNumber}
+              {...register('idNumber')}
             />
+            <p>{errors.idNumber?.message}</p>
           </Form.Group>
         </div>
 
@@ -56,9 +50,9 @@ const Identity = ({ handleChange, values, prevStep, nextStep }) => {
               type="date"
               placeholder="Enter Date"
               name="idExpireDate"
-              onChange={(e) => handleChange(e)}
-              value={values.idExpireDate}
+              {...register('idExpireDate')}
             />
+            <p>{errors.idExpireDate?.message}</p>
           </div>
         </div>
 
