@@ -31,10 +31,15 @@ const Contact = () => {
             >
               Please feel free to reach out to us
             </h5>
-            <Form>
+            <Form action="https://formspree.io/f/xvodbgnw" method="POST">
               <Form.Group>
                 <Form.Label className="formLabel">Name</Form.Label>
-                <Form.Control size="lg" type="text" placeholder="Enter Name" />
+                <Form.Control
+                  size="lg"
+                  type="text"
+                  name="name"
+                  placeholder="Enter Name"
+                />
               </Form.Group>
 
               <Form.Group>
@@ -42,6 +47,7 @@ const Contact = () => {
                 <Form.Control
                   size="lg"
                   type="email"
+                  name="email"
                   placeholder="Enter Email"
                 />
               </Form.Group>
@@ -51,6 +57,7 @@ const Contact = () => {
                 <Form.Control
                   size="lg"
                   type="text"
+                  name="phonenumber"
                   placeholder="Enter PhoneNumber"
                 />
               </Form.Group>
@@ -60,13 +67,19 @@ const Contact = () => {
                 <Form.Control
                   size="lg"
                   type="text"
+                  name="location"
                   placeholder="Enter Location"
                 />
               </Form.Group>
 
               <Form.Group className="mb-3">
                 <Form.Label className="formLabel">Message</Form.Label>
-                <Form.Control className="formMessage" as="textarea" rows={5} />
+                <Form.Control
+                  name="message"
+                  className="formMessage"
+                  as="textarea"
+                  rows={5}
+                />
               </Form.Group>
 
               <Button variant="primary" type="submit">

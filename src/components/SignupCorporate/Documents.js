@@ -4,11 +4,11 @@ import { Form, Button } from 'react-bootstrap';
 import SignupTitle from '../SignupTitle';
 
 const Documents = ({ register, prevStep, nextStep, isValid, errors }) => {
-  const continueToNextStep = (e) => {
+  const continueToNextStep = () => {
     nextStep();
   };
 
-  const goBackToPreviousStep = (e) => {
+  const goBackToPreviousStep = () => {
     prevStep();
   };
 
