@@ -2,14 +2,12 @@ import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 import SignupTitle from '../SignupTitle';
 
-const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
+const BankDetails = ({ register, prevStep, nextStep, errors, isValid }) => {
   const continueToNextStep = (e) => {
-    e.preventDefault();
     nextStep();
   };
 
   const goBackToPreviousStep = (e) => {
-    e.preventDefault();
     prevStep();
   };
 
@@ -24,9 +22,11 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Bank Name"
               name="bankName"
-              onChange={(e) => handleChange(e)}
-              value={values.bankName}
+              {...register('bankName', { required: true })}
             />
+            {errors.bankName?.type === 'required' && (
+              <p className="InputErrorText">bank name is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -35,9 +35,11 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Account Number"
               name="bankAccountNumber"
-              onChange={(e) => handleChange(e)}
-              value={values.bankAccountNumber}
+              {...register('bankAccountNumber', { required: true })}
             />
+            {errors.bankAccountNumber?.type === 'required' && (
+              <p className="InputErrorText">account number is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -48,9 +50,11 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Enter Your BVN"
               name="bvnNumber"
-              onChange={(e) => handleChange(e)}
-              value={values.bvnNumber}
+              {...register('bvnNumber', { required: true })}
             />
+            {errors.bvnNumber?.type === 'required' && (
+              <p className="InputErrorText">bvn is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -59,13 +63,15 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               as="select"
               placeholder="Account Type"
               name="bankAccountType"
-              onChange={(e) => handleChange(e)}
-              value={values.bankAccountType}
+              {...register('bankAccountType', { required: true })}
             >
               <option>Select Account Type</option>
               <option>Savings</option>
               <option>Current</option>
             </Form.Control>
+            {errors.bankAccountType?.type === 'required' && (
+              <p className="InputErrorText">account type is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -76,9 +82,11 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Sort Code"
               name="sortCode"
-              onChange={(e) => handleChange(e)}
-              value={values.sortCode}
+              {...register('sortCode', { required: true })}
             />
+            {errors.sortCode?.type === 'required' && (
+              <p className="InputErrorText">sort code is required</p>
+            )}
           </Form.Group>
 
           <div className="dateInput">
@@ -89,9 +97,11 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
               type="date"
               placeholder="Enter Date"
               name="accountOpeningDate"
-              onChange={(e) => handleChange(e)}
-              value={values.accountOpeningDate}
+              {...register('accountOpeningDate', { required: true })}
             />
+            {errors.accountOpeningDate?.type === 'required' && (
+              <p className="InputErrorText">date is required</p>
+            )}
           </div>
         </div>
 
@@ -105,7 +115,8 @@ const BankDetails = ({ handleChange, values, prevStep, nextStep }) => {
           </Button>
 
           <Button
-            onClick={(e) => continueToNextStep(e)}
+            disabled={!isValid}
+            onClick={continueToNextStep}
             variant="primary"
             type="button"
           >

@@ -3,14 +3,12 @@ import { Form, Button } from 'react-bootstrap';
 
 import SignupTitle from '../SignupTitle';
 
-const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
+const NextOfKin = ({ register, prevStep, nextStep, errors, isValid }) => {
   const continueToNextStep = (e) => {
-    e.preventDefault();
     nextStep();
   };
 
   const goBackToPreviousStep = (e) => {
-    e.preventDefault();
     prevStep();
   };
 
@@ -25,9 +23,11 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Enter Name"
               name="nextOfKinName"
-              onChange={(e) => handleChange(e)}
-              value={values.nextOfKinName}
+              {...register('nextOfKinName', { required: true })}
             />
+            {errors.nextOfKinName?.type === 'required' && (
+              <p className="InputErrorText">name is required</p>
+            )}{' '}
           </Form.Group>
 
           <Form.Group>
@@ -38,9 +38,11 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Enter Relationship"
               name="relationNextOfKin"
-              onChange={(e) => handleChange(e)}
-              value={values.relationNextOfKin}
+              {...register('relationNextOfKin', { required: true })}
             />
+            {errors.relationNextOfKin?.type === 'required' && (
+              <p className="InputErrorText">relationship is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -51,9 +53,11 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Enter Contact Address"
               name="contactNextOfKin"
-              onChange={(e) => handleChange(e)}
-              defaultValue={values.contactNextOfKin}
+              {...register('contactNextOfKin', { required: true })}
             />
+            {errors.contactNextOfKin?.type === 'required' && (
+              <p className="InputErrorText">contact is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -62,9 +66,11 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Enter Phone Number"
               name="phoneNumberNextOfKin"
-              onChange={(e) => handleChange(e)}
-              defaultValue={values.phoneNumberNextOfKin}
+              {...register('phoneNumberNextOfKin', { required: true })}
             />
+            {errors.phoneNumberNextOfKin?.type === 'required' && (
+              <p className="InputErrorText">phone number is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -75,9 +81,12 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
               type="email"
               placeholder="Enter Email"
               name="emailNextOfKin"
-              onChange={(e) => handleChange(e)}
-              value={values.emailNextOfKin}
+              {...register('emailNextOfKin', { required: true })}
             />
+
+            {errors.emailNextOfKin?.type === 'required' && (
+              <p className="InputErrorText">email is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -86,9 +95,11 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
               type="email"
               placeholder="Enter CHN"
               name="chnNextOfKin"
-              onChange={(e) => handleChange(e)}
-              value={values.chnNextOfKin}
+              {...register('chnNextOfKin', { required: true })}
             />
+            {errors.chnNextOfKin?.type === 'required' && (
+              <p className="InputErrorText">chn is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -102,7 +113,8 @@ const NextOfKin = ({ handleChange, values, prevStep, nextStep }) => {
           </Button>
 
           <Button
-            onClick={(e) => continueToNextStep(e)}
+            disabled={!isValid}
+            onClick={continueToNextStep}
             variant="primary"
             type="button"
           >

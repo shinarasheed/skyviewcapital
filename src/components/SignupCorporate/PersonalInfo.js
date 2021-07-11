@@ -1,10 +1,10 @@
 import React from 'react';
 import SignupTitle from '../SignupTitle';
 import { Form, Button } from 'react-bootstrap';
+import { mixed } from 'yup';
 
-const PersonalInfo = ({ handleChange, values, nextStep }) => {
-  const continueToNextStep = (e) => {
-    e.preventDefault();
+const PersonalInfo = ({ register, nextStep, isValid, errors }) => {
+  const continueToNextStep = () => {
     nextStep();
   };
 
@@ -18,14 +18,22 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
             <Form.Control
               as="select"
               name="title"
-              onChange={(e) => handleChange(e)}
-              value={values.title}
+              {...register(
+                'title',
+                {
+                  required: true,
+                },
+                mixed().oneOf(['Mr', 'Mrs', 'Miss'])
+              )}
             >
-              <option>Select</option>
+              <option>Select Title</option>
               <option>Mr</option>
               <option>Mrs</option>
               <option>Miss</option>
             </Form.Control>
+            {errors.title?.typeof === 'required' && (
+              <p className="InputErrorText">First name is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -34,9 +42,11 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="text"
               placeholder="surName"
               name="surName"
-              onChange={(e) => handleChange(e)}
-              value={values.surName}
+              {...register('surName', { required: true })}
             />
+            {errors.surName?.type === 'required' && (
+              <p className="InputErrorText">surname name is required</p>
+            )}{' '}
           </Form.Group>
         </div>
 
@@ -47,9 +57,11 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="text"
               placeholder="First Name"
               name="firstName"
-              onChange={(e) => handleChange(e)}
-              value={values.firstName}
+              {...register('firstName', { required: true })}
             />
+            {errors.firstName?.type === 'required' && (
+              <p className="InputErrorText">First name is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -58,9 +70,11 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="text"
               placeholder="Other Names"
               name="otherName"
-              onChange={(e) => handleChange(e)}
-              value={values.otherName}
+              {...register('otherName', { required: true })}
             />
+            {errors.otherName?.type === 'required' && (
+              <p className="InputErrorText">other name is required</p>
+            )}{' '}
           </Form.Group>
         </div>
 
@@ -71,9 +85,12 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="date"
               placeholder="Date of Birth"
               name="dateOfBirth"
-              onChange={(e) => handleChange(e)}
-              value={values.dateOfBirth}
+              {...register('dateOfBirth', { required: true })}
             />
+
+            {errors.otherName?.type === 'required' && (
+              <p className="InputErrorText">dob is required</p>
+            )}
           </div>
 
           <Form.Group>
@@ -81,12 +98,15 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
             <Form.Control
               as="select"
               name="gender"
-              onChange={(e) => handleChange(e)}
-              value={values.gender}
+              {...register('gender', { required: true })}
             >
+              <option>Select Gender</option>
               <option>Male</option>
               <option>Female</option>
             </Form.Control>
+            {errors.gender?.type === 'required' && (
+              <p className="InputErrorText">other name is required</p>
+            )}{' '}
           </Form.Group>
         </div>
 
@@ -97,9 +117,11 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="text"
               placeholder="Residence Address"
               name="residenceAddress"
-              onChange={(e) => handleChange(e)}
-              value={values.residenceAddress}
+              {...register('residenceAddress', { required: true })}
             />
+            {errors.residenceAddress?.type === 'required' && (
+              <p className="InputErrorText">address is required</p>
+            )}{' '}
           </Form.Group>
 
           <Form.Group>
@@ -108,14 +130,18 @@ const PersonalInfo = ({ handleChange, values, nextStep }) => {
               type="text"
               placeholder="City"
               name="city"
-              onChange={(e) => handleChange(e)}
-              value={values.city}
+              {...register('city', { required: true })}
             />
+            {errors.city?.type === 'required' && (
+              <p className="InputErrorText">city is required</p>
+            )}{' '}
           </Form.Group>
         </div>
 
+        {/* i can just disable the button if isValid if false in another situation instead of this weild way */}
         <Button
-          onClick={(e) => continueToNextStep(e)}
+          disabled={!isValid}
+          onClick={continueToNextStep}
           className="mt-4"
           variant="primary"
           type="button"
