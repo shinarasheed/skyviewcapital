@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useForm } from 'react-hook-form';
 
 import PersonalInfo from './PersonalInfo';
 import PersonalInfoSecond from './PersonalInfoSecond';
@@ -10,126 +12,117 @@ import Documents from './Documents';
 import Summary from './Summary';
 
 const SignupForms = () => {
-  const [passport, setPassport] = useState('');
-  const [identitycard, setIdentitycard] = useState('');
-  const [signature, setSignature] = useState('');
-  const [utilitybill, setUtilitybill] = useState('');
-  const [bankstatement, setBankstatment] = useState('');
-  const [incorporationcertificate, setIncorporationCertificate] = useState('');
+  const [submitState, setSubmitState] = useState('Submit');
+  const {
+    register,
+    formState: { errors, isValid },
+    handleSubmit,
+    getValues,
+  } = useForm({ mode: 'all' });
+
+  const onSubmit = async (data) => {
+    const {
+      title,
+      surName,
+      firstName,
+      otherName,
+      dateOfBirth,
+      gender,
+      residenceAddress,
+      city,
+      stateOfOrigin,
+      localGovernment,
+      emailAddress,
+      mobilePhoneNumber,
+      homePhoneNumber,
+      profession,
+      employmentType,
+      companyName,
+      bankName,
+      bankAccountNumber,
+      bvnNumber,
+      sortCode,
+      accountOpeningDate,
+      bankAccountType,
+      nextOfKinName,
+      chnNextOfKin,
+      relationNextOfKin,
+      contactNextOfKin,
+      phoneNumberNextOfKin,
+      emailNextOfKin,
+      idForm,
+      idNumber,
+      idExpireDate,
+      passport,
+      identitycard,
+      signature,
+      utilitybill,
+      bankstatement,
+      incorporationcertificate,
+    } = data;
+
+    const formData = new FormData();
+
+    formData.append('title', title);
+    formData.append('surName', surName);
+    formData.append('firstName', firstName);
+    formData.append('otherName', otherName);
+    formData.append('dateOfBirth', dateOfBirth);
+    formData.append('gender', gender);
+    formData.append('residenceAddress', residenceAddress);
+
+    formData.append('city', city);
+    formData.append('stateOfOrigin', stateOfOrigin);
+    formData.append('localGovernment', localGovernment);
+    formData.append('emailAddress', emailAddress);
+    formData.append('mobilePhoneNumber', mobilePhoneNumber);
+    formData.append('homePhoneNumber', homePhoneNumber);
+    formData.append('profession', profession);
+    formData.append('employmentType', employmentType);
+
+    formData.append('companyName', companyName);
+    formData.append('bankName', bankName);
+    formData.append('bankAccountNumber', bankAccountNumber);
+    formData.append('bvnNumber', bvnNumber);
+    formData.append('sortCode', sortCode);
+    formData.append('accountOpeningDate', accountOpeningDate);
+    formData.append('bankAccountType', bankAccountType);
+    formData.append('nextOfKinName', nextOfKinName);
+    formData.append('chnNextOfKin', chnNextOfKin);
+    formData.append('relationNextOfKin', relationNextOfKin);
+    formData.append('contactNextOfKin', contactNextOfKin);
+    formData.append('phoneNumberNextOfKin', phoneNumberNextOfKin);
+
+    formData.append('emailNextOfKin', emailNextOfKin);
+    formData.append('idForm', idForm);
+    formData.append('idNumber', idNumber);
+    formData.append('idExpireDate', idExpireDate);
+    formData.append('passport', passport[0]);
+    formData.append('identitycard', identitycard[0]);
+    formData.append('signature', signature[0]);
+    formData.append('utilitybill', utilitybill[0]);
+    formData.append('bankstatement', bankstatement[0]);
+    formData.append('incorporationcertificate', incorporationcertificate[0]);
+
+    const config = {
+      headers: {
+        'Content-Type': 'multipart/form-formData',
+      },
+    };
+    setSubmitState('Submiting...');
+    try {
+      await axios.post('http://localhost:8080/api/users', formData, config);
+      setSubmitState('Submitted');
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const [formValues, setFormvalues] = useState({
     step: 1,
-    title: '',
-    surName: '',
-    firstName: '',
-    otherName: '',
-    dateOfBirth: '',
-    gender: '',
-    residenceAddress: '',
-    city: '',
-    stateOfOrigin: '',
-    LocalGovernmentArea: '',
-    emailAddress: '',
-    mobilePhoneNumber: '',
-    homePhoneNumber: '',
-    profession: '',
-    employmentType: '',
-    companyName: '',
-    bankName: '',
-    bankAccountNumber: '',
-    bvnNumber: '',
-    bankAccountType: '',
-    sortCode: '',
-    accountOpeningDate: '',
-    incorporationCertificate: '',
-    nextOfKinName: '',
-    relationNextOfKin: '',
-    contactNextOfKin: '',
-    phoneNumberNextOfKin: '',
-    emailNextOfKin: '',
-    chnNextOfKin: '',
-    idForm: '',
-    idNumber: '',
-    idExpireDate: '',
   });
 
-  const {
-    step,
-    title,
-    surName,
-    firstName,
-    otherName,
-    dateOfBirth,
-    gender,
-    residenceAddress,
-    city,
-    stateOfOrigin,
-    LocalGovernmentArea,
-    emailAddress,
-    mobilePhoneNumber,
-    homePhoneNumber,
-    profession,
-    employmentType,
-    companyName,
-    bankName,
-    bankAccountNumber,
-    bvnNumber,
-    bankAccountType,
-    sortCode,
-    accountOpeningDate,
-    incorporationCertificate,
-    nextOfKinName,
-    relationNextOfKin,
-    contactNextOfKin,
-    phoneNumberNextOfKin,
-    emailNextOfKin,
-    chnNextOfKin,
-    idForm,
-    idNumber,
-    idExpireDate,
-  } = formValues;
-
-  const values = {
-    step,
-    title,
-    surName,
-    firstName,
-    otherName,
-    dateOfBirth,
-    gender,
-    residenceAddress,
-    city,
-    stateOfOrigin,
-    LocalGovernmentArea,
-    emailAddress,
-    mobilePhoneNumber,
-    homePhoneNumber,
-    profession,
-    employmentType,
-    companyName,
-    bankName,
-    bankAccountNumber,
-    bvnNumber,
-    bankAccountType,
-    sortCode,
-    accountOpeningDate,
-    incorporationCertificate,
-    nextOfKinName,
-    chnNextOfKin,
-    relationNextOfKin,
-    contactNextOfKin,
-    phoneNumberNextOfKin,
-    emailNextOfKin,
-    idForm,
-    idNumber,
-    idExpireDate,
-    passport,
-    identitycard,
-    signature,
-    utilitybill,
-    bankstatement,
-    incorporationcertificate,
-  };
+  const { step } = formValues;
 
   const nextStep = () => {
     const { step } = formValues;
@@ -141,90 +134,85 @@ const SignupForms = () => {
     setFormvalues({ ...formValues, step: step - 1 });
   };
 
-  const handleChange = (e) => {
-    setFormvalues({ ...formValues, [e.target.name]: e.target.value });
-  };
-
   switch (step) {
     case 1:
       return (
         <PersonalInfo
-          handleChange={handleChange}
+          handleSubmit={handleSubmit}
           nextStep={nextStep}
-          values={values}
+          register={register}
+          errors={errors}
+          isValid={isValid}
         />
       );
     case 2:
       return (
         <PersonalInfoSecond
-          handleChange={handleChange}
           nextStep={nextStep}
           prevStep={prevStep}
-          values={values}
+          register={register}
+          errors={errors}
+          isValid={isValid}
         />
       );
 
     case 3:
       return (
         <BankDetails
-          handleChange={handleChange}
           nextStep={nextStep}
           prevStep={prevStep}
-          values={values}
+          register={register}
+          errors={errors}
+          isValid={isValid}
         />
       );
 
     case 4:
       return (
         <NextOfKin
-          handleChange={handleChange}
           nextStep={nextStep}
           prevStep={prevStep}
-          values={values}
+          register={register}
+          errors={errors}
+          isValid={isValid}
         />
       );
 
     case 5:
       return (
         <Identity
-          handleChange={handleChange}
           nextStep={nextStep}
           prevStep={prevStep}
-          values={values}
+          register={register}
+          errors={errors}
+          isValid={isValid}
         />
       );
 
     case 6:
       return (
-        <Confirm
-          handleChange={handleChange}
-          nextStep={nextStep}
-          prevStep={prevStep}
-          values={values}
-        />
+        <Confirm nextStep={nextStep} prevStep={prevStep} errors={errors} />
       );
 
     case 7:
       return (
         <Documents
-          handleChange={handleChange}
           nextStep={nextStep}
           prevStep={prevStep}
-          setPassport={setPassport}
-          setIdentitycard={setIdentitycard}
-          setSignature={setSignature}
-          setUtilitybill={setUtilitybill}
-          setBankstatment={setBankstatment}
-          setIncorporationCertificate={setIncorporationCertificate}
+          register={register}
+          errors={errors}
+          isValid={isValid}
         />
       );
 
     case 8:
       return (
         <Summary
-          handleChange={handleChange}
           prevStep={prevStep}
-          values={values}
+          getValues={getValues}
+          onSubmit={onSubmit}
+          handleSubmit={handleSubmit}
+          submitState={submitState}
         />
       );
 

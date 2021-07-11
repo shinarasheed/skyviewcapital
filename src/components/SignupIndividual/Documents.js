@@ -71,7 +71,6 @@ const Documents = ({ register, prevStep, nextStep, isValid, errors }) => {
               name="bankstatement"
               {...register('bankstatement', { required: true })}
             />
-            <p>{errors.bankstatement?.message}</p>
             {errors.bankstatement?.typeof === 'required' && (
               <p className="InputErrorText">bank statement is required</p>
             )}

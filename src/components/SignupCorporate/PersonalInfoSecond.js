@@ -3,21 +3,24 @@ import { Form, Button } from 'react-bootstrap';
 
 import SignupTitle from '../SignupTitle';
 
-const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
+const PersonalInfoSecond = ({
+  prevStep,
+  register,
+  isValid,
+  nextStep,
+  errors,
+}) => {
   const continueToNextStep = (e) => {
-    e.preventDefault();
     nextStep();
   };
 
   const goBackToPreviousStep = (e) => {
-    e.preventDefault();
     prevStep();
   };
 
   return (
     <>
       <SignupTitle title="personal information" />
-
       <Form>
         <div className="formInputContainer">
           <Form.Group>
@@ -26,9 +29,12 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="State of Origin"
               name="stateOfOrigin"
-              onChange={(e) => handleChange(e)}
-              value={values.stateOfOrigin}
+              {...register('stateOfOrigin', { required: true })}
             />
+
+            {errors.stateOfOrigin?.type === 'required' && (
+              <p className="InputErrorText">state of origin is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -37,9 +43,11 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Local Government Area"
               name="localGovernment"
-              onChange={(e) => handleChange(e)}
-              value={values.localGovernment}
+              {...register('localGovernment', { required: true })}
             />
+            {errors.localGovernment?.type === 'required' && (
+              <p className="InputErrorText">local government is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -50,9 +58,11 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="email"
               placeholder="Email"
               name="emailAddress"
-              onChange={(e) => handleChange(e)}
-              value={values.emailAddress}
+              {...register('emailAddress', { required: true })}
             />
+            {errors.emailAddress?.type === 'required' && (
+              <p className="InputErrorText">email address is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -61,9 +71,11 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Mobile Phone Number"
               name="mobilePhoneNumber"
-              onChange={(e) => handleChange(e)}
-              value={values.mobilePhoneNumber}
+              {...register('mobilePhoneNumber', { required: true })}
             />
+            {errors.mobilePhoneNumber?.type === 'required' && (
+              <p className="InputErrorText">mobile phone is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -74,9 +86,11 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Home Phone Number"
               name="homePhoneNumber"
-              onChange={(e) => handleChange(e)}
-              value={values.homePhoneNumber}
+              {...register('homePhoneNumber', { required: true })}
             />
+            {errors.homePhoneNumber?.type === 'required' && (
+              <p className="InputErrorText">home phone is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -85,9 +99,11 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Profession"
               name="profession"
-              onChange={(e) => handleChange(e)}
-              value={values.profession}
+              {...register('profession', { required: true })}
             />
+            {errors.profession?.type === 'required' && (
+              <p className="InputErrorText">profession is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -98,8 +114,7 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               as="select"
               placeholder="Employment Type"
               name="employmentType"
-              onChange={(e) => handleChange(e)}
-              value={values.employmentType}
+              {...register('employmentType', { required: true })}
             >
               <option>Select Employment Type</option>
               <option>Salaried</option>
@@ -107,6 +122,9 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               <option>Retired</option>
               <option>Unemployed</option>
             </Form.Control>
+            {errors.employmentType?.type === 'required' && (
+              <p className="InputErrorText">employment type is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -115,9 +133,11 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
               type="text"
               placeholder="Company Name"
               name="companyName"
-              onChange={(e) => handleChange(e)}
-              value={values.companyName}
+              {...register('companyName', { required: true })}
             />
+            {errors.companyName?.type === 'required' && (
+              <p className="InputErrorText">company name is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -131,7 +151,8 @@ const PersonalInfoSecond = ({ handleChange, values, prevStep, nextStep }) => {
           </Button>
 
           <Button
-            onClick={(e) => continueToNextStep(e)}
+            disabled={!isValid}
+            onClick={continueToNextStep}
             variant="primary"
             type="button"
           >
