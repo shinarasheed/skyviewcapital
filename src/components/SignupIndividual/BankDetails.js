@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 import SignupTitle from '../SignupTitle';
 
-const BankDetails = ({ register, prevStep, nextStep, errors }) => {
+const BankDetails = ({ register, prevStep, nextStep, errors, isValid }) => {
   const continueToNextStep = (e) => {
     nextStep();
   };
@@ -22,9 +22,11 @@ const BankDetails = ({ register, prevStep, nextStep, errors }) => {
               type="text"
               placeholder="Bank Name"
               name="bankName"
-              {...register('bankName')}
+              {...register('bankName', { required: true })}
             />
-            <p>{errors.banKName?.message}</p>
+            {errors.bankName?.type === 'required' && (
+              <p className="InputErrorText">bank name is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -33,9 +35,11 @@ const BankDetails = ({ register, prevStep, nextStep, errors }) => {
               type="text"
               placeholder="Account Number"
               name="bankAccountNumber"
-              {...register('bankAccountNumber')}
+              {...register('bankAccountNumber', { required: true })}
             />
-            <p>{errors.bankAccountNumber?.message}</p>
+            {errors.bankAccountNumber?.type === 'required' && (
+              <p className="InputErrorText">account number is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -46,9 +50,11 @@ const BankDetails = ({ register, prevStep, nextStep, errors }) => {
               type="text"
               placeholder="Enter Your BVN"
               name="bvnNumber"
-              {...register('bvnNumber')}
+              {...register('bvnNumber', { required: true })}
             />
-            <p>{errors.bvnNumber?.message}</p>
+            {errors.bvnNumber?.type === 'required' && (
+              <p className="InputErrorText">bvn is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -57,13 +63,15 @@ const BankDetails = ({ register, prevStep, nextStep, errors }) => {
               as="select"
               placeholder="Account Type"
               name="bankAccountType"
-              {...register('bankAccountType')}
+              {...register('bankAccountType', { required: true })}
             >
               <option>Select Account Type</option>
               <option>Savings</option>
               <option>Current</option>
             </Form.Control>
-            <p>{errors.bankAccountType?.message}</p>
+            {errors.bankAccountType?.type === 'required' && (
+              <p className="InputErrorText">account type is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -74,9 +82,11 @@ const BankDetails = ({ register, prevStep, nextStep, errors }) => {
               type="text"
               placeholder="Sort Code"
               name="sortCode"
-              {...register('sortCode')}
+              {...register('sortCode', { required: true })}
             />
-            <p>{errors.sortCode?.message}</p>
+            {errors.sortCode?.type === 'required' && (
+              <p className="InputErrorText">sort code is required</p>
+            )}
           </Form.Group>
 
           <div className="dateInput">
@@ -87,9 +97,11 @@ const BankDetails = ({ register, prevStep, nextStep, errors }) => {
               type="date"
               placeholder="Enter Date"
               name="accountOpeningDate"
-              {...register('accountOpeningDate')}
+              {...register('accountOpeningDate', { required: true })}
             />
-            <p>{errors.accountOpeningDate?.message}</p>
+            {errors.accountOpeningDate?.type === 'required' && (
+              <p className="InputErrorText">date is required</p>
+            )}
           </div>
         </div>
 
@@ -103,7 +115,8 @@ const BankDetails = ({ register, prevStep, nextStep, errors }) => {
           </Button>
 
           <Button
-            onClick={(e) => continueToNextStep(e)}
+            disabled={!isValid}
+            onClick={continueToNextStep}
             variant="primary"
             type="button"
           >

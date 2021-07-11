@@ -167,13 +167,13 @@ const Summary = ({
               <tr>
                 <td>21</td>
                 <td>Bank Account Type</td>
-                <td></td>
+                <td>{getValues('bankAccountType')}</td>
               </tr>
 
               <tr>
                 <td>22</td>
                 <td>Bank Statement</td>
-                <td>{getValues('bankstatement')}</td>
+                {/* <td>{getValues('bankstatement')}</td> */}
               </tr>
 
               <tr>
@@ -227,7 +227,7 @@ const Summary = ({
               <tr>
                 <td>31</td>
                 <td>ID Card</td>
-                <td></td>
+                <td>{getValues('idForm')}</td>
               </tr>
 
               <tr>

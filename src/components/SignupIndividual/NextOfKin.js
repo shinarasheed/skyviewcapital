@@ -3,7 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 
 import SignupTitle from '../SignupTitle';
 
-const NextOfKin = ({ register, prevStep, nextStep, errors }) => {
+const NextOfKin = ({ register, prevStep, nextStep, errors, isValid }) => {
   const continueToNextStep = (e) => {
     nextStep();
   };
@@ -23,9 +23,11 @@ const NextOfKin = ({ register, prevStep, nextStep, errors }) => {
               type="text"
               placeholder="Enter Name"
               name="nextOfKinName"
-              {...register('nextOfKinName')}
+              {...register('nextOfKinName', { required: true })}
             />
-            <p>{errors.nextOfKinName?.message}</p>
+            {errors.nextOfKinName?.type === 'required' && (
+              <p className="InputErrorText">name is required</p>
+            )}{' '}
           </Form.Group>
 
           <Form.Group>
@@ -36,9 +38,11 @@ const NextOfKin = ({ register, prevStep, nextStep, errors }) => {
               type="text"
               placeholder="Enter Relationship"
               name="relationNextOfKin"
-              {...register('relationNextOfKin')}
+              {...register('relationNextOfKin', { required: true })}
             />
-            <p>{errors.relationNextOfKin?.message}</p>
+            {errors.relationNextOfKin?.type === 'required' && (
+              <p className="InputErrorText">relationship is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -49,9 +53,11 @@ const NextOfKin = ({ register, prevStep, nextStep, errors }) => {
               type="text"
               placeholder="Enter Contact Address"
               name="contactNextOfKin"
-              {...register('contactNextOfKin')}
+              {...register('contactNextOfKin', { required: true })}
             />
-            <p>{errors.contactNextOfKin?.message}</p>
+            {errors.contactNextOfKin?.type === 'required' && (
+              <p className="InputErrorText">contact is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -60,9 +66,11 @@ const NextOfKin = ({ register, prevStep, nextStep, errors }) => {
               type="text"
               placeholder="Enter Phone Number"
               name="phoneNumberNextOfKin"
-              {...register('phoneNumberNextOfKin')}
+              {...register('phoneNumberNextOfKin', { required: true })}
             />
-            <p>{errors.phoneNumberNextOfKin?.message}</p>
+            {errors.phoneNumberNextOfKin?.type === 'required' && (
+              <p className="InputErrorText">phone number is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -73,9 +81,12 @@ const NextOfKin = ({ register, prevStep, nextStep, errors }) => {
               type="email"
               placeholder="Enter Email"
               name="emailNextOfKin"
-              {...register('emailNextOfKin')}
+              {...register('emailNextOfKin', { required: true })}
             />
-            <p>{errors.emailNextOfKin?.message}</p>
+
+            {errors.emailNextOfKin?.type === 'required' && (
+              <p className="InputErrorText">email is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -84,9 +95,11 @@ const NextOfKin = ({ register, prevStep, nextStep, errors }) => {
               type="email"
               placeholder="Enter CHN"
               name="chnNextOfKin"
-              {...register('chnNextOfKin')}
+              {...register('chnNextOfKin', { required: true })}
             />
-            <p>{errors.chnNextOfKin?.message}</p>
+            {errors.chnNextOfKin?.type === 'required' && (
+              <p className="InputErrorText">chn is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -100,7 +113,8 @@ const NextOfKin = ({ register, prevStep, nextStep, errors }) => {
           </Button>
 
           <Button
-            onClick={(e) => continueToNextStep(e)}
+            disabled={!isValid}
+            onClick={continueToNextStep}
             variant="primary"
             type="button"
           >

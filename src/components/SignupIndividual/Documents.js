@@ -3,7 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 
 import SignupTitle from '../SignupTitle';
 
-const Documents = ({ register, prevStep, nextStep, errors }) => {
+const Documents = ({ register, prevStep, nextStep, isValid, errors }) => {
   const continueToNextStep = (e) => {
     nextStep();
   };
@@ -21,18 +21,22 @@ const Documents = ({ register, prevStep, nextStep, errors }) => {
             <Form.File
               name="passport"
               label="Passport Photo"
-              {...register('passport')}
+              {...register('passport', { required: true })}
             />
-            <p>{errors.passport?.message}</p>
+            {errors.passport?.typeof === 'required' && (
+              <p className="InputErrorText">passport is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
             <Form.File
               label="ID"
               name="identitycard"
-              {...register('identitycard')}
+              {...register('identitycard', { required: true })}
             />
-            <p>{errors.identitycard?.message}</p>
+            {errors.identitycard?.typeof === 'required' && (
+              <p className="InputErrorText">identity card is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -41,18 +45,22 @@ const Documents = ({ register, prevStep, nextStep, errors }) => {
             <Form.File
               label="signature"
               name="signature"
-              {...register('signature')}
+              {...register('signature', { required: true })}
             />
-            <p>{errors.signature?.message}</p>
+            {errors.signature?.typeof === 'required' && (
+              <p className="InputErrorText">signature is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
             <Form.File
               label="Utility Bill"
               name="utilitybill"
-              {...register('utilitybill')}
+              {...register('utilitybill', { required: true })}
             />
-            <p>{errors.utilitybill?.message}</p>
+            {errors.utilitybill?.typeof === 'required' && (
+              <p className="InputErrorText">utility bill is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -61,9 +69,12 @@ const Documents = ({ register, prevStep, nextStep, errors }) => {
             <Form.File
               label="Bank Statement"
               name="bankstatement"
-              {...register('bankstatement')}
+              {...register('bankstatement', { required: true })}
             />
             <p>{errors.bankstatement?.message}</p>
+            {errors.bankstatement?.typeof === 'required' && (
+              <p className="InputErrorText">bank statement is required</p>
+            )}
           </Form.Group>
         </div>
 
@@ -77,7 +88,8 @@ const Documents = ({ register, prevStep, nextStep, errors }) => {
           </Button>
 
           <Button
-            onClick={(e) => continueToNextStep(e)}
+            disabled={!isValid}
+            onClick={continueToNextStep}
             variant="primary"
             type="button"
           >

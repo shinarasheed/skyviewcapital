@@ -1,8 +1,9 @@
 import React from 'react';
 import SignupTitle from '../SignupTitle';
 import { Form, Button } from 'react-bootstrap';
+import { mixed } from 'yup';
 
-const PersonalInfo = ({ register, nextStep, handleSubmit, errors }) => {
+const PersonalInfo = ({ register, nextStep, isValid, errors }) => {
   const continueToNextStep = () => {
     nextStep();
   };
@@ -14,13 +15,25 @@ const PersonalInfo = ({ register, nextStep, handleSubmit, errors }) => {
         <div className="formInputContainer">
           <Form.Group>
             <Form.Label className="formLabel">Title</Form.Label>
-            <Form.Control as="select" name="title" {...register('title')}>
+            <Form.Control
+              as="select"
+              name="title"
+              {...register(
+                'title',
+                {
+                  required: true,
+                },
+                mixed().oneOf(['Mr', 'Mrs', 'Miss'])
+              )}
+            >
               <option>Select Title</option>
               <option>Mr</option>
               <option>Mrs</option>
               <option>Miss</option>
             </Form.Control>
-            <p className="InputErrorText">{errors.title?.message}</p>
+            {errors.title?.typeof === 'required' && (
+              <p className="InputErrorText">First name is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -29,9 +42,11 @@ const PersonalInfo = ({ register, nextStep, handleSubmit, errors }) => {
               type="text"
               placeholder="surName"
               name="surName"
-              {...register('surName')}
+              {...register('surName', { required: true })}
             />
-            <p className="InputErrorText">{errors.surName?.message}</p>
+            {errors.surName?.type === 'required' && (
+              <p className="InputErrorText">surname name is required</p>
+            )}{' '}
           </Form.Group>
         </div>
 
@@ -42,9 +57,11 @@ const PersonalInfo = ({ register, nextStep, handleSubmit, errors }) => {
               type="text"
               placeholder="First Name"
               name="firstName"
-              {...register('firstName')}
+              {...register('firstName', { required: true })}
             />
-            <p className="InputErrorText">{errors.firstName?.message}</p>
+            {errors.firstName?.type === 'required' && (
+              <p className="InputErrorText">First name is required</p>
+            )}
           </Form.Group>
 
           <Form.Group>
@@ -53,9 +70,11 @@ const PersonalInfo = ({ register, nextStep, handleSubmit, errors }) => {
               type="text"
               placeholder="Other Names"
               name="otherName"
-              {...register('otherName')}
+              {...register('otherName', { required: true })}
             />
-            <p className="InputErrorText">{errors.otherName?.message}</p>
+            {errors.otherName?.type === 'required' && (
+              <p className="InputErrorText">other name is required</p>
+            )}{' '}
           </Form.Group>
         </div>
 
@@ -66,19 +85,28 @@ const PersonalInfo = ({ register, nextStep, handleSubmit, errors }) => {
               type="date"
               placeholder="Date of Birth"
               name="dateOfBirth"
-              {...register('dateOfBirth')}
+              {...register('dateOfBirth', { required: true })}
             />
-            <p>{errors.dateOfBirth?.message}</p>
+
+            {errors.otherName?.type === 'required' && (
+              <p className="InputErrorText">dob is required</p>
+            )}
           </div>
 
           <Form.Group>
             <Form.Label className="formLabel">Gender</Form.Label>
-            <Form.Control as="select" name="gender" {...register('gender')}>
+            <Form.Control
+              as="select"
+              name="gender"
+              {...register('gender', { required: true })}
+            >
               <option>Select Gender</option>
               <option>Male</option>
               <option>Female</option>
             </Form.Control>
-            <p>{errors.gender?.message}</p>
+            {errors.gender?.type === 'required' && (
+              <p className="InputErrorText">other name is required</p>
+            )}{' '}
           </Form.Group>
         </div>
 
@@ -89,9 +117,11 @@ const PersonalInfo = ({ register, nextStep, handleSubmit, errors }) => {
               type="text"
               placeholder="Residence Address"
               name="residenceAddress"
-              {...register('residenceAddress')}
+              {...register('residenceAddress', { required: true })}
             />
-            <p>{errors.residenceAddress?.message}</p>
+            {errors.residenceAddress?.type === 'required' && (
+              <p className="InputErrorText">address is required</p>
+            )}{' '}
           </Form.Group>
 
           <Form.Group>
@@ -100,14 +130,18 @@ const PersonalInfo = ({ register, nextStep, handleSubmit, errors }) => {
               type="text"
               placeholder="City"
               name="city"
-              {...register('city')}
+              {...register('city', { required: true })}
             />
-            <p>{errors.city?.message}</p>
+            {errors.city?.type === 'required' && (
+              <p className="InputErrorText">city is required</p>
+            )}{' '}
           </Form.Group>
         </div>
 
+        {/* i can just disable the button if isValid if false in another situation instead of this weild way */}
         <Button
-          onClick={handleSubmit(continueToNextStep)}
+          disabled={!isValid}
+          onClick={continueToNextStep}
           className="mt-4"
           variant="primary"
           type="button"

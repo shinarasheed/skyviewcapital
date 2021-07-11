@@ -4,7 +4,7 @@ export const LoginForm = styled.article`
   width: ${(props) => (props.step === 8 ? '80%' : '50%')};
   padding-bottom: 5rem;
   padding: 5rem 4rem 2rem 4rem;
-  opacity: 0.9;
+  /* opacity: 0.9; */
   border-radius: 10px;
 
   @media screen and (max-width: 768px) {
