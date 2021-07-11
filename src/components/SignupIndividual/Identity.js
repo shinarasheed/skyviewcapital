@@ -3,7 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 
 import SignupTitle from '../SignupTitle';
 
-const Identity = ({ register, prevStep, nextStep, errors }) => {
+const Identity = ({ register, prevStep, nextStep, isValid, errors }) => {
   const continueToNextStep = (e) => {
     nextStep();
   };
@@ -21,14 +21,20 @@ const Identity = ({ register, prevStep, nextStep, errors }) => {
             <Form.Label className="formLabel">
               Form of Identification
             </Form.Label>
-            <Form.Control as="select" name="idForm" {...register('idForm')}>
+            <Form.Control
+              as="select"
+              name="idForm"
+              {...register('idForm', { required: true })}
+            >
               <option>Select Form of ID</option>
               <option>Driver License</option>
               <option>National Identity Card</option>
               <option>Voters' Card</option>
               <option>International Passport</option>
             </Form.Control>
-            <p>{errors.idForm?.message}</p>
+            {errors.idForm?.type === 'required' && (
+              <p className="InputErrorText">type of ID is required</p>
+            )}{' '}
           </Form.Group>
 
           <Form.Group>
@@ -37,9 +43,12 @@ const Identity = ({ register, prevStep, nextStep, errors }) => {
               type="text"
               placeholder="Enter ID Number"
               name="idNumber"
-              {...register('idNumber')}
+              {...register('idNumber', { required: true })}
             />
             <p>{errors.idNumber?.message}</p>
+            {errors.idNumber?.type === 'required' && (
+              <p className="InputErrorText">ID number is required</p>
+            )}{' '}
           </Form.Group>
         </div>
 
@@ -50,9 +59,11 @@ const Identity = ({ register, prevStep, nextStep, errors }) => {
               type="date"
               placeholder="Enter Date"
               name="idExpireDate"
-              {...register('idExpireDate')}
+              {...register('idExpireDate', { required: true })}
             />
-            <p>{errors.idExpireDate?.message}</p>
+            {errors.idExpireDate?.type === 'required' && (
+              <p className="InputErrorText">expiry date is required</p>
+            )}{' '}
           </div>
         </div>
 
@@ -66,7 +77,8 @@ const Identity = ({ register, prevStep, nextStep, errors }) => {
           </Button>
 
           <Button
-            onClick={(e) => continueToNextStep(e)}
+            disabled={!isValid}
+            onClick={continueToNextStep}
             variant="primary"
             type="button"
           >

@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-// import axios from 'axios';
-import { yupResolver } from '@hookform/resolvers/yup';
+import axios from 'axios';
 import { useForm } from 'react-hook-form';
-
-import { schema } from '../../utils/validationSchema';
 
 import PersonalInfo from './PersonalInfo';
 import PersonalInfoSecond from './PersonalInfoSecond';
@@ -15,15 +12,13 @@ import Documents from './Documents';
 import Summary from './Summary';
 
 const SignupForms = () => {
-  // const [submitState, setSubmitState] = useState('Submit');
+  const [submitState, setSubmitState] = useState('Submit');
   const {
     register,
-    formState: { errors },
+    formState: { errors, isValid },
     handleSubmit,
     getValues,
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
+  } = useForm({ mode: 'all' });
 
   const onSubmit = async (data) => {
     const {
@@ -64,8 +59,6 @@ const SignupForms = () => {
       utilitybill,
       bankstatement,
     } = data;
-
-    console.log(data);
 
     const formData = new FormData();
 
@@ -109,18 +102,18 @@ const SignupForms = () => {
     formData.append('utilitybill', utilitybill[0]);
     formData.append('bankstatement', bankstatement[0]);
 
-    // const config = {
-    //   headers: {
-    //     'Content-Type': 'multipart/form-formData',
-    //   },
-    // };
-    // setSubmitState('Submiting...');
-    // try {
-    //   await axios.post('http://localhost:8080/api/users', formData, config);
-    //   setSubmitState('Submitted');
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    const config = {
+      headers: {
+        'Content-Type': 'multipart/form-formData',
+      },
+    };
+    setSubmitState('Submiting...');
+    try {
+      await axios.post('http://localhost:8080/api/users', formData, config);
+      setSubmitState('Submitted');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const [formValues, setFormvalues] = useState({
@@ -147,6 +140,7 @@ const SignupForms = () => {
           nextStep={nextStep}
           register={register}
           errors={errors}
+          isValid={isValid}
         />
       );
     case 2:
@@ -156,6 +150,7 @@ const SignupForms = () => {
           prevStep={prevStep}
           register={register}
           errors={errors}
+          isValid={isValid}
         />
       );
 
@@ -166,6 +161,7 @@ const SignupForms = () => {
           prevStep={prevStep}
           register={register}
           errors={errors}
+          isValid={isValid}
         />
       );
 
@@ -176,6 +172,7 @@ const SignupForms = () => {
           prevStep={prevStep}
           register={register}
           errors={errors}
+          isValid={isValid}
         />
       );
 
@@ -186,6 +183,7 @@ const SignupForms = () => {
           prevStep={prevStep}
           register={register}
           errors={errors}
+          isValid={isValid}
         />
       );
 
@@ -201,6 +199,7 @@ const SignupForms = () => {
           prevStep={prevStep}
           register={register}
           errors={errors}
+          isValid={isValid}
         />
       );
 
@@ -211,7 +210,7 @@ const SignupForms = () => {
           getValues={getValues}
           onSubmit={onSubmit}
           handleSubmit={handleSubmit}
-          // submitState={submitState}
+          submitState={submitState}
         />
       );
 
