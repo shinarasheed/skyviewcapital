@@ -109,7 +109,7 @@ const SignupForms = () => {
     };
     setSubmitState('Submiting...');
     try {
-      await axios.post('http://localhost:8080/api/users', formData, config);
+      await axios.post('https://radiant-crag-53232.herokuapp.com/api/users', formData, config);
       setSubmitState('Submitted');
     } catch (error) {
       console.log(error);
